@@ -16,6 +16,8 @@ z_index = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bqxi7")
+dash_speed = 900.0
+dash_seconds = 1.0
 dash_curve = ExtResource("2_x4ex5")
 dash_sound = NodePath("DashSound")
 

@@ -6,8 +6,8 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var accel = 3000.0
 
-@export var dash_speed = 600.0
-@export var dash_seconds = 0.5
+@export var dash_speed = 900.0
+@export var dash_seconds = 1.0
 @export var dash_curve: Curve
 @export var dash_sound: AudioStreamPlayer
 var dash_progress := 0.0

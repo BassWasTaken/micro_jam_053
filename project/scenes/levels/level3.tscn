@@ -39,8 +39,6 @@ zoom = Vector2(0.565, 0.565)
 
 [node name="Hand2" parent="." unique_id=1121984249 instance=ExtResource("2_w2jhf")]
 position = Vector2(485, 386)
-dash_speed = 900.0
-dash_seconds = 1.0
 
 [node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("2_hsxuq")]
 position = Vector2(416, 935)
