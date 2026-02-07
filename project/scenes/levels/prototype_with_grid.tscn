@@ -6,22 +6,88 @@
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="4_366sc"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="5_ngfvh"]
 [ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="6_nlewo"]
-[ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_shufo"]
-[ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="7_wjbml"]
+[ext_resource type="Texture2D" uid="uid://re4tgarajqqg" path="res://project/assets/import/Grid_Vampure.png" id="6_ybgfg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]
 radius = 16.0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shufo"]
-scenes/1/scene = ExtResource("7_wjbml")
-scenes/2/scene = ExtResource("7_shufo")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0qaq"]
+texture = ExtResource("6_ybgfg")
+texture_region_size = Vector2i(64, 64)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+10:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_366sc"]
+[sub_resource type="TileSet" id="TileSet_v0qaq"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetScenesCollectionSource_shufo")
+sources/2 = SubResource("TileSetAtlasSource_v0qaq")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
 vertices = PackedVector2Array(133.60156, 325.60156, -136.63281, 325.60156, -136.4375, 314.39844, 122.39844, 314.39844, 133.60156, -5.6015625, 122.39844, 5.6015625, -58.398438, -5.6015625, -69.60156, 5.6015625, -69.60156, -453.60156, -58.398438, -442.39844, 186.39844, -453.60156, 442.39844, -442.39844, 186.39844, -656.0625, 197.60156, -655.9922, 197.60156, -453.60156, 453.60156, -453.60156, 453.60156, 5.6015625, 442.39844, -5.6015625, 261.60156, 5.6015625, 250.39844, -5.6015625, 250.39844, 325.60156, 261.60156, 314.39844, 510.42188, 325.60156, 510.46875, 314.39844, 5.6015625, 197.60156, -134.53125, 197.60156, -133.29688, 122.39844, 5.6015625, 122.39844, 511, 197.60156, 378.39844, 197.60156, 378.39844, 122.39844, 511.34375, 122.39844, 325.60156, -122.39844, 58.398438, -122.39844, 58.398438, -325.60156, 325.60156, -325.60156, 69.60156, -656.72656, 69.60156, -570.39844, -121.953125, -570.39844, -120.50781, -657.8125, 514.85156, -654.1797, 514.47656, -570.39844, 314.39844, -570.39844, 314.39844, -655.3281)
@@ -79,9 +145,11 @@ autoplay = true
 [node name="HeroGoal" type="Node2D" parent="." unique_id=180760635]
 position = Vector2(544, -96)
 
-[node name="WallLayer" type="TileMapLayer" parent="." unique_id=987531899 groups=["navigation"]]
+[node name="tilemaplayers" type="Node" parent="." unique_id=1656222435]
+
+[node name="tilemapMainLayer" type="TileMapLayer" parent="tilemaplayers" unique_id=987531899 groups=["navigation"]]
 tile_map_data = PackedByteArray("AAAFAAkAAQAAAAAAAQAEAAkAAQAAAAAAAQADAAkAAQAAAAAAAQADAAAAAQAAAAAAAQAEAAAAAQAAAAAAAQAFAAAAAQAAAAAAAQAGAAAAAQAAAAAAAQAKAAAAAQAAAAAAAQALAAAAAQAAAAAAAQAMAAAAAQAAAAAAAQANAAAAAQAAAAAAAQANAAkAAQAAAAAAAQAMAAkAAQAAAAAAAQALAAkAAQAAAAAAAQAIAAcAAQAAAAAAAQAIAAIAAQAAAAAAAQAJAAcAAQAAAAAAAQAKAAcAAQAAAAAAAQALAAcAAQAAAAAAAQALAAIAAQAAAAAAAQAKAAIAAQAAAAAAAQAJAAIAAQAAAAAAAQAHAAIAAQAAAAAAAQAGAAIAAQAAAAAAAQAFAAIAAQAAAAAAAQAHAAAAAQAAAAAAAQAFAAYAAQAAAAAAAQAFAAUAAQAAAAAAAQAFAAQAAQAAAAAAAQAFAAMAAQAAAAAAAQALAAMAAQAAAAAAAQALAAQAAQAAAAAAAQALAAUAAQAAAAAAAQALAAYAAQAAAAAAAQANAAgAAQAAAAAAAQANAAcAAQAAAAAAAQANAAYAAQAAAAAAAQANAAUAAQAAAAAAAQANAAQAAQAAAAAAAQANAAMAAQAAAAAAAQANAAIAAQAAAAAAAQANAAEAAQAAAAAAAQADAAcAAQAAAAAAAQADAAYAAQAAAAAAAQADAAQAAQAAAAAAAQADAAMAAQAAAAAAAQADAAIAAQAAAAAAAQADAAEAAQAAAAAAAQAJAAAAAQAAAAAAAQAIAA4AAQAAAAAAAQAJAA4AAQAAAAAAAQAKAA4AAQAAAAAAAQALAA4AAQAAAAAAAQAMAA4AAQAAAAAAAQANAA4AAQAAAAAAAQALAAwAAQAAAAAAAQAMAAwAAQAAAAAAAQANAAwAAQAAAAAAAQAGAA4AAQAAAAAAAQAFAA4AAQAAAAAAAQAEAA4AAQAAAAAAAQADAA4AAQAAAAAAAQAFAAwAAQAAAAAAAQAEAAwAAQAAAAAAAQADAAwAAQAAAAAAAQAHAA4AAQAAAAAAAQAHAP7/AQAAAAAAAQAHAP//AQAAAAAAAQAJAP7/AQAAAAAAAQAJAP//AQAAAAAAAQAIAAgAAQAAAAAAAQAIAAkAAQAAAAAAAQAIAAoAAQAAAAAAAQAIAAsAAQAAAAAAAQAIAAwAAQAAAAAAAQAIAA0AAQAAAAAAAQADAAUAAQAAAAAAAQADAAgAAQAAAAAAAQAHAAcAAQAAAAAAAQAGAAcAAQAAAAAAAQAFAAcAAQAAAAAAAQAGAAkAAQAAAAAAAQAGAAoAAQAAAAAAAQAGAAsAAQAAAAAAAQAGAAwAAQAAAAAAAQAKAAkAAQAAAAAAAQAKAAoAAQAAAAAAAQAKAAsAAQAAAAAAAQAKAAwAAQAAAAAAAQA=")
-tile_set = SubResource("TileSet_366sc")
+tile_set = SubResource("TileSet_v0qaq")
 
 [node name="Ballista1" parent="." unique_id=1194676352 instance=ExtResource("4_366sc")]
 position = Vector2(224, 96)
