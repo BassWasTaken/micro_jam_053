@@ -1,0 +1,104 @@
+[gd_scene format=4 uid="uid://bpf00mrviar0k"]
+
+[ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="1_2q103"]
+[ext_resource type="Script" uid="uid://uksay1euqvga" path="res://project/scripts/main_menu/main_menu.gd" id="1_ngxo4"]
+[ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="2_vtjxc"]
+[ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="3_fb00g"]
+[ext_resource type="Script" uid="uid://cfhwgallh1jt5" path="res://project/scripts/main_menu/menu_option.gd" id="4_fb00g"]
+[ext_resource type="AudioStream" uid="uid://mbpv1i6qijs6" path="res://project/assets/menu_select.wav" id="6_3amcv"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ngxo4"]
+scenes/1/scene = ExtResource("2_vtjxc")
+scenes/2/scene = ExtResource("3_fb00g")
+
+[sub_resource type="TileSet" id="TileSet_3amcv"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetScenesCollectionSource_ngxo4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtjxc"]
+radius = 24.0
+
+[node name="MenuScene" type="Node2D" unique_id=1375005530 node_paths=PackedStringArray("start_option")]
+script = ExtResource("1_ngxo4")
+start_option = NodePath("MenuOption")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=494264626]
+scale = Vector2(1.1106015, 1.1058222)
+zoom = Vector2(0.78, 0.78)
+
+[node name="Hand2" parent="." unique_id=1121984249 instance=ExtResource("1_2q103")]
+position = Vector2(-307, 21)
+
+[node name="Label" type="Label" parent="." unique_id=1116827928]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -646.0
+offset_top = -160.0
+offset_right = 650.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "reverse tower defense thingy"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1260989627]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -646.0
+offset_top = 134.0
+offset_right = 650.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+theme_override_font_sizes/font_size = 28
+text = "move: wasd          grab: space"
+horizontal_alignment = 1
+
+[node name="WallLayer" type="TileMapLayer" parent="." unique_id=1669962607 groups=["navigation"]]
+tile_map_data = PackedByteArray("AAD3//r/AQAAAAAAAQD4//r/AQAAAAAAAQD5//r/AQAAAAAAAQD6//r/AQAAAAAAAQD7//r/AQAAAAAAAQD8//r/AQAAAAAAAQD9//r/AQAAAAAAAQD+//r/AQAAAAAAAQAAAPr/AQAAAAAAAQADAPr/AQAAAAAAAQAEAPr/AQAAAAAAAQAFAPr/AQAAAAAAAQAGAPr/AQAAAAAAAQAHAPr/AQAAAAAAAQAIAPr/AQAAAAAAAQACAPr/AQAAAAAAAQD+//n/AQAAAAAAAQACAPn/AQAAAAAAAQAAAPn/AQAAAAAAAQD9/wUAAQAAAAAAAQABAAUAAQAAAAAAAQD3/wUAAQAAAAAAAQD4/wUAAQAAAAAAAQD5/wUAAQAAAAAAAQD6/wUAAQAAAAAAAQD7/wUAAQAAAAAAAQD8/wUAAQAAAAAAAQD9/wYAAQAAAAAAAQD//wUAAQAAAAAAAQABAAYAAQAAAAAAAQACAAUAAQAAAAAAAQADAAUAAQAAAAAAAQAEAAUAAQAAAAAAAQAFAAUAAQAAAAAAAQAGAAUAAQAAAAAAAQAHAAUAAQAAAAAAAQAIAAUAAQAAAAAAAQD2/wUAAQAAAAAAAQD1//v/AQAAAAAAAQD1//z/AQAAAAAAAQD1//3/AQAAAAAAAQD1//7/AQAAAAAAAQD1////AQAAAAAAAQD1/wAAAQAAAAAAAQD1/wEAAQAAAAAAAQD1/wIAAQAAAAAAAQD1/wMAAQAAAAAAAQD1/wQAAQAAAAAAAQD2//r/AQAAAAAAAQD1//r/AQAAAAAAAQD1/wUAAQAAAAAAAQAJAPr/AQAAAAAAAQAKAPr/AQAAAAAAAQAKAPv/AQAAAAAAAQAKAPz/AQAAAAAAAQAKAP3/AQAAAAAAAQAKAP7/AQAAAAAAAQAKAP//AQAAAAAAAQAKAAAAAQAAAAAAAQAKAAEAAQAAAAAAAQAKAAIAAQAAAAAAAQAKAAMAAQAAAAAAAQAKAAUAAQAAAAAAAQAKAAQAAQAAAAAAAQAJAAUAAQAAAAAAAQD//wYAAQAAAAAAAQD3//z/AQAAAAAAAQD3//3/AQAAAAAAAQD3//7/AQAAAAAAAQD3////AQAAAAAAAQD3/wAAAQAAAAAAAQD3/wEAAQAAAAAAAQD3/wIAAQAAAAAAAQD3/wMAAQAAAAAAAQD4//z/AQAAAAAAAQD4/wMAAQAAAAAAAQD5//z/AQAAAAAAAQD5/wMAAQAAAAAAAQD6//z/AQAAAAAAAQD6/wMAAQAAAAAAAQD7//z/AQAAAAAAAQD7/wMAAQAAAAAAAQD8//z/AQAAAAAAAQD8/wMAAQAAAAAAAQD9//z/AQAAAAAAAQD9/wMAAQAAAAAAAQD+//z/AQAAAAAAAQD+/wMAAQAAAAAAAQD///z/AQAAAAAAAQD//wMAAQAAAAAAAQAAAPz/AQAAAAAAAQAAAAMAAQAAAAAAAQABAPz/AQAAAAAAAQABAAMAAQAAAAAAAQACAPz/AQAAAAAAAQACAAMAAQAAAAAAAQADAPz/AQAAAAAAAQADAAMAAQAAAAAAAQAEAPz/AQAAAAAAAQAEAAMAAQAAAAAAAQAFAPz/AQAAAAAAAQAFAAMAAQAAAAAAAQAGAPz/AQAAAAAAAQAGAAMAAQAAAAAAAQAHAPz/AQAAAAAAAQAHAAMAAQAAAAAAAQAIAPz/AQAAAAAAAQAIAP3/AQAAAAAAAQAIAP7/AQAAAAAAAQAIAP//AQAAAAAAAQAIAAAAAQAAAAAAAQAIAAEAAQAAAAAAAQAIAAIAAQAAAAAAAQAIAAMAAQAAAAAAAQAAAPv/AQAAAAAAAQA=")
+tile_set = SubResource("TileSet_3amcv")
+
+[node name="MenuOption" type="Area2D" parent="." unique_id=1276706608 node_paths=PackedStringArray("select_audio")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_fb00g")
+select_audio = NodePath("SelectSound")
+
+[node name="Polygon2D" type="Polygon2D" parent="MenuOption" unique_id=1588122202]
+color = Color(0, 1, 0.48235294, 1)
+polygon = PackedVector2Array(-23, -26, -24, 25, 29, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuOption" unique_id=1861480288]
+shape = SubResource("CircleShape2D_vtjxc")
+
+[node name="Label3" type="Label" parent="MenuOption" unique_id=1994958571]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -648.0
+offset_top = 6.0
+offset_right = 648.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "start"
+horizontal_alignment = 1
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=90881210]
+stream = ExtResource("6_3amcv")
