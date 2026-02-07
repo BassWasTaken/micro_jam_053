@@ -4,6 +4,7 @@ extends Area2D
 @export var disable_timer: Timer
 @export var tower_visual: Polygon2D
 @export var bullet_scene: PackedScene
+@export var disable_sound: AudioStreamPlayer
 
 var timer = Timer.new()
 
@@ -42,6 +43,9 @@ func enable():
 	tower_visual.modulate = Color.WHITE
 
 func disable():
+	if !disabled:
+		disable_sound.play()
+
 	disabled = true
 	disable_timer.start()
 	tower_visual.modulate = Color.DARK_GRAY
