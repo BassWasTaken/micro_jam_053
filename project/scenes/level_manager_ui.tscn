@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ddjtmyt8l2gu"]
+
+[ext_resource type="Script" uid="uid://3811aag1r7xk" path="res://project/scripts/level_manager_ui.gd" id="1_glvq7"]
+
+[node name="LevelManagerUI" type="Control" unique_id=752008195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glvq7")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=159093505]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 136.0
+offset_right = 302.0
+offset_bottom = 176.0
+
+[node name="Level1Btn" type="Button" parent="BoxContainer" unique_id=1011860322]
+layout_mode = 2
+text = "Level 1"
+
+[node name="Level2Btn" type="Button" parent="BoxContainer" unique_id=1128280200]
+layout_mode = 2
+text = "Level 2"
+
+[node name="Level3Btn" type="Button" parent="BoxContainer" unique_id=1451459910]
+layout_mode = 2
+text = "Level 3"
+
+[node name="Label" type="Label" parent="." unique_id=1432143762]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 80.0
+offset_right = 213.0
+offset_bottom = 103.0
+text = "Starting units:"
+
+[node name="StartingUnitsInput" type="SpinBox" parent="." unique_id=708787248]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 310.5
+offset_bottom = 111.0
+value = 12.0
+rounded = true
