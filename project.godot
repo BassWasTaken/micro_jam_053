@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="microjam 053"
-run/main_scene="uid://bgxnno8eptwk5"
+run/main_scene="uid://cgdkevl8iumnd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*uid://xy05l2wid56k"
+LevelManager="*uid://rqt5dj6t1nh7"
+UserInterface="*uid://1p73v4f258jh"
 
 [display]
 

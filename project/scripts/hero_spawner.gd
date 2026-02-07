@@ -11,8 +11,10 @@ var Hero = preload("res://project/scenes/hero.tscn")
 var timer = Timer.new()
 
 func _ready() -> void:
+	if hero_count == 0:
+		return
 	if count_heroes:
-		hero_goal.total_count += hero_count
+		LevelManager.heroes_remaining += hero_count
 	add_child(timer)
 	timer.wait_time = 3
 	await get_tree().create_timer(initial_delay).timeout
@@ -22,7 +24,7 @@ func _ready() -> void:
 
 func spawn_hero():
 	var h = Hero.instantiate()
-	get_tree().root.add_child(h) # TODO confirm hero parent is ok
+	get_parent().add_child(h)
 	h.global_position = global_position
 	h.navigate_to_goal(hero_goal.global_position)
 	hero_count -= 1

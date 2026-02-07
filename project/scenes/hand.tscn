@@ -2,18 +2,22 @@
 
 [ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="1_bqxi7"]
 [ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="2_810mo"]
+[ext_resource type="Curve" uid="uid://dufmaxnijg7lu" path="res://project/resources/dash_curve.tres" id="2_x4ex5"]
 [ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="3_x4ex5"]
+[ext_resource type="AudioStream" uid="uid://b1jfq33g7oqqg" path="res://project/assets/import/SFX 202602060850/Die (1).wav" id="5_x4ex5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]
 radius = 16.0
 
-[node name="Hand" type="CharacterBody2D" unique_id=1121984249]
+[node name="Hand" type="CharacterBody2D" unique_id=1121984249 node_paths=PackedStringArray("dash_sound")]
 z_index = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bqxi7")
+dash_curve = ExtResource("2_x4ex5")
+dash_sound = NodePath("DashSound")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=384819436]
 shape = SubResource("CircleShape2D_ulgpx")
@@ -31,3 +35,6 @@ collision_mask = 24
 
 [node name="GrabShape" type="CollisionShape2D" parent="GrabArea" unique_id=651822346]
 shape = SubResource("CircleShape2D_khsym")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=1596771560]
+stream = ExtResource("5_x4ex5")
