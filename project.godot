@@ -70,6 +70,7 @@ grab={
 2d_physics/layer_3="Heros"
 2d_physics/layer_4="Towers"
 2d_physics/layer_5="Bullets"
+2d_physics/layer_6="Water"
 
 [physics]
 
