@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_hr0km"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_1h3is"]
 
+[sub_resource type="Curve" id="Curve_y5sry"]
+_data = [Vector2(0, 0.79775286), 0.0, 0.0, 0, 0, Vector2(0.315, 1), 0.0, 0.0, 0, 0, Vector2(0.91999996, 0), -0.645, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]

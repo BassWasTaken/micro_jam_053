@@ -3,8 +3,13 @@ extends CharacterBody2D
 @onready var open_hand_sprite = $OpenHand
 @onready var closed_hand_sprite = $ClosedHand
 
-@export var SPEED = 300.0
-@export var ACCEL = 3000.0
+@export var speed = 300.0
+@export var accel = 3000.0
+
+@export var dash_speed = 600.0
+@export var dash_seconds = 0.5
+@export var dash_curve: Curve
+var dash_progress := 0.0
 
 var grabbables: Array[Node] = []
 var hovered_tower: Node = null
@@ -16,11 +21,19 @@ func _ready():
 
 	GameManager.hand = self
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_grabbing_tower:
 		return
 	var input_dir = Input.get_vector("left", "right", "up", "down")
-	velocity = input_dir.normalized() * SPEED
+
+	var current_speed = speed
+
+	if dash_progress > 0.0:
+		var weight = dash_curve.sample_baked(dash_progress)
+		current_speed = lerp(dash_speed, speed, weight)
+		dash_progress -= dash_seconds * delta
+
+	velocity = input_dir * current_speed
 
 	move_and_slide()
 
@@ -29,10 +42,13 @@ func _process(_delta):
 		for grabbable in grabbables:
 			grabbable.grab()
 
+	if Input.is_action_just_pressed("dash") && dash_progress <= 0.0:
+		dash_progress = dash_seconds
+
 	is_grabbing_tower = Input.is_action_pressed("grab")
 	modulate = Color.VIOLET if is_grabbing_tower else Color.WHITE
 
-	# # if hovered_tower != null:
+	# # if hovered_tower != null:DW
 	# # 	modulate = Color.VIOLET
 	# # 	if Input.is_action_just_pressed("ui_accept"):
 	# # 		is_grabbing_tower = true
