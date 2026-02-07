@@ -36,7 +36,6 @@ func shoot():
 	get_tree().root.add_child(b) # TODO confirm bullet parent is ok
 
 func grab():
-	print("grabbed")
 	disable()
 
 func enable():

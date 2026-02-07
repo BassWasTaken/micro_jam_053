@@ -18,5 +18,4 @@ func hit_object(body: Node2D):
 	queue_free()
 
 func grab():
-	print("grab bullet")
 	queue_free()

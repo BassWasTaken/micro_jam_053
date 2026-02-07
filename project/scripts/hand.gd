@@ -27,7 +27,6 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta):
 	if Input.is_action_just_pressed("grab"):
 		for grabbable in grabbables:
-			print("try grab", grabbable)
 			grabbable.grab()
 
 	is_grabbing_tower = Input.is_action_pressed("grab")
