@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://5ytmks2ap74m"]
+
+[ext_resource type="Script" uid="uid://24wcmtfv6lt4" path="res://project/scripts/hero_spawner.gd" id="1_nmtkm"]
+
+[node name="HeroSpawner" type="Node2D" unique_id=245380419 node_paths=PackedStringArray("hero_goal")]
+script = ExtResource("1_nmtkm")
+hero_goal = NodePath("")

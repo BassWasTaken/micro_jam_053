@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jemmm6vl3ypq"
+path="res://.godot/imported/LowIntensity Demo 01.mp3-052e5c16ab74edcafb231ce4af4cf05a.mp3str"
+
+[deps]
+
+source_file="res://project/assets/import/LowIntensity Demo 01.mp3"
+dest_files=["res://.godot/imported/LowIntensity Demo 01.mp3-052e5c16ab74edcafb231ce4af4cf05a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
