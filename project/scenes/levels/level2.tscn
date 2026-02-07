@@ -1,0 +1,90 @@
+[gd_scene format=4 uid="uid://cqtn3wx0k5psr"]
+
+[ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_us1tu"]
+[ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="2_rhesf"]
+[ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="3_nt6ef"]
+[ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="4_plj1l"]
+[ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_r4yme"]
+[ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_3hugt"]
+[ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_2dfxk"]
+[ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_xuo8e"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shufo"]
+scenes/1/scene = ExtResource("6_3hugt")
+scenes/2/scene = ExtResource("7_2dfxk")
+
+[sub_resource type="TileSet" id="TileSet_366sc"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetScenesCollectionSource_shufo")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
+vertices = PackedVector2Array(197.60156, -5.6015625, 645.60156, -5.6015625, 645.60156, 197.60156, 581.60156, 197.60156, 581.60156, 314.39844, 645.60156, 314.39844, 645.60156, 325.60156, -261.60156, 325.60156, -261.60156, 314.39844, -197.60156, 314.39844, -197.60156, 197.60156, 186.39844, -5.6015625, -261.60156, 197.60156, -261.60156, -5.6015625, 197.60156, -186.39844, 186.39844, -197.60156, 250.39844, -197.60156, 261.60156, -186.39844, 261.60156, -453.60156, 250.39844, -442.39844, 197.60156, -453.60156, 133.60156, -442.39844, 133.60156, -314.39844, 69.60156, -314.39844, -261.60156, -453.60156, 69.60156, -122.39844, -261.60156, -122.39844, 186.39844, -453.60156, 186.39844, -656, 197.60156, -656, 645.60156, -122.39844, 378.39844, -122.39844, 378.39844, -453.60156, 645.60156, -453.60156, 69.60156, -570.39844, -319.15625, -570.39844, -319.77344, -656, 69.60156, -656, 703.15625, -570.39844, 314.39844, -570.39844, 314.39844, -656, 703.77344, -656)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 8, 9), PackedInt32Array(4, 7, 9, 3), PackedInt32Array(0, 3, 9, 10, 11), PackedInt32Array(10, 12, 13, 11), PackedInt32Array(14, 0, 11, 15), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 17, 16, 19), PackedInt32Array(20, 18, 19, 21), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(23, 25, 26, 24), PackedInt32Array(27, 28, 29, 20), PackedInt32Array(27, 20, 21), PackedInt32Array(24, 27, 21), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-352, -688, -344, 416, 728, 416, 736, -688)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 32.0
+
+[node name="PrototypeWithGrid" type="Node2D" unique_id=1443434043]
+
+[node name="LevelConfig" type="Node2D" parent="." unique_id=446800427 node_paths=PackedStringArray("hero_spawners")]
+script = ExtResource("1_us1tu")
+hero_spawners = [NodePath("../HeroSpawner1"), NodePath("../HeroSpawner2")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1782817460]
+position = Vector2(544, 415.99997)
+scale = Vector2(1.1106015, 1.1058222)
+zoom = Vector2(0.565, 0.565)
+
+[node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("2_rhesf")]
+position = Vector2(96, 864)
+hero_goal = NodePath("../HeroGoal")
+hero_count = 8
+initial_delay = 1.0
+count_heroes = true
+
+[node name="HeroSpawner2" parent="." unique_id=1968864384 node_paths=PackedStringArray("hero_goal") instance=ExtResource("2_rhesf")]
+position = Vector2(992, 864)
+hero_goal = NodePath("../HeroGoal")
+hero_count = 8
+count_heroes = true
+
+[node name="HeroGoal" parent="." unique_id=327495353 instance=ExtResource("3_nt6ef")]
+position = Vector2(544, -96)
+
+[node name="Hand" parent="." unique_id=1121984249 instance=ExtResource("4_plj1l")]
+
+[node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2128074938]
+stream = ExtResource("5_r4yme")
+autoplay = true
+bus = &"Music"
+
+[node name="WallLayer" type="TileMapLayer" parent="." unique_id=987531899 groups=["navigation"]]
+tile_map_data = PackedByteArray("AAAEAAAAAQAAAAAAAQAFAAAAAQAAAAAAAQAGAAAAAQAAAAAAAQAKAAAAAQAAAAAAAQALAAAAAQAAAAAAAQAMAAAAAQAAAAAAAQANAAAAAQAAAAAAAQAHAAAAAQAAAAAAAQAJAAAAAQAAAAAAAQAHAP7/AQAAAAAAAQAHAP//AQAAAAAAAQAJAP7/AQAAAAAAAQAJAP//AQAAAAAAAQADAAAAAQAAAAAAAQACAAAAAQAAAAAAAQABAAAAAQAAAAAAAQAAAAAAAQAAAAAAAQAAAAEAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAMAAQAAAAAAAQAAAAQAAQAAAAAAAQAAAAUAAQAAAAAAAQAAAAYAAQAAAAAAAQAAAAcAAQAAAAAAAQAAAAgAAQAAAAAAAQAAAAkAAQAAAAAAAQAAAAoAAQAAAAAAAQAAAAsAAQAAAAAAAQAAAAwAAQAAAAAAAQAAAA4AAQAAAAAAAQAOAAAAAQAAAAAAAQAPAAAAAQAAAAAAAQAQAAAAAQAAAAAAAQAQAAEAAQAAAAAAAQAQAAIAAQAAAAAAAQAQAAMAAQAAAAAAAQAQAAQAAQAAAAAAAQAQAAUAAQAAAAAAAQAQAAYAAQAAAAAAAQAQAAcAAQAAAAAAAQAQAAgAAQAAAAAAAQAQAAkAAQAAAAAAAQAQAAoAAQAAAAAAAQAQAAsAAQAAAAAAAQAQAAwAAQAAAAAAAQAQAA4AAQAAAAAAAQABAAwAAQAAAAAAAQABAA4AAQAAAAAAAQACAA4AAQAAAAAAAQADAA4AAQAAAAAAAQAEAA4AAQAAAAAAAQAFAA4AAQAAAAAAAQAGAA4AAQAAAAAAAQAHAA4AAQAAAAAAAQAIAA4AAQAAAAAAAQAJAA4AAQAAAAAAAQAKAA4AAQAAAAAAAQALAA4AAQAAAAAAAQAMAA4AAQAAAAAAAQANAA4AAQAAAAAAAQAOAA4AAQAAAAAAAQAPAA4AAQAAAAAAAQAPAAwAAQAAAAAAAQADAAcAAQAAAAAAAgAEAAcAAQAAAAAAAgAFAAcAAQAAAAAAAgAGAAcAAQAAAAAAAgAHAAcAAQAAAAAAAgAJAAcAAQAAAAAAAgAKAAcAAQAAAAAAAgALAAcAAQAAAAAAAgAMAAcAAQAAAAAAAgAPAAcAAQAAAAAAAgAOAAcAAQAAAAAAAgANAAcAAQAAAAAAAgACAAcAAQAAAAAAAgABAAcAAQAAAAAAAgAHAAYAAQAAAAAAAQAHAAUAAQAAAAAAAQAJAAYAAQAAAAAAAQAHAAQAAQAAAAAAAQAIAAQAAQAAAAAAAQAKAAYAAQAAAAAAAQAKAAUAAQAAAAAAAQAKAAQAAQAAAAAAAQAKAAMAAQAAAAAAAQAKAAIAAQAAAAAAAQAKAAEAAQAAAAAAAQAIAAMAAQAAAAAAAQAIAAIAAQAAAAAAAQA=")
+tile_set = SubResource("TileSet_366sc")
+
+[node name="Ballista1" parent="." unique_id=1194676352 instance=ExtResource("8_xuo8e")]
+position = Vector2(32, 32)
+rotation = -1.5707964
+bullet_direction = Vector2(1, 0)
+
+[node name="Ballista3" parent="." unique_id=581751397 instance=ExtResource("8_xuo8e")]
+position = Vector2(416, 32)
+
+[node name="Ballista7" parent="." unique_id=1646100261 instance=ExtResource("8_xuo8e")]
+position = Vector2(608, 32)
+
+[node name="Ballista5" parent="." unique_id=1553871738 instance=ExtResource("8_xuo8e")]
+position = Vector2(352, 32)
+
+[node name="Ballista4" parent="." unique_id=1420875520 instance=ExtResource("8_xuo8e")]
+position = Vector2(608, 416)
+
+[node name="Ballista6" parent="." unique_id=1214623265 instance=ExtResource("8_xuo8e")]
+position = Vector2(672, 416)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2075492468]
+position = Vector2(352, 544)
+navigation_polygon = SubResource("NavigationPolygon_wjbml")
+metadata/_edit_lock_ = true

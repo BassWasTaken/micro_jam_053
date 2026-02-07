@@ -28,4 +28,5 @@ func take_damage(amount):
 		die()
 
 func die():
+	LevelManager.hero_died_event()
 	queue_free()
