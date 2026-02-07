@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7gwhvpka2fbw"]
+
+[node name="Visuals" type="Node2D" unique_id=455265779]
+
+[node name="Wall" type="Polygon2D" parent="." unique_id=919103193]
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+
+[node name="Wall2" type="Polygon2D" parent="Wall" unique_id=1478526349]
+scale = Vector2(0.8249333, 0.8249333)
+color = Color(0.78715384, 0.78715396, 0.78715354, 1)
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)

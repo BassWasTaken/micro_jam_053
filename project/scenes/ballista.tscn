@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vscjdn6nv5vk"]
+
+[ext_resource type="Script" uid="uid://bat4qabgg70o5" path="res://project/scripts/ballista.gd" id="1_sybw5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_160yq"]
+radius = 24.0
+
+[node name="Ballista" type="Area2D" unique_id=1194676352]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_sybw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784935512]
+shape = SubResource("CircleShape2D_160yq")
+
+[node name="Tower" type="Polygon2D" parent="." unique_id=719787405]
+color = Color(1, 0, 0, 1)
+offset = Vector2(0, 8)
+polygon = PackedVector2Array(0, 16, 16, 0, 16, -8, 8, -8, 8, -32, -8, -32, -8, -8, -16, -8, -16, 0)

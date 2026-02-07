@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bnbcs225hguaq"]
+
+[ext_resource type="Script" uid="uid://qysymjmniuec" path="res://project/scripts/hero.gd" id="1_3clfj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xwwwb"]
+radius = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4qi2"]
+bg_color = Color(0.6333333, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Hero" type="CharacterBody2D" unique_id=967307088]
+collision_layer = 4
+script = ExtResource("1_3clfj")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=76643998]
+shape = SubResource("CircleShape2D_xwwwb")
+
+[node name="Visuals" type="Polygon2D" parent="." unique_id=1435043310]
+color = Color(0.44895673, 0.50189817, 1, 1)
+polygon = PackedVector2Array(-16, -8, -8, 24, 0, 16, 8, 24, 16, -8, 8, -8, 8, -16, 0, -24, -8, -16, -8, -8)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1421495157]
+path_desired_distance = 5.0
+
+[node name="HpBar" type="ProgressBar" parent="." unique_id=201462936]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 40.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_l4qi2")
+value = 100.0
+show_percentage = false
