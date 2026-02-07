@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dvg6was0mjaym"]
 
 [ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="1_mtmn1"]
+[ext_resource type="Curve" uid="uid://dufmaxnijg7lu" path="res://project/resources/dash_curve.tres" id="2_ncf6k"]
 [ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="2_y5sry"]
 [ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="3_ncf6k"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="4_lcdqg"]
@@ -8,10 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_ct5db"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="7_23kk8"]
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_y5sry"]
-
-[sub_resource type="Curve" id="Curve_y5sry"]
-_data = [Vector2(0, 0.79775286), 0.0, 0.0, 0, 0, Vector2(0.315, 1), 0.0, 0.0, 0, 0, Vector2(0.91999996, 0), -0.645, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
 
@@ -48,9 +45,9 @@ position = Vector2(465, 331)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_mtmn1")
-dash_speed = 1200.0
+dash_speed = 900.0
 dash_seconds = 1.0
-dash_curve = SubResource("Curve_y5sry")
+dash_curve = ExtResource("2_ncf6k")
 
 [node name="Hitbox" type="CollisionShape2D" parent="Hand" unique_id=554047017]
 shape = SubResource("CircleShape2D_ulgpx")

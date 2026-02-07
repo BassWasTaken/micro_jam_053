@@ -23,8 +23,14 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if is_grabbing_tower:
+		# Cancel dash if player is locked
+		dash_progress = 0.0
 		return
 	var input_dir = Input.get_vector("left", "right", "up", "down")
+
+	# Cancel dash if theres no remaining velocity
+	if input_dir.length_squared() < 0.001:
+		dash_progress = 0.0
 
 	var current_speed = speed
 
