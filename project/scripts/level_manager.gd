@@ -82,9 +82,4 @@ func hero_reached_goal_event():
 func hero_died_event():
 	heroes_remaining -= 1
 	if heroes_remaining <= 0:
-		print("defeat... starting from the beginning")
-		load_level(
-			last_loaded_level.get_parent(),
-			"1",
-			_heroes_initial_count_for_reset_after_losing
-		)
+		UserInterface.show_game_over_screen()
