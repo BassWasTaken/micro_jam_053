@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7hhhnw2b5ycd"]
+
+[ext_resource type="PackedScene" uid="uid://ddjtmyt8l2gu" path="res://project/scenes/level_manager_ui.tscn" id="1_wvhek"]
+
+[node name="LevelSelect" type="Node2D" unique_id=143294049]
+
+[node name="LevelManagerUI" parent="." unique_id=752008195 node_paths=PackedStringArray("world_node") instance=ExtResource("1_wvhek")]
+world_node = NodePath("../World")
+
+[node name="World" type="Node2D" parent="." unique_id=665005283]

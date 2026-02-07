@@ -32,7 +32,7 @@ func shoot():
 	var b = bullet_scene.instantiate()
 	b.global_position = global_position
 	b.direction = bullet_direction
-	get_tree().root.add_child(b) # TODO confirm bullet parent is ok
+	get_parent().add_child(b)
 
 func grab():
 	disable()
