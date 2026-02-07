@@ -48,7 +48,7 @@ func _process(_delta):
 	is_grabbing_tower = Input.is_action_pressed("grab")
 	modulate = Color.VIOLET if is_grabbing_tower else Color.WHITE
 
-	# # if hovered_tower != null:
+	# # if hovered_tower != null:DW
 	# # 	modulate = Color.VIOLET
 	# # 	if Input.is_action_just_pressed("ui_accept"):
 	# # 		is_grabbing_tower = true
