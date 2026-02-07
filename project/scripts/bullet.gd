@@ -9,10 +9,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
-	
+
 	# TODO kill bullet when out of bounds
 
 func hit_object(body: Node2D):
 	if body.has_method("take_damage"):
 		body.take_damage(3)
+	queue_free()
+
+func grab():
+	print("grab bullet")
 	queue_free()
