@@ -13,9 +13,9 @@
 size = Vector2(64, 64)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xwwwb"]
-vertices = PackedVector2Array(538.39844, -100.60156, 538.39844, -159.07813, 549.60156, -158.95313, 549.60156, -100.60156, 613.60156, 229.60156, 613.60156, 600, 602.39844, 600, 602.39844, 218.39844, 794.39844, 218.39844, 805.60156, 229.60156, 805.60156, -100.60156, 794.39844, -89.39844, 293.60156, -89.39844, 282.39844, -100.60156, 282.39844, 229.60156, 293.60156, 218.39844, 474.39844, 229.60156, 485.60156, 218.39844, 485.60156, 600, 474.39844, 600, 677.60156, 101.60156, 410.39844, 101.60156, 410.39844, 27.398438, 677.60156, 27.398438)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(4, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(3, 10, 11, 12), PackedInt32Array(0, 3, 12), PackedInt32Array(13, 0, 12), PackedInt32Array(14, 13, 12, 15), PackedInt32Array(16, 14, 15, 17), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(20, 21, 22, 23)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(198, -195, 200, 304, 400, 312, 392, 632, 696, 632, 696, 304, 880, 312, 894, -187)])
+vertices = PackedVector2Array(538.39844, -864.60156, 538.39844, -925.02344, 549.60156, -924.97656, 549.60156, -864.60156, 613.60156, 229.60156, 613.60156, 600, 602.39844, 600, 602.39844, 218.39844, 794.39844, 218.39844, 805.60156, 229.60156, 805.60156, -100.60156, 794.39844, -89.39844, 613.60156, -100.60156, 602.39844, -89.39844, 602.39844, -545.60156, 613.60156, -534.39844, 794.39844, -545.60156, 805.60156, -534.39844, 805.60156, -864.60156, 794.39844, -853.39844, 293.60156, -853.39844, 282.39844, -864.60156, 282.39844, -534.39844, 293.60156, -545.60156, 474.39844, -534.39844, 485.60156, -545.60156, 485.60156, -89.39844, 474.39844, -100.60156, 293.60156, -89.39844, 282.39844, -100.60156, 282.39844, 229.60156, 293.60156, 218.39844, 474.39844, 229.60156, 485.60156, 218.39844, 485.60156, 600, 474.39844, 600, 677.60156, 101.60156, 410.39844, 101.60156, 410.39844, 27.398438, 677.60156, 27.398438, 357.60156, -217.39844, 229.10938, -217.39844, 228, -417.60156, 357.60156, -417.60156, 855.9219, -217.39844, 730.39844, -217.39844, 730.39844, -417.60156, 858.9219, -417.60156, 677.60156, -662.39844, 410.39844, -662.39844, 410.39844, -736.60156, 677.60156, -736.60156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(4, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(15, 14, 16, 17), PackedInt32Array(18, 17, 16, 19), PackedInt32Array(3, 18, 19, 20), PackedInt32Array(0, 3, 20), PackedInt32Array(21, 0, 20), PackedInt32Array(22, 21, 20, 23), PackedInt32Array(24, 22, 23, 25), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(27, 26, 28, 29), PackedInt32Array(30, 29, 28, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(44, 45, 46, 47), PackedInt32Array(48, 49, 50, 51)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(193, -958, 200, 304, 400, 312, 392, 632, 696, 632, 696, 304, 880, 312, 899, -956)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
 agent_radius = 32.0
@@ -321,14 +321,6 @@ shape = SubResource("RectangleShape2D_n5qes")
 
 [node name="WallVisuals" parent="Walls/Wall66" unique_id=413967958 instance=ExtResource("2_0swuy")]
 
-[node name="Wall67" type="StaticBody2D" parent="Walls" unique_id=527513966]
-position = Vector2(544, -159)
-
-[node name="Shape" type="CollisionShape2D" parent="Walls/Wall67" unique_id=292256189]
-shape = SubResource("RectangleShape2D_n5qes")
-
-[node name="WallVisuals" parent="Walls/Wall67" unique_id=1914901108 instance=ExtResource("2_0swuy")]
-
 [node name="Wall68" type="StaticBody2D" parent="Walls" unique_id=1517573080]
 position = Vector2(608, -159)
 
@@ -336,14 +328,6 @@ position = Vector2(608, -159)
 shape = SubResource("RectangleShape2D_n5qes")
 
 [node name="WallVisuals" parent="Walls/Wall68" unique_id=904589090 instance=ExtResource("2_0swuy")]
-
-[node name="Wall69" type="StaticBody2D" parent="Walls" unique_id=2076364951]
-position = Vector2(416, -159)
-
-[node name="Shape" type="CollisionShape2D" parent="Walls/Wall69" unique_id=404738051]
-shape = SubResource("RectangleShape2D_n5qes")
-
-[node name="WallVisuals" parent="Walls/Wall69" unique_id=1498674667 instance=ExtResource("2_0swuy")]
 
 [node name="Wall70" type="StaticBody2D" parent="Walls" unique_id=1253281236]
 position = Vector2(672, -159)
@@ -561,8 +545,521 @@ shape = SubResource("RectangleShape2D_n5qes")
 
 [node name="WallVisuals" parent="Walls/Wall45" unique_id=1774587656 instance=ExtResource("2_0swuy")]
 
+[node name="Wall12" type="StaticBody2D" parent="Walls" unique_id=93183420]
+position = Vector2(352, -220)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall12" unique_id=121131322]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall12" unique_id=247697422 instance=ExtResource("2_0swuy")]
+
+[node name="Wall13" type="StaticBody2D" parent="Walls" unique_id=640150039]
+position = Vector2(352, -284)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall13" unique_id=268217105]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall13" unique_id=2129765479 instance=ExtResource("2_0swuy")]
+
+[node name="Wall14" type="StaticBody2D" parent="Walls" unique_id=484234891]
+position = Vector2(352, -348)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall14" unique_id=421801371]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall14" unique_id=13370910 instance=ExtResource("2_0swuy")]
+
+[node name="Wall15" type="StaticBody2D" parent="Walls" unique_id=154650585]
+position = Vector2(352, -412)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall15" unique_id=910667340]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall15" unique_id=222965885 instance=ExtResource("2_0swuy")]
+
+[node name="Wall16" type="StaticBody2D" parent="Walls" unique_id=1010825406]
+position = Vector2(352, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall16" unique_id=1124228915]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall16" unique_id=153731965 instance=ExtResource("2_0swuy")]
+
+[node name="Wall17" type="StaticBody2D" parent="Walls" unique_id=1965305027]
+position = Vector2(288, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall17" unique_id=553991938]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall17" unique_id=326738908 instance=ExtResource("2_0swuy")]
+
+[node name="Wall18" type="StaticBody2D" parent="Walls" unique_id=1458567691]
+position = Vector2(224, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall18" unique_id=1037925779]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall18" unique_id=324495365 instance=ExtResource("2_0swuy")]
+
+[node name="Wall73" type="StaticBody2D" parent="Walls" unique_id=126483194]
+position = Vector2(416, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall73" unique_id=1944139411]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall73" unique_id=244869193 instance=ExtResource("2_0swuy")]
+
+[node name="Wall74" type="StaticBody2D" parent="Walls" unique_id=7668500]
+position = Vector2(352, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall74" unique_id=284040238]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall74" unique_id=1594336772 instance=ExtResource("2_0swuy")]
+
+[node name="Wall75" type="StaticBody2D" parent="Walls" unique_id=60107392]
+position = Vector2(544, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall75" unique_id=415375425]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall75" unique_id=1851065318 instance=ExtResource("2_0swuy")]
+
+[node name="Wall76" type="StaticBody2D" parent="Walls" unique_id=1084515780]
+position = Vector2(608, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall76" unique_id=1925569958]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall76" unique_id=202568034 instance=ExtResource("2_0swuy")]
+
+[node name="Wall77" type="StaticBody2D" parent="Walls" unique_id=1406595676]
+position = Vector2(480, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall77" unique_id=173543767]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall77" unique_id=1380855328 instance=ExtResource("2_0swuy")]
+
+[node name="Wall19" type="StaticBody2D" parent="Walls" unique_id=552538991]
+position = Vector2(160, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall19" unique_id=2047118338]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall19" unique_id=928044107 instance=ExtResource("2_0swuy")]
+
+[node name="Wall20" type="StaticBody2D" parent="Walls" unique_id=1529819958]
+position = Vector2(160, -540)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall20" unique_id=2054892592]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall20" unique_id=189069725 instance=ExtResource("2_0swuy")]
+
+[node name="Wall21" type="StaticBody2D" parent="Walls" unique_id=675868292]
+position = Vector2(160, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall21" unique_id=773870289]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall21" unique_id=2102408986 instance=ExtResource("2_0swuy")]
+
+[node name="Wall78" type="StaticBody2D" parent="Walls" unique_id=834193196]
+position = Vector2(160, -668)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall78" unique_id=1645026067]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall78" unique_id=161638822 instance=ExtResource("2_0swuy")]
+
+[node name="Wall79" type="StaticBody2D" parent="Walls" unique_id=1341678684]
+position = Vector2(160, -731)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall79" unique_id=146966952]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall79" unique_id=1911178479 instance=ExtResource("2_0swuy")]
+
+[node name="Wall80" type="StaticBody2D" parent="Walls" unique_id=2083900717]
+position = Vector2(160, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall80" unique_id=1011601249]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall80" unique_id=1425213579 instance=ExtResource("2_0swuy")]
+
+[node name="Wall81" type="StaticBody2D" parent="Walls" unique_id=196890170]
+position = Vector2(160, -859)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall81" unique_id=1719759094]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall81" unique_id=958390181 instance=ExtResource("2_0swuy")]
+
+[node name="Wall82" type="StaticBody2D" parent="Walls" unique_id=612543089]
+position = Vector2(160, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall82" unique_id=136285935]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall82" unique_id=2048717448 instance=ExtResource("2_0swuy")]
+
+[node name="Wall83" type="StaticBody2D" parent="Walls" unique_id=940153491]
+position = Vector2(800, -731)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall83" unique_id=879581671]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall83" unique_id=1007756167 instance=ExtResource("2_0swuy")]
+
+[node name="Wall84" type="StaticBody2D" parent="Walls" unique_id=391984999]
+position = Vector2(800, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall84" unique_id=132830564]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall84" unique_id=1947535155 instance=ExtResource("2_0swuy")]
+
+[node name="Wall85" type="StaticBody2D" parent="Walls" unique_id=777828717]
+position = Vector2(800, -859)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall85" unique_id=766025005]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall85" unique_id=1327528539 instance=ExtResource("2_0swuy")]
+
+[node name="Wall86" type="StaticBody2D" parent="Walls" unique_id=1000519936]
+position = Vector2(800, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall86" unique_id=997099980]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall86" unique_id=1260102178 instance=ExtResource("2_0swuy")]
+
+[node name="Wall87" type="StaticBody2D" parent="Walls" unique_id=1984933652]
+position = Vector2(800, -668)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall87" unique_id=1969893594]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall87" unique_id=1598849329 instance=ExtResource("2_0swuy")]
+
+[node name="Wall88" type="StaticBody2D" parent="Walls" unique_id=1687265424]
+position = Vector2(672, -731)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall88" unique_id=2141155088]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall88" unique_id=2094516542 instance=ExtResource("2_0swuy")]
+
+[node name="Wall89" type="StaticBody2D" parent="Walls" unique_id=1697893425]
+position = Vector2(672, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall89" unique_id=101927523]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall89" unique_id=1707083687 instance=ExtResource("2_0swuy")]
+
+[node name="Wall90" type="StaticBody2D" parent="Walls" unique_id=1875838072]
+position = Vector2(672, -668)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall90" unique_id=1056785641]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall90" unique_id=1188482207 instance=ExtResource("2_0swuy")]
+
+[node name="Wall91" type="StaticBody2D" parent="Walls" unique_id=1645600486]
+position = Vector2(288, -731)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall91" unique_id=1444746298]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall91" unique_id=644681041 instance=ExtResource("2_0swuy")]
+
+[node name="Wall92" type="StaticBody2D" parent="Walls" unique_id=119501575]
+position = Vector2(288, -795)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall92" unique_id=1354583766]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall92" unique_id=469275185 instance=ExtResource("2_0swuy")]
+
+[node name="Wall93" type="StaticBody2D" parent="Walls" unique_id=949469473]
+position = Vector2(352, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall93" unique_id=600495229]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall93" unique_id=1358010672 instance=ExtResource("2_0swuy")]
+
+[node name="Wall94" type="StaticBody2D" parent="Walls" unique_id=2002689836]
+position = Vector2(288, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall94" unique_id=519674190]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall94" unique_id=1488870203 instance=ExtResource("2_0swuy")]
+
+[node name="Wall95" type="StaticBody2D" parent="Walls" unique_id=1803690437]
+position = Vector2(544, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall95" unique_id=150739760]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall95" unique_id=1471472485 instance=ExtResource("2_0swuy")]
+
+[node name="Wall96" type="StaticBody2D" parent="Walls" unique_id=1842300466]
+position = Vector2(608, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall96" unique_id=1778446896]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall96" unique_id=190438235 instance=ExtResource("2_0swuy")]
+
+[node name="Wall97" type="StaticBody2D" parent="Walls" unique_id=133152162]
+position = Vector2(416, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall97" unique_id=1541811456]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall97" unique_id=1959823442 instance=ExtResource("2_0swuy")]
+
+[node name="Wall98" type="StaticBody2D" parent="Walls" unique_id=994085368]
+position = Vector2(672, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall98" unique_id=1022680067]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall98" unique_id=1119321207 instance=ExtResource("2_0swuy")]
+
+[node name="Wall99" type="StaticBody2D" parent="Walls" unique_id=906105911]
+position = Vector2(736, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall99" unique_id=327451873]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall99" unique_id=861373990 instance=ExtResource("2_0swuy")]
+
+[node name="Wall100" type="StaticBody2D" parent="Walls" unique_id=1796288549]
+position = Vector2(224, -923)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall100" unique_id=56978178]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall100" unique_id=58024703 instance=ExtResource("2_0swuy")]
+
+[node name="Wall101" type="StaticBody2D" parent="Walls" unique_id=1468909166]
+position = Vector2(288, -668)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall101" unique_id=1778722725]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall101" unique_id=230265031 instance=ExtResource("2_0swuy")]
+
+[node name="Wall102" type="StaticBody2D" parent="Walls" unique_id=1648654345]
+position = Vector2(800, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall102" unique_id=284633489]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall102" unique_id=1820755000 instance=ExtResource("2_0swuy")]
+
+[node name="Wall103" type="StaticBody2D" parent="Walls" unique_id=136541586]
+position = Vector2(800, -540)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall103" unique_id=882838812]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall103" unique_id=547571185 instance=ExtResource("2_0swuy")]
+
+[node name="Wall104" type="StaticBody2D" parent="Walls" unique_id=232852701]
+position = Vector2(800, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall104" unique_id=1396065917]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall104" unique_id=160332356 instance=ExtResource("2_0swuy")]
+
+[node name="Wall105" type="StaticBody2D" parent="Walls" unique_id=350840414]
+position = Vector2(736, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall105" unique_id=248762031]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall105" unique_id=684047468 instance=ExtResource("2_0swuy")]
+
+[node name="Wall106" type="StaticBody2D" parent="Walls" unique_id=1318879110]
+position = Vector2(672, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall106" unique_id=1777008487]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall106" unique_id=1247080320 instance=ExtResource("2_0swuy")]
+
+[node name="Wall107" type="StaticBody2D" parent="Walls" unique_id=615689128]
+position = Vector2(608, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall107" unique_id=77720154]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall107" unique_id=307970955 instance=ExtResource("2_0swuy")]
+
+[node name="Wall108" type="StaticBody2D" parent="Walls" unique_id=1977097459]
+position = Vector2(608, -412)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall108" unique_id=2183091]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall108" unique_id=1181785330 instance=ExtResource("2_0swuy")]
+
+[node name="Wall109" type="StaticBody2D" parent="Walls" unique_id=723927372]
+position = Vector2(608, -348)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall109" unique_id=1794763848]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall109" unique_id=1082514457 instance=ExtResource("2_0swuy")]
+
+[node name="Wall110" type="StaticBody2D" parent="Walls" unique_id=1659689742]
+position = Vector2(608, -284)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall110" unique_id=2103186692]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall110" unique_id=1540380682 instance=ExtResource("2_0swuy")]
+
+[node name="Wall111" type="StaticBody2D" parent="Walls" unique_id=637119330]
+position = Vector2(608, -220)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall111" unique_id=1935476410]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall111" unique_id=1933078649 instance=ExtResource("2_0swuy")]
+
+[node name="Wall112" type="StaticBody2D" parent="Walls" unique_id=439521553]
+position = Vector2(480, -220)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall112" unique_id=1571516911]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall112" unique_id=1002549517 instance=ExtResource("2_0swuy")]
+
+[node name="Wall113" type="StaticBody2D" parent="Walls" unique_id=1090574815]
+position = Vector2(480, -284)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall113" unique_id=685255893]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall113" unique_id=1898587413 instance=ExtResource("2_0swuy")]
+
+[node name="Wall125" type="StaticBody2D" parent="Walls" unique_id=1481793488]
+position = Vector2(480, -95)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall125" unique_id=916298915]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall125" unique_id=1386933890 instance=ExtResource("2_0swuy")]
+
+[node name="Wall126" type="StaticBody2D" parent="Walls" unique_id=1162623314]
+position = Vector2(480, -159)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall126" unique_id=755445804]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall126" unique_id=1875204172 instance=ExtResource("2_0swuy")]
+
+[node name="Wall114" type="StaticBody2D" parent="Walls" unique_id=2048775492]
+position = Vector2(480, -348)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall114" unique_id=2132459016]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall114" unique_id=1552151736 instance=ExtResource("2_0swuy")]
+
+[node name="Wall115" type="StaticBody2D" parent="Walls" unique_id=1276124180]
+position = Vector2(480, -412)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall115" unique_id=654353760]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall115" unique_id=1864083371 instance=ExtResource("2_0swuy")]
+
+[node name="Wall116" type="StaticBody2D" parent="Walls" unique_id=1972249634]
+position = Vector2(480, -476)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall116" unique_id=1209137168]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall116" unique_id=40699325 instance=ExtResource("2_0swuy")]
+
+[node name="Wall117" type="StaticBody2D" parent="Walls" unique_id=1598696173]
+position = Vector2(480, -540)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall117" unique_id=1320512974]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall117" unique_id=85317617 instance=ExtResource("2_0swuy")]
+
+[node name="Wall118" type="StaticBody2D" parent="Walls" unique_id=2002792884]
+position = Vector2(480, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall118" unique_id=656468367]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall118" unique_id=1923813537 instance=ExtResource("2_0swuy")]
+
+[node name="Wall119" type="StaticBody2D" parent="Walls" unique_id=792994963]
+position = Vector2(416, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall119" unique_id=2061446409]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall119" unique_id=1879234066 instance=ExtResource("2_0swuy")]
+
+[node name="Wall120" type="StaticBody2D" parent="Walls" unique_id=581971735]
+position = Vector2(352, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall120" unique_id=1839939271]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall120" unique_id=477606837 instance=ExtResource("2_0swuy")]
+
+[node name="Wall121" type="StaticBody2D" parent="Walls" unique_id=18806491]
+position = Vector2(288, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall121" unique_id=448842215]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall121" unique_id=1783208869 instance=ExtResource("2_0swuy")]
+
+[node name="Wall122" type="StaticBody2D" parent="Walls" unique_id=2064567783]
+position = Vector2(544, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall122" unique_id=174314059]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall122" unique_id=735279052 instance=ExtResource("2_0swuy")]
+
+[node name="Wall123" type="StaticBody2D" parent="Walls" unique_id=1437011601]
+position = Vector2(608, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall123" unique_id=1513407541]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall123" unique_id=1073216678 instance=ExtResource("2_0swuy")]
+
+[node name="Wall124" type="StaticBody2D" parent="Walls" unique_id=1529138702]
+position = Vector2(672, -604)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall124" unique_id=1222325883]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="Walls/Wall124" unique_id=809613135 instance=ExtResource("2_0swuy")]
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1019705521]
 navigation_polygon = SubResource("NavigationPolygon_xwwwb")
+metadata/_edit_lock_ = true
 
 [node name="Hand" type="CharacterBody2D" parent="." unique_id=1926582855]
 z_index = 1
@@ -570,6 +1067,7 @@ position = Vector2(128, 128)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("3_avawd")
+SPEED = 600.0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Hand" unique_id=775641000]
 shape = SubResource("CircleShape2D_l4qi2")
@@ -599,16 +1097,15 @@ bullet_direction = Vector2(1, 0)
 [node name="Ballista2" parent="." unique_id=499609080 instance=ExtResource("6_oehif")]
 position = Vector2(608, 160)
 
-[node name="HeroGoal" type="Node2D" parent="." unique_id=169379617]
-position = Vector2(544, -185)
-
 [node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("7_l0hcd")]
 position = Vector2(480, 600)
 hero_goal = NodePath("../HeroGoal")
+hero_count = 8
 
 [node name="HeroSpawner2" parent="." unique_id=1226255055 node_paths=PackedStringArray("hero_goal") instance=ExtResource("7_l0hcd")]
 position = Vector2(608, 600)
 hero_goal = NodePath("../HeroGoal")
+hero_count = 8
 initial_delay = 1.0
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1809992940]
@@ -616,6 +1113,20 @@ stream = ExtResource("8_im3x5")
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1652064757]
-position = Vector2(544, 160)
+position = Vector2(544, -194)
 scale = Vector2(1.1106015, 1.1058222)
-zoom = Vector2(0.69, 0.69)
+zoom = Vector2(0.4, 0.4)
+
+[node name="Ballista4" parent="." unique_id=1778984225 instance=ExtResource("6_oehif")]
+position = Vector2(480, -604)
+
+[node name="Ballista5" parent="." unique_id=2099978869 instance=ExtResource("6_oehif")]
+position = Vector2(225, -859)
+rotation = -1.5707964
+bullet_direction = Vector2(1, 0)
+
+[node name="Ballista6" parent="." unique_id=1675369693 instance=ExtResource("6_oehif")]
+position = Vector2(608, -604)
+
+[node name="HeroGoal" type="Node2D" parent="." unique_id=1744565851]
+position = Vector2(544, -949)
