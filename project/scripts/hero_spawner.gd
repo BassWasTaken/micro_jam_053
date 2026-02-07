@@ -8,6 +8,7 @@ extends Node2D
 
 var Hero = preload("res://project/scenes/hero.tscn")
 
+var timer_initial = Timer.new()
 var timer = Timer.new()
 
 func _ready() -> void:
@@ -15,11 +16,16 @@ func _ready() -> void:
 		return
 	if count_heroes:
 		LevelManager.heroes_remaining += hero_count
-	add_child(timer)
-	timer.wait_time = 3
-	await get_tree().create_timer(initial_delay).timeout
+	
+	add_child(timer_initial)
+	timer_initial.start(initial_delay)
+	timer_initial.connect("timeout", initial_spawn)
+	timer_initial.one_shot = true
+
+func initial_spawn():
 	spawn_hero()
-	timer.start()
+	add_child(timer)
+	timer.start(spawn_interval)
 	timer.connect("timeout", spawn_hero)
 
 func spawn_hero():
