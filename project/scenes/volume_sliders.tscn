@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bm0uk06q71ls3"]
 
+[ext_resource type="Script" uid="uid://cjufd65qs7528" path="res://project/scenes/volume_control.gd" id="1_di2hm"]
+
 [node name="VolumeSliders" type="Control" unique_id=750645071]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="." unique_id=440853042]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_di2hm")
+bus_name = "Master"
+
+[node name="HSlider2" type="HSlider" parent="." unique_id=1014253714]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_di2hm")
+bus_name = "Music"
+
+[node name="HSlider3" type="HSlider" parent="." unique_id=1789789946]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_di2hm")
+bus_name = "Sfx"
+
+[node name="HSlider4" type="HSlider" parent="." unique_id=1965454188]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_di2hm")
+bus_name = "Ambiance"
+
+[node name="HSlider5" type="HSlider" parent="." unique_id=1004382117]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_di2hm")
+bus_name = "Vox"
