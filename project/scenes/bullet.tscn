@@ -8,6 +8,7 @@
 collision_layer = 16
 collision_mask = 5
 script = ExtResource("1_eevmn")
+wall_mask = 1
 
 [node name="Visuals" type="Polygon2D" parent="." unique_id=1971352736]
 color = Color(1, 0, 0, 1)

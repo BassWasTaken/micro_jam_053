@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bgxnno8eptwk5"]
+
+[ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="1_v4uk7"]
+[ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="2_wjbml"]
+[ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="3_shufo"]
+[ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="4_366sc"]
+[ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="5_ngfvh"]
+[ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="6_nlewo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]
+radius = 16.0
+
+[node name="PrototypeWithGrid" type="Node2D" unique_id=1443434043]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1782817460]
+scale = Vector2(1.1106015, 1.1058222)
+zoom = Vector2(0.4, 0.4)
+
+[node name="Hand" type="CharacterBody2D" parent="." unique_id=322523697]
+z_index = 1
+position = Vector2(128, 128)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_v4uk7")
+SPEED = 600.0
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hand" unique_id=554047017]
+shape = SubResource("CircleShape2D_ulgpx")
+
+[node name="OpenHand" type="Sprite2D" parent="Hand" unique_id=200735907]
+texture = ExtResource("2_wjbml")
+
+[node name="ClosedHand" type="Sprite2D" parent="Hand" unique_id=664364146]
+visible = false
+texture = ExtResource("3_shufo")
+
+[node name="GrabArea" type="Area2D" parent="Hand" unique_id=1533909845]
+collision_layer = 0
+collision_mask = 24
+
+[node name="GrabShape" type="CollisionShape2D" parent="Hand/GrabArea" unique_id=148710149]
+shape = SubResource("CircleShape2D_khsym")
+
+[node name="Ballista1" parent="." unique_id=1194676352 instance=ExtResource("4_366sc")]
+position = Vector2(480, 160)
+
+[node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("5_ngfvh")]
+position = Vector2(480, 600)
+hero_goal = NodePath("../HeroGoal")
+hero_count = 8
+
+[node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2128074938]
+stream = ExtResource("6_nlewo")
+autoplay = true
+
+[node name="HeroGoal" type="Node2D" parent="." unique_id=180760635]
+position = Vector2(544, -949)
