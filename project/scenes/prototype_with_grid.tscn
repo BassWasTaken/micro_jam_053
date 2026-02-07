@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="4_366sc"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="5_ngfvh"]
 [ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="6_nlewo"]
+[ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_shufo"]
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="7_wjbml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
@@ -15,6 +16,7 @@ radius = 16.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shufo"]
 scenes/1/scene = ExtResource("7_wjbml")
+scenes/2/scene = ExtResource("7_shufo")
 
 [sub_resource type="TileSet" id="TileSet_366sc"]
 tile_size = Vector2i(64, 64)
