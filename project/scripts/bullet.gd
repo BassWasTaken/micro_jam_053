@@ -1,5 +1,6 @@
 extends Area2D
 
+@export_flags_2d_physics var wall_mask := 0
 var speed = 100
 var direction = Vector2(1,0)
 
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# TODO kill bullet when out of bounds
 
 func hit_object(body: Node2D):
-	if has_wall_immunity:
+	if body is StaticBody2D and body.collision_layer & wall_mask and has_wall_immunity:
 		return
 
 	if body.has_method("take_damage"):

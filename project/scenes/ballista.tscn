@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vscjdn6nv5vk"]
 
 [ext_resource type="Script" uid="uid://bat4qabgg70o5" path="res://project/scripts/ballista.gd" id="1_sybw5"]
+[ext_resource type="PackedScene" uid="uid://bgsd66mcgck41" path="res://project/scenes/bullet.tscn" id="2_soy4f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_160yq"]
 radius = 24.0
@@ -11,6 +12,7 @@ collision_mask = 0
 script = ExtResource("1_sybw5")
 disable_timer = NodePath("DisableTimer")
 tower_visual = NodePath("Tower")
+bullet_scene = ExtResource("2_soy4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784935512]
 shape = SubResource("CircleShape2D_160yq")

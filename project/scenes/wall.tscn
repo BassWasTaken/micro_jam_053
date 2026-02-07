@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://curtjaxepqma6"]
+
+[ext_resource type="PackedScene" uid="uid://b7gwhvpka2fbw" path="res://project/scenes/wall_visuals.tscn" id="1_3e887"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5qes"]
+size = Vector2(64, 64)
+
+[node name="Wall" type="StaticBody2D" unique_id=1550963772]
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=1719724278]
+shape = SubResource("RectangleShape2D_n5qes")
+
+[node name="WallVisuals" parent="." unique_id=455265779 instance=ExtResource("1_3e887")]

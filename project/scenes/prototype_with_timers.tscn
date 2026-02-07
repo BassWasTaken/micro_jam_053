@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kwh7alu64fvf" path="res://project/scripts/prototype.gd" id="1_onpdw"]
 [ext_resource type="PackedScene" uid="uid://b7gwhvpka2fbw" path="res://project/scenes/wall_visuals.tscn" id="2_0swuy"]
+[ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="2_avawd"]
 [ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="3_avawd"]
 [ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="4_neont"]
 [ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="5_kj3on"]
@@ -65,13 +66,8 @@ polygon = PackedVector2Array(-8, -8, -16, 0, -8, 8, 0, 16, 8, 8, 16, 0, 8, -8, 0
 [node name="Walls" type="Node2D" parent="." unique_id=685059251 groups=["navigation"]]
 position = Vector2(64, 0)
 
-[node name="Wall1" type="StaticBody2D" parent="Walls" unique_id=248448620]
+[node name="Wall1" parent="Walls" unique_id=1550963772 instance=ExtResource("2_avawd")]
 position = Vector2(352, 544)
-
-[node name="Shape" type="CollisionShape2D" parent="Walls/Wall1" unique_id=1890095881]
-shape = SubResource("RectangleShape2D_n5qes")
-
-[node name="WallVisuals" parent="Walls/Wall1" unique_id=919103193 instance=ExtResource("2_0swuy")]
 
 [node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=199169193]
 position = Vector2(352, 480)
