@@ -472,3 +472,4 @@ initial_delay = 1.0
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1809992940]
 stream = ExtResource("8_el6ob")
+autoplay = true
