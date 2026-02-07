@@ -1,10 +1,53 @@
 [gd_scene format=3 uid="uid://c7hhhnw2b5ycd"]
 
-[ext_resource type="PackedScene" uid="uid://ddjtmyt8l2gu" path="res://project/scenes/level_manager_ui.tscn" id="1_wvhek"]
+[ext_resource type="Script" uid="uid://dwbomk7veajr0" path="res://project/scenes/testing/level_select.gd" id="1_qyrta"]
 
-[node name="LevelSelect" type="Node2D" unique_id=143294049]
+[node name="LevelSelect" type="Node2D" unique_id=143294049 node_paths=PackedStringArray("world_node")]
+script = ExtResource("1_qyrta")
+world_node = NodePath("World")
 
-[node name="LevelManagerUI" parent="." unique_id=752008195 node_paths=PackedStringArray("world_node") instance=ExtResource("1_wvhek")]
-world_node = NodePath("../World")
+[node name="LevelManagerUI" type="Control" parent="." unique_id=752008195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="LevelManagerUI" unique_id=159093505]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 136.0
+offset_right = 302.0
+offset_bottom = 176.0
+
+[node name="Level1Btn" type="Button" parent="LevelManagerUI/BoxContainer" unique_id=1011860322]
+layout_mode = 2
+text = "Level 1"
+
+[node name="Level2Btn" type="Button" parent="LevelManagerUI/BoxContainer" unique_id=1128280200]
+layout_mode = 2
+text = "Level 2"
+
+[node name="Level3Btn" type="Button" parent="LevelManagerUI/BoxContainer" unique_id=1451459910]
+layout_mode = 2
+text = "Level 3"
+
+[node name="Label" type="Label" parent="LevelManagerUI" unique_id=1432143762]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 80.0
+offset_right = 213.0
+offset_bottom = 103.0
+text = "Starting units:"
+
+[node name="StartingUnitsInput" type="SpinBox" parent="LevelManagerUI" unique_id=708787248]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 80.0
+offset_right = 310.5
+offset_bottom = 111.0
+value = 12.0
+rounded = true
 
 [node name="World" type="Node2D" parent="." unique_id=665005283]
