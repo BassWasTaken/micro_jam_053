@@ -2,23 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_w2jhf"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="2_hsxuq"]
-[ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="2_pwfut"]
+[ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="2_w2jhf"]
 [ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="3_pwfut"]
-[ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="3_ru5xy"]
-[ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="4_1w7ax"]
 [ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_1w7ax"]
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_1ogpu"]
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_hr0km"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_1h3is"]
-
-[sub_resource type="Curve" id="Curve_y5sry"]
-_data = [Vector2(0, 0.79775286), 0.0, 0.0, 0, 0, Vector2(0.315, 1), 0.0, 0.0, 0, 0, Vector2(0.91999996, 0), -0.645, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]
-radius = 16.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shufo"]
 scenes/1/scene = ExtResource("6_1ogpu")
@@ -39,39 +28,19 @@ agent_radius = 32.0
 
 [node name="PrototypeWithGrid" type="Node2D" unique_id=1443434043]
 
-[node name="LevelConfig" type="Node2D" parent="." unique_id=1524889533 node_paths=PackedStringArray("hero_spawners", "hero_goal")]
+[node name="LevelConfig" type="Node2D" parent="." unique_id=1524889533 node_paths=PackedStringArray("hero_spawners")]
 script = ExtResource("1_w2jhf")
 hero_spawners = [NodePath("../HeroSpawner1"), NodePath("../HeroSpawner2"), NodePath("../HeroSpawner3")]
-hero_goal = NodePath("../HeroGoal")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1782817460]
 position = Vector2(544, 360)
 scale = Vector2(1.1106015, 1.1058222)
 zoom = Vector2(0.565, 0.565)
 
-[node name="Hand" type="CharacterBody2D" parent="." unique_id=322523697]
-z_index = 1
-position = Vector2(465, 331)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("2_pwfut")
-
-[node name="Hitbox" type="CollisionShape2D" parent="Hand" unique_id=554047017]
-shape = SubResource("CircleShape2D_ulgpx")
-
-[node name="OpenHand" type="Sprite2D" parent="Hand" unique_id=200735907]
-texture = ExtResource("3_ru5xy")
-
-[node name="ClosedHand" type="Sprite2D" parent="Hand" unique_id=664364146]
-visible = false
-texture = ExtResource("4_1w7ax")
-
-[node name="GrabArea" type="Area2D" parent="Hand" unique_id=1533909845]
-collision_layer = 0
-collision_mask = 24
-
-[node name="GrabShape" type="CollisionShape2D" parent="Hand/GrabArea" unique_id=148710149]
-shape = SubResource("CircleShape2D_khsym")
+[node name="Hand2" parent="." unique_id=1121984249 instance=ExtResource("2_w2jhf")]
+position = Vector2(485, 386)
+dash_speed = 900.0
+dash_seconds = 1.0
 
 [node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("2_hsxuq")]
 position = Vector2(416, 935)

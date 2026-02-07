@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var dash_speed = 600.0
 @export var dash_seconds = 0.5
 @export var dash_curve: Curve
+@export var dash_sound: AudioStreamPlayer
 var dash_progress := 0.0
 
 var grabbables: Array[Node] = []
@@ -23,8 +24,14 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if is_grabbing_tower:
+		# Cancel dash if player is locked
+		dash_progress = 0.0
 		return
 	var input_dir = Input.get_vector("left", "right", "up", "down")
+
+	# Cancel dash if theres no remaining velocity
+	if input_dir.length_squared() < 0.001:
+		dash_progress = 0.0
 
 	var current_speed = speed
 
@@ -43,6 +50,7 @@ func _process(_delta):
 			grabbable.grab()
 
 	if Input.is_action_just_pressed("dash") && dash_progress <= 0.0:
+		dash_sound.play()
 		dash_progress = dash_seconds
 
 	is_grabbing_tower = Input.is_action_pressed("grab")
