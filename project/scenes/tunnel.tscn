@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b7fsien2307l1"]
+
+[ext_resource type="PackedScene" uid="uid://b7gwhvpka2fbw" path="res://project/scenes/wall_visuals.tscn" id="1_u0nfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5qes"]
+size = Vector2(64, 64)
+
+[node name="Wall" type="StaticBody2D" unique_id=1550963772]
+collision_layer = 2
+collision_mask = 16
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=1719724278]
+shape = SubResource("RectangleShape2D_n5qes")
+debug_color = Color(0.7106597, 0.26357502, 0.99999994, 0.41960785)
+
+[node name="WallVisuals" parent="." unique_id=455265779 instance=ExtResource("1_u0nfs")]
