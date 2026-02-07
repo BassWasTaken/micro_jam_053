@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://dcdwpllbiwhig"]
+[gd_scene format=3 uid="uid://bfih2tl0g3m05"]
 
-[ext_resource type="Script" uid="uid://c66og5nwe48kp" path="res://project/scripts/pause_menu.gd" id="1_2lgnm"]
+[ext_resource type="Script" path="res://project/scripts/pause_menu.gd" id="1_2lgnm"]
+[ext_resource type="PackedScene" uid="uid://bm0uk06q71ls3" path="res://project/scenes/volume_sliders.tscn" id="2_16v4v"]
 
 [node name="PauseMenu" type="ColorRect" unique_id=1664473217]
 anchors_preset = 15
@@ -45,3 +46,15 @@ text = "Resume"
 [node name="GoToMainMenu" type="Button" parent="Panel/MarginContainer/Buttons" unique_id=1427526873]
 layout_mode = 2
 text = "Return to main menu"
+
+[node name="VolumeSliders" parent="." unique_id=1665707267 instance=ExtResource("2_16v4v")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 834.0
+offset_top = 16.0
+offset_right = 1133.0
+offset_bottom = 247.0
+grow_horizontal = 1
+grow_vertical = 1
