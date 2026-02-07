@@ -18,7 +18,8 @@ func _physics_process(_delta: float) -> void:
 	if active:
 		var next_path_pos = navigation_agent.get_next_path_position()
 		var direction = global_position.direction_to(next_path_pos)
-		velocity = direction * speed
+		var boost = 10 if Input.is_key_pressed(KEY_T) else 1
+		velocity = direction * speed * boost
 		move_and_slide()
 
 func take_damage(amount):
