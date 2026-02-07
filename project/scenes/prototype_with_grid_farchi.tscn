@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cqtn3wx0k5psr"]
+[gd_scene format=4 uid="uid://663nsg4ag3kx"]
 
 [ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="1_pnt3j"]
 [ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="2_o0tb0"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="4_6puwq"]
 [ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_vda1q"]
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_ckmav"]
-[ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="6_o0tb0"]
+[ext_resource type="PackedScene" path="res://project/scenes/hero_goal.tscn" id="6_o0tb0"]
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_5abp1"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_o2x60"]
 
@@ -65,14 +65,14 @@ shape = SubResource("CircleShape2D_khsym")
 
 [node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("4_6puwq")]
 position = Vector2(96, 864)
-hero_goal = NodePath("")
+hero_goal = NodePath("../HeroGoal")
 hero_count = 8
 initial_delay = 1.0
 count_heroes = true
 
 [node name="HeroSpawner2" parent="." unique_id=1968864384 node_paths=PackedStringArray("hero_goal") instance=ExtResource("4_6puwq")]
 position = Vector2(992, 864)
-hero_goal = NodePath("")
+hero_goal = NodePath("../HeroGoal")
 hero_count = 8
 count_heroes = true
 
