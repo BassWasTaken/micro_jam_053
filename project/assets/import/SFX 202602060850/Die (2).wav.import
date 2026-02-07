@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3cy4vjxmcuwe"
+path="res://.godot/imported/Die (2).wav-cd820ec3fc2def58e4b3919f9990453c.sample"
+
+[deps]
+
+source_file="res://project/assets/import/SFX 202602060850/Die (2).wav"
+dest_files=["res://.godot/imported/Die (2).wav-cd820ec3fc2def58e4b3919f9990453c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
