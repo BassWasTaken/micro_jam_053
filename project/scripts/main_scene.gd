@@ -17,9 +17,6 @@ func _ready():
 
 
 func reset_to_main():
-	print("reset to main")
-	# reset level manager stats
-	# transition back to initial scene
 	SceneManager.transition_to_scene(initial_scene)
 
 
