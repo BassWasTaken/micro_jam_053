@@ -8,7 +8,7 @@ class_name HeroPartyArea
 @export var hero_count := 0
 
 func _ready():
-	hero_count = LevelManager.heroes_remaining
+	# hero_count = LevelManager.heroes_remaining
 	var per_row: int = hero_count / rows
 	var remainder: int = hero_count % rows
 
