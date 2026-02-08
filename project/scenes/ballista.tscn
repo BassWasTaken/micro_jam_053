@@ -37,7 +37,8 @@ polygon = PackedVector2Array(0, 16, 16, 0, 16, -8, 8, -8, 8, -32, -8, -32, -8, -
 wait_time = 3.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=631578203]
-volume_db = -17.333
+volume_db = -42.234
+bus = &"Sfx"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=342500549]
 position = Vector2(0, -32)
