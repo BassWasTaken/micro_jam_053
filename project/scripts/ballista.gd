@@ -54,7 +54,7 @@ func enable():
 func disable():
 	if !disabled:
 		audio.stream = disable_sound
-		disable_sound.play()
+		audio.play()
 
 	disabled = true
 	disable_timer.start()
