@@ -6,23 +6,13 @@ extends CanvasLayer
 var paused = false
 var is_in_game_over_screen = false
 
-signal go_to_main_menu_signal
-
 # TODO remove spaghetti
 
 func _ready() -> void:
 	pause_menu.visible = paused
-	pause_menu.on_resume.connect(toggle_pause)
-	pause_menu.on_go_to_main_menu.connect(func():
-		print("TODO: Go to menu")
-		go_to_main_menu_signal.emit()
-	)
 	game_over_screen.visible = false
-	game_over_screen.on_go_to_main_menu.connect(func():
-		print("TODO: Go to menu")
-		go_to_main_menu_signal.emit()
-		is_in_game_over_screen = false
-	)
+
+	LevelManager.game_over.connect(show_game_over_screen)
 
 func toggle_pause():
 	if is_in_game_over_screen:
@@ -30,6 +20,16 @@ func toggle_pause():
 	paused = !paused
 	pause_menu.visible = paused
 	get_tree().paused = paused
+
+func reset_to_main():
+	SceneManager.reset_to_main()
+	UserInterface.is_in_game_over_screen = false
+
+	if paused:
+		toggle_pause()
+
+	is_in_game_over_screen = false
+	game_over_screen.visible = false
 
 func show_game_over_screen():
 	is_in_game_over_screen = true
@@ -39,4 +39,3 @@ func show_game_over_screen():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
-		

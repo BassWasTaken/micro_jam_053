@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://1p73v4f258jh"]
 
 [ext_resource type="Script" uid="uid://c5om8c0xi37h3" path="res://project/scripts/user_interface.gd" id="1_8ha0k"]
-[ext_resource type="Script" path="res://project/scripts/alive_count.gd" id="1_d10cr"]
+[ext_resource type="Script" uid="uid://bxh2aluhobhym" path="res://project/scripts/alive_count.gd" id="1_d10cr"]
 [ext_resource type="PackedScene" uid="uid://bfih2tl0g3m05" path="res://project/scenes/pause_menu.tscn" id="2_xopk0"]
 [ext_resource type="PackedScene" uid="uid://cuipo2obwhgwu" path="res://project/scenes/game_over_screen.tscn" id="4_qjsv0"]
 
 [node name="UserInterface" type="CanvasLayer" unique_id=669030056]
 process_mode = 3
+layer = 10
 script = ExtResource("1_8ha0k")
 
 [node name="Base" type="Control" parent="." unique_id=1937048501]
