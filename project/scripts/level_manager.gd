@@ -83,6 +83,9 @@ func hero_reached_goal_event():
 	if !current_level_id:
 		return # load_level was not called, this is a test scene
 	heroes_on_goal += 1
+	_check_level_done_condition()
+
+func _check_level_done_condition():
 	if heroes_on_goal >= heroes_remaining:
 		var next_level_id = levels_map[current_level_id]["next"]
 		if next_level_id:
@@ -100,3 +103,5 @@ func hero_died_event():
 	if heroes_remaining <= 0:
 		print("game over")
 		game_over.emit()
+	else:
+		_check_level_done_condition()
