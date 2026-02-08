@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://re4tgarajqqg"
-path="res://.godot/imported/Grid_Vampure_V2.png-799b4264c99c4da66bed29ebde1586f2.ctex"
+uid="uid://dbt3kgcrcoskg"
+path="res://.godot/imported/seal.png-36b687fa02683baae2e30ad43e4fbee2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://project/assets/import/Grid_Vampure_V2.png"
-dest_files=["res://.godot/imported/Grid_Vampure_V2.png-799b4264c99c4da66bed29ebde1586f2.ctex"]
+source_file="res://project/assets/seal.png"
+dest_files=["res://.godot/imported/seal.png-36b687fa02683baae2e30ad43e4fbee2.ctex"]
 
 [params]
 
