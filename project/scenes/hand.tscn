@@ -2,23 +2,108 @@
 
 [ext_resource type="Script" uid="uid://1cx4ccraa5sk" path="res://project/scripts/hand.gd" id="1_bqxi7"]
 [ext_resource type="Texture2D" uid="uid://ck0wctmn7s4w2" path="res://project/assets/open_hand.png" id="2_810mo"]
+[ext_resource type="Curve" uid="uid://dufmaxnijg7lu" path="res://project/resources/dash_curve.tres" id="2_x4ex5"]
 [ext_resource type="Texture2D" uid="uid://bs5iwxdh06y1a" path="res://project/assets/closed_hand.png" id="3_x4ex5"]
+[ext_resource type="AudioStream" uid="uid://b1jfq33g7oqqg" path="res://project/assets/import/SFX 202602060850/Die (1).wav" id="5_x4ex5"]
+[ext_resource type="Texture2D" uid="uid://dt6kq6st5ithh" path="res://project/assets/import/Anim_sprites.png" id="6_mvqvy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulgpx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khsym"]
-radius = 16.0
+radius = 32.0
 
-[node name="Hand" type="CharacterBody2D" unique_id=1121984249]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v64qi"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(32, 32, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv8fg"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(154, 32, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab7vn"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(276, 32, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i1ek"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(32, 160, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fwr4"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(154, 160, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luicc"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(276, 160, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfq7s"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(398, 160, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2qw"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(520, 160, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsig4"]
+atlas = ExtResource("6_mvqvy")
+region = Rect2(642, 160, 122, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqlm7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v64qi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv8fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab7vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv8fg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i1ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fwr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luicc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfq7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsig4")
+}],
+"loop": false,
+"name": &"grab",
+"speed": 24.0
+}]
+
+[node name="Hand" type="CharacterBody2D" unique_id=1121984249 node_paths=PackedStringArray("dash_sound")]
 z_index = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bqxi7")
+dash_curve = ExtResource("2_x4ex5")
+dash_sound = NodePath("DashSound")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=384819436]
 shape = SubResource("CircleShape2D_ulgpx")
 
 [node name="OpenHand" type="Sprite2D" parent="." unique_id=560404521]
+visible = false
 texture = ExtResource("2_810mo")
 
 [node name="ClosedHand" type="Sprite2D" parent="." unique_id=41519846]
@@ -30,4 +115,13 @@ collision_layer = 0
 collision_mask = 24
 
 [node name="GrabShape" type="CollisionShape2D" parent="GrabArea" unique_id=651822346]
+position = Vector2(16, 0)
 shape = SubResource("CircleShape2D_khsym")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=1596771560]
+stream = ExtResource("5_x4ex5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=170788871]
+sprite_frames = SubResource("SpriteFrames_oqlm7")
+animation = &"grab"
+autoplay = "default"

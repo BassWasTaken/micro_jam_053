@@ -4,12 +4,16 @@ extends Area2D
 @export var disable_timer: Timer
 @export var tower_visual: Polygon2D
 @export var bullet_scene: PackedScene
+@export var disable_sound: AudioStreamPlayer
+
+@onready var seal = $Seal
 
 var timer = Timer.new()
 
 var disabled = false
 
 func _ready() -> void:
+	seal.visible = false
 	add_child(timer)
 	timer.wait_time = 1
 	timer.start()
@@ -18,8 +22,8 @@ func _ready() -> void:
 	# reenable timer if timer expires
 	disable_timer.timeout.connect(enable)
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	$Seal.rotation_degrees += delta * 60
 
 func shoot():
 	if disabled:
@@ -40,8 +44,13 @@ func grab():
 func enable():
 	disabled = false
 	tower_visual.modulate = Color.WHITE
+	seal.visible = false
 
 func disable():
+	if !disabled:
+		disable_sound.play()
+
 	disabled = true
 	disable_timer.start()
 	tower_visual.modulate = Color.DARK_GRAY
+	seal.visible = true

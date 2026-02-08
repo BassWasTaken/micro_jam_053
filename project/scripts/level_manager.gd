@@ -40,24 +40,24 @@ func _distribute_units(units, spawners):
 func load_level(world_node, level_id, starting_units):
 	if last_loaded_level:
 		last_loaded_level.queue_free()
-		
+
 	# temp condition to make the level select appear at the end
 	if level_id == "end":
 		world_node.add_child(levels_map["end"]["scene"].instantiate())
 		return
-	
+
 	var new_level : Node2D = levels_map[level_id]["scene"].instantiate()
-	
+
 	var level_config = new_level.find_child("LevelConfig")
 	if level_config:
 		_distribute_units(starting_units, level_config.hero_spawners)
 	else:
 		push_warning("Unable to find LevelConfig node")
-	
+
 	await get_tree().process_frame
-	
+
 	world_node.add_child(new_level)
-	
+
 	current_level_id = level_id
 	last_loaded_level = new_level
 	heroes_initial_count = starting_units
@@ -67,6 +67,8 @@ func load_level(world_node, level_id, starting_units):
 		_heroes_initial_count_for_reset_after_losing = heroes_initial_count
 
 func hero_reached_goal_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_on_goal += 1
 	if heroes_on_goal >= heroes_remaining:
 		var next_level_id = levels_map[current_level_id]["next"]
@@ -80,11 +82,8 @@ func hero_reached_goal_event():
 			print("no more levels to load")
 
 func hero_died_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_remaining -= 1
 	if heroes_remaining <= 0:
-		print("defeat... starting from the beginning")
-		load_level(
-			last_loaded_level.get_parent(),
-			"1",
-			_heroes_initial_count_for_reset_after_losing
-		)
+		UserInterface.show_game_over_screen()

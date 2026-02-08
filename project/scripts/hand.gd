@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 @onready var open_hand_sprite = $OpenHand
 @onready var closed_hand_sprite = $ClosedHand
+@onready var hand_anim = $AnimatedSprite2D
 
 @export var speed = 300.0
 @export var accel = 3000.0
 
-@export var dash_speed = 600.0
-@export var dash_seconds = 0.5
+@export var dash_speed = 900.0
+@export var dash_seconds = 1.0
 @export var dash_curve: Curve
+@export var dash_sound: AudioStreamPlayer
 var dash_progress := 0.0
 
 var grabbables: Array[Node] = []
@@ -20,11 +22,21 @@ func _ready():
 	$GrabArea.connect("area_exited", clear_hovered_area)
 
 	GameManager.hand = self
+	
+	hand_anim.animation_finished.connect(func():
+		hand_anim.play("default")
+	)
 
 func _physics_process(delta: float) -> void:
 	if is_grabbing_tower:
+		# Cancel dash if player is locked
+		dash_progress = 0.0
 		return
 	var input_dir = Input.get_vector("left", "right", "up", "down")
+
+	# Cancel dash if theres no remaining velocity
+	if input_dir.length_squared() < 0.001:
+		dash_progress = 0.0
 
 	var current_speed = speed
 
@@ -39,10 +51,12 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("grab"):
+		hand_anim.play("grab")
 		for grabbable in grabbables:
 			grabbable.grab()
 
 	if Input.is_action_just_pressed("dash") && dash_progress <= 0.0:
+		dash_sound.play()
 		dash_progress = dash_seconds
 
 	is_grabbing_tower = Input.is_action_pressed("grab")
@@ -57,8 +71,8 @@ func _process(_delta):
 	# else:
 	# 	modulate = Color.WHITE
 
-	open_hand_sprite.visible = !is_grabbing_tower
-	closed_hand_sprite.visible = is_grabbing_tower
+	#open_hand_sprite.visible = !is_grabbing_tower
+	#closed_hand_sprite.visible = is_grabbing_tower
 
 func set_hovered_area(area):
 	if area.has_method("grab"):

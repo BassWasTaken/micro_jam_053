@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bm0uk06q71ls3"]
+
+[ext_resource type="Script" uid="uid://cjufd65qs7528" path="res://project/scripts/volume_control.gd" id="1_di2hm"]
+
+[node name="VolumeSliders" type="VBoxContainer" unique_id=1665707267]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 164.0
+offset_top = 269.0
+offset_right = -406.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1599702863]
+layout_mode = 2
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=440853042]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_di2hm")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="." unique_id=1920913379]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider2" type="HSlider" parent="." unique_id=1014253714]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_di2hm")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="." unique_id=1633346960]
+layout_mode = 2
+text = "Sfx"
+
+[node name="HSlider3" type="HSlider" parent="." unique_id=1789789946]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_di2hm")
+bus_name = "Sfx"
+
+[node name="Label4" type="Label" parent="." unique_id=1691544364]
+layout_mode = 2
+text = "Ambience"
+
+[node name="HSlider4" type="HSlider" parent="." unique_id=1965454188]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_di2hm")
+bus_name = "Ambiance"
+
+[node name="Label5" type="Label" parent="." unique_id=1802141354]
+layout_mode = 2
+text = "Vox"
+
+[node name="HSlider5" type="HSlider" parent="." unique_id=1004382117]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("1_di2hm")
+bus_name = "Vox"

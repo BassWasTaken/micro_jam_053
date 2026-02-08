@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jd0qpy38fgx4"
+path="res://.godot/imported/Game Lost (1).wav-e67ef298e3a9702b30c1e8ef66348090.sample"
+
+[deps]
+
+source_file="res://project/assets/import/SFX 03/Game Lost (1).wav"
+dest_files=["res://.godot/imported/Game Lost (1).wav-e67ef298e3a9702b30c1e8ef66348090.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

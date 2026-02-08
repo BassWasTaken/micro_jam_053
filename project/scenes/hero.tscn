@@ -1,9 +1,78 @@
 [gd_scene format=3 uid="uid://bnbcs225hguaq"]
 
 [ext_resource type="Script" uid="uid://qysymjmniuec" path="res://project/scripts/hero.gd" id="1_3clfj"]
+[ext_resource type="Texture2D" uid="uid://dt6kq6st5ithh" path="res://project/assets/import/Anim_sprites.png" id="2_4yhmb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xwwwb"]
 radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vruob"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(64, 288, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0guk"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(128, 288, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef7l7"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(192, 288, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyrl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vruob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0guk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vruob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef7l7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yhmb"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(64, 416, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyrl5"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(128, 416, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nutgl"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(192, 416, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tut65"]
+atlas = ExtResource("2_4yhmb")
+region = Rect2(256, 416, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqwkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yhmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyrl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nutgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tut65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4qi2"]
 bg_color = Color(0.6333333, 1, 0, 1)
@@ -20,11 +89,23 @@ script = ExtResource("1_3clfj")
 shape = SubResource("CircleShape2D_xwwwb")
 
 [node name="Visuals" type="Polygon2D" parent="." unique_id=1435043310]
+visible = false
 color = Color(0.44895673, 0.50189817, 1, 1)
 polygon = PackedVector2Array(-16, -8, -8, 24, 0, 16, 8, 24, 16, -8, 8, -8, 8, -16, 0, -24, -8, -16, -8, -8)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1421495157]
 path_desired_distance = 5.0
+
+[node name="Anim1" type="AnimatedSprite2D" parent="." unique_id=992498915]
+sprite_frames = SubResource("SpriteFrames_kyrl5")
+autoplay = "default"
+frame_progress = 0.52590287
+
+[node name="Anim2" type="AnimatedSprite2D" parent="." unique_id=1679287607]
+visible = false
+sprite_frames = SubResource("SpriteFrames_sqwkv")
+autoplay = "default"
+frame_progress = 0.802251
 
 [node name="HpBar" type="ProgressBar" parent="." unique_id=201462936]
 offset_left = -32.0
