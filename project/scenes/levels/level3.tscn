@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://b1gcqy8ftt3c1" path="res://project/scripts/audio/music_requester.gd" id="8_hsxuq"]
 [ext_resource type="PackedScene" uid="uid://d4am6xfgck7ur" path="res://project/scenes/ballista_hz.tscn" id="8_w2jhf"]
 [ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="9_pwfut"]
+[ext_resource type="Texture2D" uid="uid://bgcumiovb16e2" path="res://project/assets/import/lamp.png" id="10_pwfut"]
+[ext_resource type="Texture2D" uid="uid://chhnuh1p2smnr" path="res://project/assets/import/gokd.png" id="11_ru5xy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
 vertices = PackedVector2Array(-446, 402.07813, -524.72656, 402.7422, -515.25, -703.0625, -446, -703.2031, 66, 397.78906, 62, 397.82813, 62, 194, 66, 190, -254, 190, -258, 194, -258, -2, -254, 2, -66, -2, -62, 2, -62, -194, -66, -190, -190, -194, -194, -190, -194, -578, -190, -574, 190, -578, 62, -574, 322, 395.64844, 318, 395.6797, 318, 190, 322, 194, 574, 190, 578, 194, 578, -66, 574, -62, 450, -66, 446, -62, 446, -382, 450, -386, 322, -386, 254, -382, 254, -446, 322, -514, 194, -514, 130, -446, 194, 396.71875, 190, 396.75, 190, -2, 194, 2, 318, -2, 322, 2, 322, -194, 318, -190, 66, -194, 62, -190, 66, -382, 190, -704.5469, 193.99219, -704.5625, 194, -672, 130, -382, 847.7578, 391.25, 830, 391.39063, 830, -705.90625, 839.22656, -705.9297)
@@ -78,3 +80,127 @@ metadata/_edit_lock_ = true
 [node name="MusicRequester" type="Node" parent="." unique_id=334518530]
 script = ExtResource("8_hsxuq")
 song = ExtResource("9_pwfut")
+
+[node name="Lamp" type="Sprite2D" parent="." unique_id=1982018759]
+position = Vector2(341, 662)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp3" type="Sprite2D" parent="." unique_id=105231705]
+position = Vector2(273, 660)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp4" type="Sprite2D" parent="." unique_id=1566275812]
+position = Vector2(191, 661)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp5" type="Sprite2D" parent="." unique_id=1030145410]
+position = Vector2(90, 479)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp6" type="Sprite2D" parent="." unique_id=1411071857]
+position = Vector2(169, 473)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp7" type="Sprite2D" parent="." unique_id=461698842]
+position = Vector2(268, 277)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp8" type="Sprite2D" parent="." unique_id=1868239089]
+position = Vector2(173, -98)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp9" type="Sprite2D" parent="." unique_id=929791013]
+position = Vector2(261, -97)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp15" type="Sprite2D" parent="." unique_id=1776328906]
+position = Vector2(736, 91)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp16" type="Sprite2D" parent="." unique_id=351657110]
+position = Vector2(792, 87)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp17" type="Sprite2D" parent="." unique_id=424730307]
+position = Vector2(481, 284)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp18" type="Sprite2D" parent="." unique_id=567157763]
+position = Vector2(545, 281)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp19" type="Sprite2D" parent="." unique_id=1558822570]
+position = Vector2(608, 281)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp20" type="Sprite2D" parent="." unique_id=1056694128]
+position = Vector2(540, 484)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp21" type="Sprite2D" parent="." unique_id=1717299158]
+position = Vector2(598, 482)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp23" type="Sprite2D" parent="." unique_id=1816862200]
+position = Vector2(682, 667)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp24" type="Sprite2D" parent="." unique_id=2127643666]
+position = Vector2(741, 669)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp25" type="Sprite2D" parent="." unique_id=767379497]
+position = Vector2(816, 668)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp22" type="Sprite2D" parent="." unique_id=1271232150]
+position = Vector2(870, 417)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp10" type="Sprite2D" parent="." unique_id=492346206]
+position = Vector2(338, -97)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp11" type="Sprite2D" parent="." unique_id=31043024]
+position = Vector2(416, -99)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp12" type="Sprite2D" parent="." unique_id=569489511]
+position = Vector2(475, -101)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp13" type="Sprite2D" parent="." unique_id=1768985062]
+position = Vector2(608, -32)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp14" type="Sprite2D" parent="." unique_id=295802343]
+position = Vector2(669, -33)
+texture = ExtResource("10_pwfut")
+
+[node name="Lamp2" type="Sprite2D" parent="." unique_id=119302517]
+position = Vector2(413, 664)
+texture = ExtResource("10_pwfut")
+
+[node name="Gokd" type="Sprite2D" parent="." unique_id=261201760]
+position = Vector2(224, 404)
+texture = ExtResource("11_ru5xy")
+
+[node name="Gokd2" type="Sprite2D" parent="." unique_id=787596265]
+position = Vector2(227, 210)
+texture = ExtResource("11_ru5xy")
+
+[node name="Gokd3" type="Sprite2D" parent="." unique_id=1570585620]
+position = Vector2(543, 205)
+texture = ExtResource("11_ru5xy")
+
+[node name="Gokd4" type="Sprite2D" parent="." unique_id=2106880116]
+position = Vector2(615, 603)
+texture = ExtResource("11_ru5xy")
+
+[node name="Gokd5" type="Sprite2D" parent="." unique_id=1088444250]
+position = Vector2(349, 263)
+texture = ExtResource("11_ru5xy")
+
+[node name="Gokd6" type="Sprite2D" parent="." unique_id=715219217]
+position = Vector2(479, 828)
+texture = ExtResource("11_ru5xy")
