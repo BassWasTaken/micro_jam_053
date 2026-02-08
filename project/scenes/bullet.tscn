@@ -29,7 +29,7 @@ polygon = PackedVector2Array(-8, -8, -16, 0, -8, 8, 0, 16, 8, 8, 16, 0, 8, -8, 0
 shape = SubResource("CircleShape2D_ci6n7")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=546161744]
-position = Vector2(0.172081, -0.6797447)
+position = Vector2(0.11903, 0.48268127)
 scale = Vector2(-1, 1)
 texture = SubResource("AtlasTexture_py3da")
-offset = Vector2(17.172081, -0.32025528)
+offset = Vector2(9.291111, -0.80293655)
