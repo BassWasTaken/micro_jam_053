@@ -10,6 +10,14 @@ var hp = max_hp
 
 var active = false
 
+func _ready():
+	if randi_range(0,1) == 0:
+		$Anim1.visible = true
+		$Anim2.visible = false
+	else:
+		$Anim1.visible = false
+		$Anim2.visible = true
+
 func navigate_to_goal(goal_position):
 	active = true
 	navigation_agent.target_position = goal_position
