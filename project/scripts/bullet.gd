@@ -34,6 +34,8 @@ func hit_object(body: Node2D):
 
 	if body.has_method("take_damage"):
 		body.take_damage(3)
+		audio.stream = impact_sounds.pick_random()
+		audio.play()
 		
 	remove()
 
@@ -41,10 +43,9 @@ func grab():
 	remove()
 	
 func remove():
-	audio.stream = impact_sounds.pick_random()
-	audio.play()
 	hitbox.set_deferred("disabled",true)
 	sprite.visible = false
-	await audio.finished
+	if audio.playing:
+		await audio.finished
 	queue_free()
 	
