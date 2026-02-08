@@ -89,11 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
-<<<<<<< HEAD
 text = "Stay B Positive"
-=======
-text = "Stay B Postive"
->>>>>>> 80db572b0c3b3d8efa7918802942029173c4862c
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1334179226]
