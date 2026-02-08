@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cwlwa8xufsoxr"]
 
+[ext_resource type="Script" uid="uid://dk6sveiqm1e1e" path="res://project/scripts/level_transition.gd" id="1_wpfd0"]
+
 [sub_resource type="Animation" id="Animation_e23nl"]
 length = 0.001
 tracks/0/type = "value"
@@ -52,11 +54,16 @@ _data = {
 &"fade out": SubResource("Animation_oernp")
 }
 
-[node name="LevelTransition" type="Control" unique_id=1371454848]
+[node name="LevelTransition" type="Control" unique_id=1371454848 node_paths=PackedStringArray("background", "anim_player")]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wpfd0")
+background = NodePath("ColorRect")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=722964155]
 layout_mode = 1

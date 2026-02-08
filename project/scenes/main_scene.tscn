@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cgdkevl8iumnd"]
 
 [ext_resource type="Script" uid="uid://c1geiqa2dvwes" path="res://project/scripts/main_scene.gd" id="1_c0jt4"]
+[ext_resource type="PackedScene" uid="uid://bpf00mrviar0k" path="res://project/scenes/levels/menu_scene.tscn" id="2_bk8yl"]
 [ext_resource type="PackedScene" uid="uid://cwlwa8xufsoxr" path="res://project/scenes/level_transition.tscn" id="2_tl761"]
 
-[node name="MainScene" type="Node2D" unique_id=1934839800]
+[node name="MainScene" type="Node2D" unique_id=1934839800 node_paths=PackedStringArray("level_transition", "scene_holder")]
 script = ExtResource("1_c0jt4")
+level_transition = NodePath("")
+initial_scene = ExtResource("2_bk8yl")
+scene_holder = NodePath("World")
 
 [node name="World" type="Node2D" parent="." unique_id=1331739931]
 
