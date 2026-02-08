@@ -33,12 +33,13 @@ tile_set = ExtResource("2_fdo2t")
 [node name="Hand" parent="." unique_id=1121984249 instance=ExtResource("3_vcu6o")]
 position = Vector2(-318, 13)
 
-[node name="MenuOption" type="Area2D" parent="." unique_id=997503326 node_paths=PackedStringArray("select_audio")]
+[node name="MenuOption" type="Area2D" parent="." unique_id=997503326 node_paths=PackedStringArray("select_audio", "label")]
 position = Vector2(387, 255)
 collision_layer = 8
-collision_mask = 0
+collision_mask = 64
 script = ExtResource("4_1ccrh")
 select_audio = NodePath("SelectSound")
+label = NodePath("Label")
 
 [node name="Polygon2D" type="Polygon2D" parent="MenuOption" unique_id=1098632324]
 visible = false
@@ -52,11 +53,25 @@ shape = SubResource("RectangleShape2D_gi3tg")
 [node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=1185587007]
 stream = ExtResource("5_vw17v")
 
-[node name="Deco" type="Sprite2D" parent="MenuOption" unique_id=161852839]
+[node name="Label" type="Control" parent="MenuOption" unique_id=1129832133]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Deco" type="Sprite2D" parent="MenuOption/Label" unique_id=161852839]
 position = Vector2(-16, -1)
 rotation = 2.3770504
 scale = Vector2(0.155, 0.155)
 texture = ExtResource("6_fly7v")
+
+[node name="TextureRect3" type="TextureRect" parent="MenuOption/Label" unique_id=1754997878]
+layout_mode = 0
+offset_left = -387.0
+offset_top = -24.0
+offset_right = -32.0
+offset_bottom = 16.0
+texture = ExtResource("11_vw17v")
 
 [node name="HeroPartyArea" type="Node2D" parent="." unique_id=1978270054]
 position = Vector2(-382, -2)
@@ -87,12 +102,6 @@ offset_bottom = -147.0
 texture = ExtResource("10_vw17v")
 expand_mode = 1
 stretch_mode = 4
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1754997878]
-offset_top = 231.0
-offset_right = 355.0
-offset_bottom = 271.0
-texture = ExtResource("11_vw17v")
 
 [node name="MusicRequester" type="Node" parent="." unique_id=1536365479]
 script = ExtResource("13_px1q1")
