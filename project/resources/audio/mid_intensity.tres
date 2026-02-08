@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TwoPartMusic" format=3 uid="uid://c184t2hnuvysq"]
+
+[ext_resource type="AudioStream" uid="uid://civqvyv1f2dxq" path="res://project/assets/import/MidIntensity - Intro.ogg" id="1_va52o"]
+[ext_resource type="AudioStream" uid="uid://juom1uag6wrr" path="res://project/assets/import/MidIntensity - Loop.ogg" id="2_adxnc"]
+[ext_resource type="Script" uid="uid://c2lj2j1hk6h45" path="res://project/scripts/audio/two_part_music.gd" id="3_3qu2u"]
+
+[resource]
+script = ExtResource("3_3qu2u")
+intro = ExtResource("1_va52o")
+loop = ExtResource("2_adxnc")
+metadata/_custom_type_script = "uid://c2lj2j1hk6h45"
