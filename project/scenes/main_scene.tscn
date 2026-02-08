@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c1geiqa2dvwes" path="res://project/scripts/main_scene.gd" id="1_c0jt4"]
 [ext_resource type="PackedScene" uid="uid://bpf00mrviar0k" path="res://project/scenes/levels/menu_scene.tscn" id="2_bk8yl"]
-[ext_resource type="PackedScene" uid="uid://cwlwa8xufsoxr" path="res://project/scenes/level_transition.tscn" id="2_tl761"]
+[ext_resource type="PackedScene" path="res://project/scenes/level_transition.tscn" id="2_tl761"]
+[ext_resource type="Script" uid="uid://067x4akafwsx" path="res://project/scripts/audio/music_manager.gd" id="4_1y61j"]
+[ext_resource type="Resource" uid="uid://ch68iafkw7wxm" path="res://project/resources/audio/low_intensity.tres" id="5_vr674"]
+[ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="6_bijqh"]
 
 [node name="Node" type="Node" unique_id=401249621 node_paths=PackedStringArray("level_transition", "world_root")]
 script = ExtResource("1_c0jt4")
@@ -15,3 +18,12 @@ world_root = NodePath("World")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1952528861]
 
 [node name="LevelTransition" parent="CanvasLayer" unique_id=1371454848 instance=ExtResource("2_tl761")]
+
+[node name="MusicManager" type="Node" parent="." unique_id=1819316748 node_paths=PackedStringArray("player")]
+script = ExtResource("4_1y61j")
+player = NodePath("BgMusicPlayer")
+low_intensity = ExtResource("5_vr674")
+mid_intensity = ExtResource("6_bijqh")
+
+[node name="BgMusicPlayer" type="AudioStreamPlayer" parent="MusicManager" unique_id=378104312]
+bus = &"Music"
