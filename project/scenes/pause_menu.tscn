@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bfih2tl0g3m05"]
 
-[ext_resource type="Script" path="res://project/scripts/pause_menu.gd" id="1_2lgnm"]
+[ext_resource type="Script" uid="uid://c66og5nwe48kp" path="res://project/scripts/pause_menu.gd" id="1_2lgnm"]
 [ext_resource type="PackedScene" uid="uid://bm0uk06q71ls3" path="res://project/scenes/volume_sliders.tscn" id="2_16v4v"]
 
-[node name="PauseMenu" type="ColorRect" unique_id=1664473217]
+[node name="PauseMenu" type="ColorRect" unique_id=1664473217 node_paths=PackedStringArray("pause_btn", "main_menu_btn")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,6 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.313726)
 script = ExtResource("1_2lgnm")
+pause_btn = NodePath("Panel/MarginContainer/Buttons/Resume")
+main_menu_btn = NodePath("Panel/MarginContainer/Buttons/GoToMainMenu")
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=33036393]
 custom_minimum_size = Vector2(300, 200)
