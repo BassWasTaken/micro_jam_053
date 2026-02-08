@@ -1,6 +1,10 @@
 extends Node
 
 var levels_map = {
+	"0": {
+		"scene": preload("res://project/scenes/levels/level0.tscn"),
+		"next": "1"
+	},
 	"1": {
 		"scene": preload("res://project/scenes/levels/level1.tscn"),
 		"next": "2"
@@ -43,7 +47,7 @@ func _distribute_units(units, spawners):
 
 func start_new():
 	UserInterface.show_alive_count(true)
-	load_level("1", 16)
+	load_level("0", 16)
 
 
 func load_level(level_id, starting_units):

@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://chfiy0ascu84v" path="res://project/assets/import/Menu_items/Victory.png" id="9_1ccrh"]
 [ext_resource type="Texture2D" uid="uid://kjvs5ttc2gfv" path="res://project/assets/import/Menu_items/Lively_Castle.png" id="10_vw17v"]
 [ext_resource type="Texture2D" uid="uid://cl578e6300cox" path="res://project/assets/import/Menu_items/REY.png" id="11_vw17v"]
+[ext_resource type="Script" uid="uid://b1gcqy8ftt3c1" path="res://project/scripts/audio/music_requester.gd" id="13_px1q1"]
+[ext_resource type="Resource" uid="uid://ch68iafkw7wxm" path="res://project/resources/audio/low_intensity.tres" id="14_gi3tg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58sbv"]
 radius = 24.0
@@ -89,3 +91,7 @@ offset_top = 231.0
 offset_right = 355.0
 offset_bottom = 271.0
 texture = ExtResource("11_vw17v")
+
+[node name="MusicRequester" type="Node" parent="." unique_id=1536365479]
+script = ExtResource("13_px1q1")
+song = ExtResource("14_gi3tg")
