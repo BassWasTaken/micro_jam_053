@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://dvg6was0mjaym"]
 
-[ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_w2jhf"]
+[ext_resource type="Script" path="res://project/scripts/level_config.gd" id="1_w2jhf"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="2_hsxuq"]
 [ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="2_w2jhf"]
 [ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="3_pwfut"]
-[ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_1w7ax"]
+[ext_resource type="AudioStream" uid="uid://juom1uag6wrr" path="res://project/assets/import/MidIntensity - Loop.ogg" id="5_w2jhf"]
 [ext_resource type="TileSet" uid="uid://dyemdprbgfchb" path="res://project/resources/main_tileset.tres" id="6_w2jhf"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_1h3is"]
 [ext_resource type="PackedScene" uid="uid://d4am6xfgck7ur" path="res://project/scenes/ballista_hz.tscn" id="8_w2jhf"]
@@ -50,7 +50,7 @@ count_heroes = true
 position = Vector2(544, -160)
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2128074938]
-stream = ExtResource("5_1w7ax")
+stream = ExtResource("5_w2jhf")
 autoplay = true
 bus = &"Music"
 
