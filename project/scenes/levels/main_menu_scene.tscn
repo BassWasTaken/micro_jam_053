@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cwvqv8p86sub4" path="res://project/assets/import/Menu_items/Start.png" id="10_5ysyt"]
 [ext_resource type="Texture2D" uid="uid://chhnuh1p2smnr" path="res://project/assets/import/gokd.png" id="11_xovkp"]
 [ext_resource type="Texture2D" uid="uid://bgcumiovb16e2" path="res://project/assets/import/lamp.png" id="12_iyv4o"]
+[ext_resource type="PackedScene" uid="uid://c7yy7xghf3yjv" path="res://project/scenes/vampire_fella.tscn" id="13_iyv4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xovkp"]
 size = Vector2(164, 49)
@@ -207,3 +208,6 @@ texture = ExtResource("12_iyv4o")
 [node name="Lamp19" type="Sprite2D" parent="." unique_id=345782598]
 position = Vector2(366, -161)
 texture = ExtResource("12_iyv4o")
+
+[node name="VampireFella" parent="." unique_id=1908353234 instance=ExtResource("13_iyv4o")]
+position = Vector2(-46, 38)

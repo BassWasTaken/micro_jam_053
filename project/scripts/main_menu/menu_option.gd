@@ -16,10 +16,8 @@ func grab():
 
 func hover_start(body: Node2D):
 	if body.name.to_lower().contains("hand"):
-		print("enter")
 		label.modulate = Color.MAGENTA
 
 func hover_end(body: Node2D):
 	if body.name.to_lower().contains("hand"):
-		print("exit")
 		label.modulate = Color.WHITE
