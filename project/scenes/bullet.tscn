@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c7i4myynpahoa" path="res://project/scripts/bullet.gd" id="1_eevmn"]
 [ext_resource type="Texture2D" uid="uid://re4tgarajqqg" path="res://project/assets/import/Grid_Vampure.png" id="2_i7o5h"]
+[ext_resource type="AudioStream" uid="uid://cqj3cy0hcae1c" path="res://project/assets/import/SFX 02/Hit (1).wav" id="2_qhw05"]
+[ext_resource type="AudioStream" uid="uid://x6145k77c64r" path="res://project/assets/import/SFX 02/Hit (2).wav" id="3_hkmlu"]
+[ext_resource type="AudioStream" uid="uid://dvp4w1vhjw7m5" path="res://project/assets/import/SFX 02/Hit (3).wav" id="4_2up81"]
+[ext_resource type="AudioStream" uid="uid://byv0hmew87etw" path="res://project/assets/import/SFX 02/Hit (4).wav" id="5_rue21"]
+[ext_resource type="AudioStream" uid="uid://bsbn46362tmt7" path="res://project/assets/import/SFX 02/Hit (5).wav" id="6_8kpky"]
+[ext_resource type="AudioStream" uid="uid://dlm446ptytixg" path="res://project/assets/import/SFX 02/Hit (6).wav" id="7_xd6t1"]
+[ext_resource type="AudioStream" uid="uid://d2srdy14bhg42" path="res://project/assets/import/SFX 02/Hit (7).wav" id="8_rnwx3"]
+[ext_resource type="AudioStream" uid="uid://dusjiqdjhuq8h" path="res://project/assets/import/SFX 02/Hit (8).wav" id="9_tdkky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci6n7"]
 
@@ -14,6 +22,7 @@ collision_layer = 16
 collision_mask = 5
 script = ExtResource("1_eevmn")
 wall_mask = 1
+impact_sounds = Array[AudioStream]([ExtResource("2_qhw05"), ExtResource("3_hkmlu"), ExtResource("4_2up81"), ExtResource("5_rue21"), ExtResource("6_8kpky"), ExtResource("7_xd6t1"), ExtResource("8_rnwx3"), ExtResource("9_tdkky")])
 
 [node name="Visuals" type="Polygon2D" parent="." unique_id=1971352736]
 visible = false
@@ -33,3 +42,6 @@ position = Vector2(0.11903, 0.48268127)
 scale = Vector2(-1, 1)
 texture = SubResource("AtlasTexture_py3da")
 offset = Vector2(9.291111, -0.80293655)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2049384345]
+bus = &"Sfx"

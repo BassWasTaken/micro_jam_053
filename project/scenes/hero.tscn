@@ -3,7 +3,25 @@
 [ext_resource type="Script" uid="uid://qysymjmniuec" path="res://project/scripts/hero.gd" id="1_3clfj"]
 [ext_resource type="Texture2D" uid="uid://dt6kq6st5ithh" path="res://project/assets/import/Anim_sprites.png" id="2_4yhmb"]
 [ext_resource type="AudioStream" uid="uid://db3ucfe8hw8ys" path="res://project/assets/import/SFX 02/Die Style 01 (4).wav" id="3_r0guk"]
+[ext_resource type="AudioStream" uid="uid://becatyrnvi0ma" path="res://project/assets/import/SFX 02/Hit (10).wav" id="3_sys3p"]
 [ext_resource type="AudioStream" uid="uid://curbucc2wajd1" path="res://project/assets/import/SFX 02/Hit (9).wav" id="3_vruob"]
+[ext_resource type="AudioStream" uid="uid://dgkqk3vwartji" path="res://project/assets/import/SFX 02/Hit (11).wav" id="4_mjif7"]
+[ext_resource type="AudioStream" uid="uid://bild5ag27anl5" path="res://project/assets/import/SFX 02/Hit (12).wav" id="5_jqwri"]
+[ext_resource type="AudioStream" uid="uid://din2kob4w038p" path="res://project/assets/import/SFX 02/Die Style 01 (1).wav" id="6_6wgxu"]
+[ext_resource type="AudioStream" uid="uid://cwwkkb3ih5447" path="res://project/assets/import/SFX 02/Die Style 01 (2).wav" id="7_82b1c"]
+[ext_resource type="AudioStream" uid="uid://bkl58cg3t788k" path="res://project/assets/import/SFX 02/Die Style 01 (3).wav" id="8_15oac"]
+[ext_resource type="AudioStream" uid="uid://c5qxj6ljl0xwv" path="res://project/assets/import/SFX 02/Die Style 02 (1).wav" id="10_3i0a3"]
+[ext_resource type="AudioStream" uid="uid://b8cjkgtuquk1c" path="res://project/assets/import/SFX 02/Die Style 02 (2).wav" id="11_ksicl"]
+[ext_resource type="AudioStream" uid="uid://bqncnkcmxux30" path="res://project/assets/import/SFX 02/Die Style 02 (3).wav" id="12_uvjmh"]
+[ext_resource type="AudioStream" uid="uid://cxvjt2i3waqvq" path="res://project/assets/import/SFX 02/Die Style 02 (4).wav" id="13_bnkfi"]
+[ext_resource type="AudioStream" uid="uid://bduc0kejurcge" path="res://project/assets/import/SFX 02/Die Style 02 (5).wav" id="14_r2xrb"]
+[ext_resource type="AudioStream" uid="uid://d0yriwor4gcde" path="res://project/assets/import/SFX 02/Die Style 02 (6).wav" id="15_sprs7"]
+[ext_resource type="AudioStream" uid="uid://dlm1mbes3fwbk" path="res://project/assets/import/SFX 02/Die Style 02 (7).wav" id="16_arm8w"]
+[ext_resource type="AudioStream" uid="uid://ci3mxeft1483g" path="res://project/assets/import/SFX 02/Die Style 02 (8).wav" id="17_4574o"]
+[ext_resource type="AudioStream" uid="uid://d3w1l7ey5ue1j" path="res://project/assets/import/SFX 02/Die Style 03 (1).wav" id="18_ew4l4"]
+[ext_resource type="AudioStream" uid="uid://dwtgujqpkosrl" path="res://project/assets/import/SFX 02/Die Style 03 (2).wav" id="19_32i7r"]
+[ext_resource type="AudioStream" uid="uid://gtt7g62f783w" path="res://project/assets/import/SFX 02/Die Style 03 (3).wav" id="20_psths"]
+[ext_resource type="AudioStream" uid="uid://o7sx2yhyp3su" path="res://project/assets/import/SFX 02/Die Style 03 (4).wav" id="21_4bp14"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xwwwb"]
 radius = 16.0
@@ -86,8 +104,8 @@ corner_radius_bottom_left = 4
 [node name="Hero" type="CharacterBody2D" unique_id=967307088]
 collision_layer = 4
 script = ExtResource("1_3clfj")
-hitsound = ExtResource("3_vruob")
-diesound = ExtResource("3_r0guk")
+hit_sounds = Array[AudioStream]([ExtResource("3_vruob"), ExtResource("3_sys3p"), ExtResource("4_mjif7"), ExtResource("5_jqwri")])
+die_sounds = Array[AudioStream]([ExtResource("6_6wgxu"), ExtResource("7_82b1c"), ExtResource("8_15oac"), ExtResource("3_r0guk"), ExtResource("10_3i0a3"), ExtResource("11_ksicl"), ExtResource("12_uvjmh"), ExtResource("13_bnkfi"), ExtResource("14_r2xrb"), ExtResource("15_sprs7"), ExtResource("16_arm8w"), ExtResource("17_4574o"), ExtResource("18_ew4l4"), ExtResource("19_32i7r"), ExtResource("20_psths"), ExtResource("21_4bp14")])
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=76643998]
 shape = SubResource("CircleShape2D_xwwwb")

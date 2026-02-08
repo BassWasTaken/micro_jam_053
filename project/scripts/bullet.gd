@@ -2,7 +2,11 @@ extends Area2D
 
 @export_flags_2d_physics var wall_mask := 0
 
+
 @onready var sprite = $Sprite
+@onready var audio = $AudioStreamPlayer2D
+
+@export var impact_sounds: Array[AudioStream]
 
 var speed = 100
 var direction = Vector2(1,0)
@@ -26,6 +30,8 @@ func _physics_process(delta: float) -> void:
 func hit_object(body: Node2D):
 	if body is TileMapLayer and has_wall_immunity:
 		return
+	
+	audio.stream = impact_sounds.pick_random()
 
 	if body.has_method("take_damage"):
 		body.take_damage(3)
