@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://bfjke37oa3xi2"
 GameManager="*uid://xy05l2wid56k"
 LevelManager="*uid://rqt5dj6t1nh7"
 UserInterface="*uid://1p73v4f258jh"
+SceneManager="*uid://u7deeyp81vir"
 
 [display]
 
