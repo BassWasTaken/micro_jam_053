@@ -1,0 +1,107 @@
+[gd_scene format=4 uid="uid://bgkdtq1nwmton"]
+
+[ext_resource type="Script" uid="uid://b75jka3hoyfin" path="res://project/scripts/victory_screen/victory_screen.gd" id="1_xe60i"]
+[ext_resource type="TileSet" uid="uid://dyemdprbgfchb" path="res://project/resources/main_tileset.tres" id="2_fdo2t"]
+[ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="3_vcu6o"]
+[ext_resource type="Script" uid="uid://cfhwgallh1jt5" path="res://project/scripts/main_menu/menu_option.gd" id="4_1ccrh"]
+[ext_resource type="AudioStream" uid="uid://mbpv1i6qijs6" path="res://project/assets/menu_select.wav" id="5_vw17v"]
+[ext_resource type="Script" uid="uid://cr6qefe0unvmr" path="res://project/scripts/victory_screen/hero_party_area.gd" id="6_be8m4"]
+[ext_resource type="PackedScene" uid="uid://d3pusqmlqy4b8" path="res://project/scenes/victory_screen/hero_dummy.tscn" id="7_fly7v"]
+[ext_resource type="AudioStream" uid="uid://b7xng5t70hinm" path="res://project/assets/import/SFX 03/Game Win (2).wav" id="8_fdo2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58sbv"]
+radius = 24.0
+
+[node name="VictoryScene" type="Node2D" unique_id=251242985 node_paths=PackedStringArray("exit_grabber", "win_sfx")]
+script = ExtResource("1_xe60i")
+exit_grabber = NodePath("MenuOption")
+win_sfx = NodePath("WinSfx")
+
+[node name="tilemapMainLayer" type="TileMapLayer" parent="." unique_id=397749981 groups=["navigation"]]
+tile_map_data = PackedByteArray("AAAIAAMAAgADAAMAAAAIAAIAAgADAAIAAAAIAAEAAgADAAIAAAAIAAAAAgADAAIAAAAIAP//AgADAAIAAAAIAP7/AgADAAIAAAAIAP3/AgADAAIAAAAIAPz/AgADAAIAAAAIAPv/AgAEAAMAAAAHAAMAAgABAAMAAAAHAAIAAgABAAIAAAAHAAEAAgABAAIAAAAHAAAAAgABAAIAAAAHAP//AgABAAIAAAAHAP3/AgACAAIAAAAHAPz/AgACAAIAAAAHAPv/AgACAAEAAAAGAAQAAgACAAYAAAAGAAMAAgACAAYAAAAGAAIAAgACAAYAAAAGAAEAAgACAAYAAAAGAAAAAgACAAYAAAAGAP//AgACAAYAAAAGAP7/AgACAAQAAAAGAP3/AgACAAMAAAAGAPz/AgACAAIAAAAGAPv/AgACAAEAAAAFAAQAAgACAAYAAAAFAAMAAgADAAcAAAAFAAIAAgACAAYAAAAFAAEAAgACAAYAAAAFAAAAAgACAAYAAAAFAP//AgACAAYAAAAFAP7/AgACAAQAAAAFAP3/AgACAAMAAAAFAPz/AgACAAIAAAAFAPv/AgACAAEAAAAEAAQAAgACAAYAAAAEAAMAAgACAAYAAAAEAAIAAgAFAAYAAAAEAP//AgADAAcAAAAEAP7/AgACAAQAAAAEAP3/AgACAAMAAAAEAPz/AgACAAIAAAAEAPv/AgACAAEAAAADAAQAAgACAAYAAAADAAMAAgACAAYAAAADAAIAAgAEAAYAAAADAP//AgACAAYAAAADAP7/AgACAAQAAAADAP3/AgACAAMAAAADAPz/AgACAAIAAAADAPv/AgACAAEAAAACAAQAAgACAAYAAAACAAMAAgACAAYAAAACAAIAAgAEAAYAAAACAP//AgACAAYAAAACAP7/AgACAAQAAAACAP3/AgACAAMAAAACAPz/AgACAAIAAAACAPv/AgACAAEAAAABAAQAAgACAAYAAAABAAMAAgACAAYAAAABAAIAAgAEAAYAAAABAP//AgACAAYAAAABAP7/AgACAAQAAAABAP3/AgACAAMAAAABAPz/AgACAAIAAAABAPv/AgACAAEAAAAAAAQAAgACAAYAAAAAAAMAAgACAAYAAAAAAAIAAgAEAAYAAAAAAP//AgACAAYAAAAAAP7/AgACAAQAAAAAAP3/AgACAAMAAAAAAPz/AgACAAIAAAAAAPv/AgACAAEAAAD//wQAAgACAAYAAAD//wMAAgACAAYAAAD//wIAAgAEAAYAAAD/////AgACAAYAAAD///7/AgACAAQAAAD///3/AgACAAMAAAD///z/AgACAAIAAAD///v/AgACAAEAAAD+/wQAAgACAAYAAAD+/wMAAgACAAYAAAD+/wIAAgAEAAYAAAD+////AgACAAYAAAD+//7/AgACAAQAAAD+//3/AgACAAMAAAD+//z/AgACAAIAAAD+//v/AgACAAEAAAD9/wQAAgADAAcAAAD9/wMAAgADAAcAAAD9/wIAAgAEAAYAAAD9////AgACAAYAAAD9//7/AgACAAQAAAD9//3/AgACAAMAAAD9//z/AgACAAIAAAD9//v/AgACAAEAAAD8/wQAAgACAAYAAAD8/wMAAgACAAYAAAD8/wIAAgAEAAYAAAD8////AgACAAYAAAD8//7/AgACAAQAAAD8//3/AgACAAMAAAD8//z/AgACAAIAAAD8//v/AgACAAEAAAD7/wQAAgACAAYAAAD7/wMAAgACAAYAAAD7/wIAAgADAAYAAAD7////AgACAAYAAAD7//7/AgACAAQAAAD7//3/AgACAAMAAAD7//z/AgACAAIAAAD7//v/AgACAAEAAAD6/wQAAgACAAYAAAD6/wMAAgACAAYAAAD6/wIAAgACAAYAAAD6/wEAAgACAAYAAAD6/wAAAgACAAYAAAD6////AgACAAYAAAD6//7/AgACAAQAAAD6//3/AgACAAMAAAD6//z/AgACAAIAAAD6//v/AgACAAEAAAD5/wQAAgACAAYAAAD5/wMAAgACAAYAAAD5/wIAAgACAAYAAAD5/wEAAgACAAYAAAD5/wAAAgACAAYAAAD5////AgACAAYAAAD5//7/AgABAAQAAAD5//3/AgACAAMAAAD5//z/AgACAAIAAAD5//v/AgACAAEAAAD4/wIAAgADAAIAAAD4/wEAAgADAAIAAAD4/wAAAgADAAIAAAD4////AgADAAIAAAD4//7/AgADAAIAAAD4//3/AgACAAIAAAD4//z/AgACAAIAAAD4//v/AgACAAEAAAD3/wIAAgABAAIAAAD3/wEAAgABAAIAAAD3/wAAAgABAAIAAAD3////AgABAAIAAAD3//7/AgABAAIAAAD3//3/AgABAAIAAAD3//z/AgABAAIAAAD3//v/AgABAAEAAAD9/wEAAgAEAAUAAAD9/wAAAgACAAYAAAD8/wEAAgAEAAUAAAD8/wAAAgACAAYAAAD7/wEAAgADAAUAAAD7/wAAAgACAAYAAAAEAAEAAgAFAAUAAAAEAAAAAgACAAYAAAADAAEAAgAEAAUAAAADAAAAAgACAAYAAAACAAEAAgAEAAUAAAACAAAAAgACAAYAAAABAAEAAgAEAAUAAAABAAAAAgACAAYAAAAAAAEAAgAEAAUAAAAAAAAAAgACAAYAAAD//wEAAgAEAAUAAAD//wAAAgACAAYAAAD+/wEAAgAEAAUAAAD+/wAAAgACAAYAAAAHAP7/AgABAAIAAAD4/wMAAgADAAMAAAD3/wMAAgABAAMAAAD3/wQAAgABAAQAAAD4/wQAAgADAAQAAAAIAAQAAgADAAQAAAAHAAQAAgABAAQAAAA=")
+tile_set = ExtResource("2_fdo2t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1396828781]
+
+[node name="Hand" parent="." unique_id=1121984249 instance=ExtResource("3_vcu6o")]
+position = Vector2(-318, 13)
+
+[node name="MenuOption" type="Area2D" parent="." unique_id=997503326 node_paths=PackedStringArray("select_audio")]
+position = Vector2(387, 255)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_1ccrh")
+select_audio = NodePath("SelectSound")
+
+[node name="Polygon2D" type="Polygon2D" parent="MenuOption" unique_id=1098632324]
+color = Color(0.5279288, 0, 0.2818575, 1)
+polygon = PackedVector2Array(-23, -26, -24, 25, 29, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuOption" unique_id=466661896]
+shape = SubResource("CircleShape2D_58sbv")
+
+[node name="Label3" type="Label" parent="MenuOption" unique_id=1543551586]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -648.0
+offset_top = 6.0
+offset_right = 648.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "exit"
+horizontal_alignment = 1
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=1185587007]
+stream = ExtResource("5_vw17v")
+
+[node name="Label" type="Label" parent="." unique_id=1244451492]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -264.0
+offset_right = 166.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 65
+text = "YOU WON"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=744369289]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -171.5
+offset_right = 150.5
+offset_bottom = -148.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "its so lively in the castle these days..."
+horizontal_alignment = 1
+
+[node name="HeroPartyArea" type="Node2D" parent="." unique_id=1978270054]
+position = Vector2(-382, -2)
+script = ExtResource("6_be8m4")
+rect = Rect2(0, 0, 700, 250)
+hero_scene = ExtResource("7_fly7v")
+hero_count = 14
+
+[node name="WinSfx" type="AudioStreamPlayer" parent="." unique_id=1483174976]
+stream = ExtResource("8_fdo2t")
+volume_db = -9.26
+bus = &"Sfx"

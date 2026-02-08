@@ -11,6 +11,9 @@ extends Area2D
 
 @onready var seal = $Seal
 
+@export var delay: float = 1
+@export var frequency: float = 1
+
 var timer = Timer.new()
 
 var disabled = false
@@ -18,9 +21,9 @@ var disabled = false
 func _ready() -> void:
 	seal.visible = false
 	add_child(timer)
-	timer.wait_time = 1
-	timer.start()
 	timer.connect("timeout", shoot)
+	timer.wait_time = delay
+	timer.start()
 
 	# reenable timer if timer expires
 	disable_timer.timeout.connect(enable)
@@ -29,6 +32,7 @@ func _process(delta: float) -> void:
 	$Seal.rotation_degrees += delta * 60
 
 func shoot():
+	timer.wait_time = frequency
 	if disabled:
 		return
 	# if GameManager.hand \

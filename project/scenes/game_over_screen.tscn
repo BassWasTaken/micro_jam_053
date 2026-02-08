@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cuipo2obwhgwu"]
 
 [ext_resource type="Script" uid="uid://ddbwy1qaitvj" path="res://project/scripts/game_over_screen.gd" id="1_iqym2"]
+[ext_resource type="AudioStream" uid="uid://dv3cjxfir7ei5" path="res://project/assets/import/SFX 03/Game Lost (3).wav" id="2_8jdy7"]
 
-[node name="GameOverScreen" type="ColorRect" unique_id=1664473217]
+[node name="GameOverScreen" type="ColorRect" unique_id=1664473217 node_paths=PackedStringArray("main_menu_btn", "game_over_sfx")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,6 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.313726)
 script = ExtResource("1_iqym2")
+main_menu_btn = NodePath("Panel/MarginContainer/Buttons/GoToMainMenu")
+game_over_sfx = NodePath("GameOverSfx")
 
 [node name="Label" type="Label" parent="." unique_id=1107793560]
 layout_mode = 0
@@ -50,3 +53,7 @@ alignment = 1
 [node name="GoToMainMenu" type="Button" parent="Panel/MarginContainer/Buttons" unique_id=1427526873]
 layout_mode = 2
 text = "Return to main menu"
+
+[node name="GameOverSfx" type="AudioStreamPlayer" parent="." unique_id=1414225612]
+stream = ExtResource("2_8jdy7")
+bus = &"Sfx"
