@@ -8,9 +8,10 @@ extends Area2D
 @onready var hitbox = $Hitbox
 
 @export var impact_sounds: Array[AudioStream]
+@export var grab_sfx: AudioStream
 
 var speed = 100
-var direction = Vector2(1,0)
+var direction = Vector2(1, 0)
 
 # Can phase through walls
 var has_wall_immunity = true
@@ -31,7 +32,6 @@ func hit_object(body: Node2D):
 	if body is TileMapLayer and has_wall_immunity:
 		return
 	
-
 	if body.has_method("take_damage"):
 		body.take_damage(3)
 		audio.stream = impact_sounds.pick_random()
@@ -40,12 +40,12 @@ func hit_object(body: Node2D):
 	remove()
 
 func grab():
+	QuickSounds.play(grab_sfx, -20.0)
 	remove()
 	
 func remove():
-	hitbox.set_deferred("disabled",true)
+	hitbox.set_deferred("disabled", true)
 	sprite.visible = false
 	if audio.playing:
 		await audio.finished
 	queue_free()
-	

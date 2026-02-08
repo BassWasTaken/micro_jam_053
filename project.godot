@@ -26,6 +26,7 @@ LevelManager="*uid://rqt5dj6t1nh7"
 UserInterface="*uid://1p73v4f258jh"
 SceneManager="*uid://u7deeyp81vir"
 Music="*uid://diq4l6o4xyobu"
+QuickSounds="*uid://cav8w8broyaif"
 
 [display]
 
@@ -98,3 +99,4 @@ pause={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.1254902, 0.12156863, 0.11372549, 1)
