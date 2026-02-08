@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="3_fb00g"]
 [ext_resource type="Script" uid="uid://cfhwgallh1jt5" path="res://project/scripts/main_menu/menu_option.gd" id="4_fb00g"]
 [ext_resource type="AudioStream" uid="uid://mbpv1i6qijs6" path="res://project/assets/menu_select.wav" id="6_3amcv"]
+[ext_resource type="Script" uid="uid://b1gcqy8ftt3c1" path="res://project/scripts/audio/music_requester.gd" id="8_jvmsf"]
+[ext_resource type="Resource" uid="uid://ch68iafkw7wxm" path="res://project/resources/audio/low_intensity.tres" id="9_8h515"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ngxo4"]
 scenes/1/scene = ExtResource("2_vtjxc")
@@ -104,3 +106,7 @@ horizontal_alignment = 1
 
 [node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=90881210]
 stream = ExtResource("6_3amcv")
+
+[node name="MusicRequester" type="Node" parent="." unique_id=776756273]
+script = ExtResource("8_jvmsf")
+song = ExtResource("9_8h515")

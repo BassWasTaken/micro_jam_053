@@ -1,18 +1,12 @@
 extends Node
 
 @export var player: AudioStreamPlayer
-@export var low_intensity: TwoPartMusic
-@export var mid_intensity: TwoPartMusic
 
 var current: TwoPartMusic
 
 func _ready():
 	player.finished.connect(song_finished)
-	play(low_intensity)
-
-func _process(_delta):
-	if Input.is_key_pressed(KEY_N):
-		play(mid_intensity)
+	Music.on_song_requested.connect(play)
 
 func play(new_song: TwoPartMusic):
 	if current == new_song:
