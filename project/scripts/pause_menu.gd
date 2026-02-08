@@ -1,12 +1,8 @@
 extends ColorRect
 
-signal on_resume
-signal on_go_to_main_menu
+@export var pause_btn: Button
+@export var main_menu_btn: Button
 
 func _ready() -> void:
-	$Panel/MarginContainer/Buttons/Resume.pressed.connect(func():
-		on_resume.emit()
-	)
-	$Panel/MarginContainer/Buttons/GoToMainMenu.pressed.connect(func():
-		on_go_to_main_menu.emit()
-	)
+	pause_btn.pressed.connect(UserInterface.toggle_pause)
+	main_menu_btn.pressed.connect(UserInterface.reset_to_main)

@@ -8,4 +8,4 @@ func _ready():
 
 func start():
 	# TODO: move this config out of here maybe
-	LevelManager.load_level("1", 16)
+	LevelManager.start_new()
