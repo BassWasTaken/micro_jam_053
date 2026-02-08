@@ -6,8 +6,12 @@
 [ext_resource type="Script" uid="uid://cfhwgallh1jt5" path="res://project/scripts/main_menu/menu_option.gd" id="4_1ccrh"]
 [ext_resource type="AudioStream" uid="uid://mbpv1i6qijs6" path="res://project/assets/menu_select.wav" id="5_vw17v"]
 [ext_resource type="Script" uid="uid://cr6qefe0unvmr" path="res://project/scripts/victory_screen/hero_party_area.gd" id="6_be8m4"]
+[ext_resource type="Texture2D" uid="uid://jtbueh8bcvd3" path="res://project/assets/import/Menu_items/Deco.png" id="6_fly7v"]
 [ext_resource type="PackedScene" uid="uid://d3pusqmlqy4b8" path="res://project/scenes/victory_screen/hero_dummy.tscn" id="7_fly7v"]
 [ext_resource type="AudioStream" uid="uid://b7xng5t70hinm" path="res://project/assets/import/SFX 03/Game Win (2).wav" id="8_fdo2t"]
+[ext_resource type="Texture2D" uid="uid://chfiy0ascu84v" path="res://project/assets/import/Menu_items/Victory.png" id="9_1ccrh"]
+[ext_resource type="Texture2D" uid="uid://kjvs5ttc2gfv" path="res://project/assets/import/Menu_items/Lively_Castle.png" id="10_vw17v"]
+[ext_resource type="Texture2D" uid="uid://cl578e6300cox" path="res://project/assets/import/Menu_items/REY.png" id="11_vw17v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58sbv"]
 radius = 24.0
@@ -34,65 +38,21 @@ script = ExtResource("4_1ccrh")
 select_audio = NodePath("SelectSound")
 
 [node name="Polygon2D" type="Polygon2D" parent="MenuOption" unique_id=1098632324]
+visible = false
 color = Color(0.5279288, 0, 0.2818575, 1)
 polygon = PackedVector2Array(-23, -26, -24, 25, 29, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MenuOption" unique_id=466661896]
 shape = SubResource("CircleShape2D_58sbv")
 
-[node name="Label3" type="Label" parent="MenuOption" unique_id=1543551586]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -648.0
-offset_top = 6.0
-offset_right = 648.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 25
-text = "exit"
-horizontal_alignment = 1
-
 [node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=1185587007]
 stream = ExtResource("5_vw17v")
 
-[node name="Label" type="Label" parent="." unique_id=1244451492]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -264.0
-offset_right = 166.0
-offset_bottom = -174.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 65
-text = "YOU WON"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="." unique_id=744369289]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -131.5
-offset_top = -171.5
-offset_right = 150.5
-offset_bottom = -148.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "its so lively in the castle these days..."
-horizontal_alignment = 1
+[node name="Deco" type="Sprite2D" parent="MenuOption" unique_id=161852839]
+position = Vector2(-16, -1)
+rotation = 2.3770504
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("6_fly7v")
 
 [node name="HeroPartyArea" type="Node2D" parent="." unique_id=1978270054]
 position = Vector2(-382, -2)
@@ -105,3 +65,27 @@ hero_count = 14
 stream = ExtResource("8_fdo2t")
 volume_db = -9.26
 bus = &"Sfx"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1289154948]
+offset_left = -153.0
+offset_top = -266.0
+offset_right = 167.0
+offset_bottom = -181.0
+texture = ExtResource("9_1ccrh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=681622340]
+offset_left = -197.0
+offset_top = -182.0
+offset_right = 226.0
+offset_bottom = -147.0
+texture = ExtResource("10_vw17v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1754997878]
+offset_top = 231.0
+offset_right = 355.0
+offset_bottom = 271.0
+texture = ExtResource("11_vw17v")

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c66og5nwe48kp" path="res://project/scripts/pause_menu.gd" id="1_2lgnm"]
 [ext_resource type="PackedScene" uid="uid://bm0uk06q71ls3" path="res://project/scenes/volume_sliders.tscn" id="2_16v4v"]
+[ext_resource type="Texture2D" uid="uid://dseymvu4exx5f" path="res://project/assets/import/Menu_items/Pause_Box.png" id="2_414of"]
+[ext_resource type="Theme" uid="uid://y5sddoe28r5w" path="res://project/resources/pause_theme.tres" id="4_m3u2f"]
 
 [node name="PauseMenu" type="ColorRect" unique_id=1664473217 node_paths=PackedStringArray("pause_btn", "main_menu_btn")]
 anchors_preset = 15
@@ -29,6 +31,11 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1550000712]
+layout_mode = 2
+texture = ExtResource("2_414of")
+expand_mode = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=283381071]
 layout_mode = 2
 theme_override_constants/margin_left = 30
@@ -43,10 +50,12 @@ alignment = 1
 
 [node name="Resume" type="Button" parent="Panel/MarginContainer/Buttons" unique_id=1828671495]
 layout_mode = 2
+theme = ExtResource("4_m3u2f")
 text = "Resume"
 
 [node name="GoToMainMenu" type="Button" parent="Panel/MarginContainer/Buttons" unique_id=1427526873]
 layout_mode = 2
+theme = ExtResource("4_m3u2f")
 text = "Return to main menu"
 
 [node name="VolumeSliders" parent="." unique_id=1665707267 instance=ExtResource("2_16v4v")]
