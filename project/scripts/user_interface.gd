@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@export var alive_counter: Control
+
 @onready var pause_menu = $Base/PauseMenu
 @onready var game_over_screen = $Base/GameOverScreen
 
@@ -21,9 +23,12 @@ func toggle_pause():
 	pause_menu.visible = paused
 	get_tree().paused = paused
 
+func show_alive_count(enabled: bool):
+	alive_counter.visible = enabled
+
 func reset_to_main():
 	SceneManager.reset_to_main()
-	UserInterface.is_in_game_over_screen = false
+	show_alive_count(false)
 
 	if paused:
 		toggle_pause()

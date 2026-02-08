@@ -42,6 +42,7 @@ func _distribute_units(units, spawners):
 
 
 func start_new():
+	UserInterface.show_alive_count(true)
 	load_level("1", 16)
 
 
