@@ -5,6 +5,7 @@ extends Area2D
 
 @onready var sprite = $Sprite
 @onready var audio = $AudioStreamPlayer2D
+@onready var hitbox = $Hitbox
 
 @export var impact_sounds: Array[AudioStream]
 
@@ -20,7 +21,6 @@ func _ready() -> void:
 	# Allow bullet to be inside a wall until is has exited it
 	body_exited.connect(func(_body): has_wall_immunity = false)
 	sprite.look_at(sprite.global_position + direction)
-	
 
 func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
@@ -31,11 +31,20 @@ func hit_object(body: Node2D):
 	if body is TileMapLayer and has_wall_immunity:
 		return
 	
-	audio.stream = impact_sounds.pick_random()
 
 	if body.has_method("take_damage"):
 		body.take_damage(3)
-	queue_free()
+		
+	remove()
 
 func grab():
+	remove()
+	
+func remove():
+	audio.stream = impact_sounds.pick_random()
+	audio.play()
+	hitbox.set_deferred("disabled",true)
+	sprite.visible = false
+	await audio.finished
 	queue_free()
+	
