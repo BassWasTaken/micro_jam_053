@@ -1,15 +1,19 @@
 extends Node2D
 
 
-@export var hero_spawners : Array[Node2D]
+@export var hero_spawners: Array[Node2D]
+@export var debug_level := false
 
 func _ready():
 	distribute(LevelManager.heroes_initial_count)
+	if debug_level:
+		push_warning("DEBUG LEVEL ON! MAKE SURE ITS DISABLED BEFORE RELEASING")
 	# LevelManager.distribute_requested.connect(distribute)
 
 func distribute(units: int):
 	for s in hero_spawners:
-		s.hero_count = 0
+		if !debug_level:
+			s.hero_count = 0
 		s.count_heroes = false
 	var current_spawner_index = 0
 	while units > 0:

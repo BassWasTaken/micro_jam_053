@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="8_nt6ef"]
 [ext_resource type="TileSet" uid="uid://dyemdprbgfchb" path="res://project/resources/main_tileset.tres" id="8_rhesf"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="8_xuo8e"]
+[ext_resource type="Texture2D" uid="uid://chhnuh1p2smnr" path="res://project/assets/import/gokd.png" id="9_nt6ef"]
+[ext_resource type="Texture2D" uid="uid://bgcumiovb16e2" path="res://project/assets/import/lamp.png" id="10_plj1l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
 vertices = PackedVector2Array(698.21875, 386, -314.21875, 386, 411, 327, 543, 327, -97, 327, -321.5703, -629, -321.78125, -658, 705.78125, -658, 219, -629, 698.6406, 327, -314.64063, 327, -229, 327, 411, -57, 411, -441, 543, -441, 411, 75, 223, -57, 219, 7, -97, 75, -229, 7, 219, -249, 223, -245, 283, -249, 287, -245, 287, -441, 283, -437, 223, -441, 95, -437, 95, -181, -229, -181, -229, -441, 219, -441, 223, -629, 705.5703, -629)
@@ -74,3 +76,67 @@ metadata/_edit_lock_ = true
 [node name="MusicRequester" type="Node" parent="." unique_id=830214803]
 script = ExtResource("7_us1tu")
 song = ExtResource("8_nt6ef")
+
+[node name="Gokd" type="Sprite2D" parent="." unique_id=1062757628]
+position = Vector2(52, 740)
+texture = ExtResource("9_nt6ef")
+
+[node name="Gokd2" type="Sprite2D" parent="." unique_id=919142095]
+position = Vector2(1020, 733)
+texture = ExtResource("9_nt6ef")
+
+[node name="Lamp" type="Sprite2D" parent="." unique_id=2146418861]
+position = Vector2(53, 810)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp2" type="Sprite2D" parent="." unique_id=490314586]
+position = Vector2(335, 807)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp3" type="Sprite2D" parent="." unique_id=1938867486]
+position = Vector2(431, 808)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp4" type="Sprite2D" parent="." unique_id=1206572118]
+position = Vector2(525, 808)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp5" type="Sprite2D" parent="." unique_id=478153740]
+position = Vector2(613, 807)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp7" type="Sprite2D" parent="." unique_id=93732870]
+position = Vector2(136, 35)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp8" type="Sprite2D" parent="." unique_id=727760620]
+position = Vector2(207, 34)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp9" type="Sprite2D" parent="." unique_id=310701075]
+position = Vector2(291, 34)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp10" type="Sprite2D" parent="." unique_id=1279216059]
+position = Vector2(506, 29)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp11" type="Sprite2D" parent="." unique_id=960662305]
+position = Vector2(779, 37)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp12" type="Sprite2D" parent="." unique_id=2002752630]
+position = Vector2(861, 35)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp13" type="Sprite2D" parent="." unique_id=235933965]
+position = Vector2(982, 32)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp14" type="Sprite2D" parent="." unique_id=166146157]
+position = Vector2(569, 229)
+texture = ExtResource("10_plj1l")
+
+[node name="Lamp6" type="Sprite2D" parent="." unique_id=2002650679]
+position = Vector2(697, 809)
+texture = ExtResource("10_plj1l")

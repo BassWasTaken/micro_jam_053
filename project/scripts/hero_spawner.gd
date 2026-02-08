@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var hero_goal : Node2D
+@export var hero_goal: Node2D
 @export var hero_count = 4
 @export var initial_delay = 0.5
 @export var spawn_interval = 3
