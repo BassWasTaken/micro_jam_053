@@ -3,7 +3,7 @@ extends Node
 var levels_map = {
 	"1": {
 		"scene": preload("res://project/scenes/levels/level1.tscn"),
-		"next": "2"
+		"next": "end"
 	},
 	"2": {
 		"scene": preload("res://project/scenes/levels/level2.tscn"),
@@ -14,12 +14,12 @@ var levels_map = {
 		"next": "end"
 	},
 	"end": {
-		"scene": preload("res://project/scenes/testing/level_select.tscn"),
+		"scene": preload("res://project/scenes/levels/victory_scene.tscn"),
 		"next": null
 	},
 }
 
-var current_level_id : String
+var current_level_id: String
 var last_loaded_level = null
 var heroes_initial_count = 0
 var heroes_remaining = 0
