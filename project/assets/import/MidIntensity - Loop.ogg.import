@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://juom1uag6wrr"
+path="res://.godot/imported/MidIntensity - Loop.ogg-6a083ea57a1e809d1762d292402ec7a7.oggvorbisstr"
+
+[deps]
+
+source_file="res://project/assets/import/MidIntensity - Loop.ogg"
+dest_files=["res://.godot/imported/MidIntensity - Loop.ogg-6a083ea57a1e809d1762d292402ec7a7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
