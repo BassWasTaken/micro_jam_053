@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://clmheniby8xkd"]
 
-[ext_resource type="Script" path="res://project/scripts/level_config.gd" id="1_btpvr"]
+[ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_btpvr"]
 [ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="2_wqddh"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="3_lr6mp"]
 [ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="4_8w1yf"]
