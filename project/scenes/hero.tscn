@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://qysymjmniuec" path="res://project/scripts/hero.gd" id="1_3clfj"]
 [ext_resource type="Texture2D" uid="uid://dt6kq6st5ithh" path="res://project/assets/import/Anim_sprites.png" id="2_4yhmb"]
+[ext_resource type="AudioStream" uid="uid://db3ucfe8hw8ys" path="res://project/assets/import/SFX 02/Die Style 01 (4).wav" id="3_r0guk"]
+[ext_resource type="AudioStream" uid="uid://curbucc2wajd1" path="res://project/assets/import/SFX 02/Hit (9).wav" id="3_vruob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xwwwb"]
 radius = 16.0
@@ -84,6 +86,8 @@ corner_radius_bottom_left = 4
 [node name="Hero" type="CharacterBody2D" unique_id=967307088]
 collision_layer = 4
 script = ExtResource("1_3clfj")
+hitsound = ExtResource("3_vruob")
+diesound = ExtResource("3_r0guk")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=76643998]
 shape = SubResource("CircleShape2D_xwwwb")
@@ -97,6 +101,7 @@ polygon = PackedVector2Array(-16, -8, -8, 24, 0, 16, 8, 24, 16, -8, 8, -8, 8, -1
 path_desired_distance = 5.0
 
 [node name="Anim1" type="AnimatedSprite2D" parent="." unique_id=992498915]
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_kyrl5")
 autoplay = "default"
 frame_progress = 0.52590287
@@ -115,3 +120,6 @@ offset_bottom = 40.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_l4qi2")
 value = 100.0
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=709901114]
+bus = &"Vox"
