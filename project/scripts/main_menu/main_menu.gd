@@ -1,10 +1,11 @@
 extends Node
 
 @export var start_option: MenuOption
-@export var level_transition: LevelTransition
+@export var level_start_scene: PackedScene
 
 func _ready():
 	start_option.on_grab.connect(start)
 
 func start():
-	pass
+	# TODO: move this config out of here maybe
+	LevelManager.load_level("1", 16)

@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://bpf00mrviar0k" path="res://project/scenes/levels/menu_scene.tscn" id="2_bk8yl"]
 [ext_resource type="PackedScene" uid="uid://cwlwa8xufsoxr" path="res://project/scenes/level_transition.tscn" id="2_tl761"]
 
-[node name="MainScene" type="Node2D" unique_id=1934839800 node_paths=PackedStringArray("level_transition", "scene_holder")]
+[node name="Node" type="Node" unique_id=401249621 node_paths=PackedStringArray("level_transition", "world_root")]
 script = ExtResource("1_c0jt4")
-level_transition = NodePath("")
+level_transition = NodePath("CanvasLayer/LevelTransition")
 initial_scene = ExtResource("2_bk8yl")
-scene_holder = NodePath("World")
+world_root = NodePath("World")
 
 [node name="World" type="Node2D" parent="." unique_id=1331739931]
 
-[node name="LevelTransition" parent="." unique_id=1371454848 instance=ExtResource("2_tl761")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1952528861]
+
+[node name="LevelTransition" parent="CanvasLayer" unique_id=1371454848 instance=ExtResource("2_tl761")]
