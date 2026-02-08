@@ -3,7 +3,7 @@ extends Node
 var levels_map = {
 	"1": {
 		"scene": preload("res://project/scenes/levels/level1.tscn"),
-		"next": "end"
+		"next": "2"
 	},
 	"2": {
 		"scene": preload("res://project/scenes/levels/level2.tscn"),
@@ -14,7 +14,7 @@ var levels_map = {
 		"next": "end"
 	},
 	"end": {
-		"scene": preload("res://project/scenes/levels/victory_scene.tscn"),
+		"scene": preload("res://project/scenes/victory_screen/victory_scene.tscn"),
 		"next": null
 	},
 }
