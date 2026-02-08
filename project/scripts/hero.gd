@@ -3,9 +3,10 @@ extends CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 @onready var hp_bar = $HpBar
 @onready var sound = $AudioStreamPlayer2D
+@onready var hitbox = $Hitbox
 
-@export var hitsound: AudioStream
-@export var diesound: AudioStream
+@export var hit_sounds: Array[AudioStream]
+@export var die_sounds: Array[AudioStream]
 @export var speed = 50
 
 var max_hp = 10.0
@@ -40,13 +41,16 @@ func take_damage(amount):
 		die()
 	else:
 		sound.stop()
-		sound.stream=hitsound
+		sound.stream=hit_sounds.pick_random()
 		sound.play()
 
 func die():
 	sound.stop()
-	sound.stream=diesound
+	sound.stream=die_sounds.pick_random()
 	sound.play()
+	hitbox.set_deferred("disabled",true)
+	visible = false
+	active = false
 	LevelManager.hero_died_event()
 	await sound.finished 
 	queue_free()
