@@ -67,6 +67,8 @@ func load_level(world_node, level_id, starting_units):
 		_heroes_initial_count_for_reset_after_losing = heroes_initial_count
 
 func hero_reached_goal_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_on_goal += 1
 	if heroes_on_goal >= heroes_remaining:
 		var next_level_id = levels_map[current_level_id]["next"]
@@ -80,6 +82,8 @@ func hero_reached_goal_event():
 			print("no more levels to load")
 
 func hero_died_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_remaining -= 1
 	if heroes_remaining <= 0:
 		UserInterface.show_game_over_screen()
