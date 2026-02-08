@@ -44,4 +44,5 @@ texture = SubResource("AtlasTexture_py3da")
 offset = Vector2(9.291111, -0.80293655)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2049384345]
+volume_db = -10.0
 bus = &"Sfx"
