@@ -18,7 +18,7 @@
 atlas = ExtResource("2_i7o5h")
 region = Rect2(704, 64, 64, 64)
 
-[node name="Bullet" type="Area2D" unique_id=411405303]
+[node name="Bullet" type="Area2D" unique_id=411405303 groups=["bullet"]]
 collision_layer = 16
 collision_mask = 5
 script = ExtResource("1_eevmn")

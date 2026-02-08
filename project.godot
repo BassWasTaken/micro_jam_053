@@ -41,6 +41,7 @@ project/assembly_name="microjam 053"
 [global_group]
 
 navigation=""
+bullet=""
 
 [input]
 

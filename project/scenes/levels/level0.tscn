@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_dceo6"]
 [ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="2_3awqn"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="3_0nqiu"]
+[ext_resource type="Texture2D" uid="uid://dt6kq6st5ithh" path="res://project/assets/import/Anim_sprites.png" id="3_3awqn"]
 [ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="4_u7pkq"]
 [ext_resource type="TileSet" uid="uid://dyemdprbgfchb" path="res://project/resources/main_tileset.tres" id="5_ip2q8"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="6_f3cjc"]
@@ -10,9 +11,93 @@
 [ext_resource type="Script" uid="uid://b1gcqy8ftt3c1" path="res://project/scripts/audio/music_requester.gd" id="8_usqob"]
 [ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="9_nd3gr"]
 
+[sub_resource type="GDScript" id="GDScript_0nqiu"]
+script/source = "extends Node2D
+
+@onready var ballista = $\"../Ballista5\"
+
+var elapsed_time = 0
+var showing = false
+
+func _ready():
+	visible = false
+
+func _process(delta: float) -> void:
+	if ballista.disabled:
+		queue_free() # the player got it, destroy this tutorial node
+	if !showing:
+		elapsed_time += delta
+		if elapsed_time > 1.5:
+			showing = true
+			visible = true
+			$Sprite2D.start_anim()
+	
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nqiu"]
+atlas = ExtResource("3_3awqn")
+region = Rect2(407, 197, 94, 62)
+
+[sub_resource type="GDScript" id="GDScript_3awqn"]
+script/source = "extends Sprite2D
+
+var tween
+
+func _ready():
+	modulate = Color(1,1,1,0)
+
+func start_anim() -> void:
+	tween = create_tween()
+	tween.set_loops()
+	tween.tween_property(self, \"modulate\", Color(1,1,1,0.5), 0.5)
+	tween.tween_property(self, \"modulate\", Color(1,1,1,0), 0.5)
+"
+
+[sub_resource type="GDScript" id="GDScript_u7pkq"]
+script/source = "extends Node2D
+
+var elapsed_time = 0
+var showing = false
+
+func _ready():
+	visible = false
+
+var target_bullet : Node2D
+	
+func store_target_bullet():
+	var bullets = get_tree().get_nodes_in_group(\"bullet\")
+	#var lowest_bullet = null
+	#for bullet in bullets:
+		#if !lowest_bullet:
+			#lowest_bullet = bullet
+		#else:
+			#if lowest_bullet.global_position.y < bullet.global_position.y:
+				#lowest_bullet = bullet
+	#target_bullet = lowest_bullet
+	
+	target_bullet = bullets[4] if bullets.size() > 3 else null
+
+func _process(delta: float) -> void:
+	if showing:
+		if !is_instance_valid(target_bullet):
+			queue_free() # if bullet was destroyed, destroy ghost
+		else:
+			global_position = target_bullet.global_position
+	if !showing:
+		elapsed_time += delta
+		if elapsed_time > 4:
+			showing = true
+			store_target_bullet()
+			visible = true
+			$Sprite2D.start_anim()
+	
+	
+"
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
-vertices = PackedVector2Array(-126, 399.39844, -524.7031, 402.7422, -513.28906, -763, -126, -763, 130, 397.2578, 126, 397.28906, 126, 258, 130, 254, 2, 254, -2, 258, -2, -578, 2, -574, 126, -578, 254, -574, 258, -578, 258, 258, 254, 258, 130, -578, 130, -763, 126, -763, 847.9531, 391.2422, 382, 395.14844, 382, -763, 846.0469, -763, 130, 2, 126, 2, 126, -258, 130, -258)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(14, 15, 16, 13), PackedInt32Array(17, 14, 13), PackedInt32Array(17, 13, 12), PackedInt32Array(18, 17, 12, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 26, 27)])
+vertices = PackedVector2Array(-126, 399.39844, -524.7031, 402.7422, -513.28906, -763, -126, -763, 130, 2, 126, 2, 126, -258, 130, -258, 847.9531, 391.2422, 382, 395.14844, 382, -763, 846.0469, -763, 258, -578, 258, 258, 254, 254, 254, -574, 130, -578, 2, -574, 194, 258, 2, 254, 194, 396.71875, 62, 397.82813, 62, 258, -2, 258, -2, -578, 126, -578, 130, -763, 126, -763)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 12, 15, 17), PackedInt32Array(14, 13, 18, 19), PackedInt32Array(20, 21, 22, 18), PackedInt32Array(19, 18, 22), PackedInt32Array(19, 22, 23), PackedInt32Array(19, 23, 24, 17), PackedInt32Array(17, 24, 25), PackedInt32Array(16, 17, 25), PackedInt32Array(26, 16, 25, 27)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-543, -793, -555, 433, 878, 421, 876, -793)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
@@ -22,7 +107,7 @@ agent_radius = 30.0
 
 [node name="LevelConfig" type="Node2D" parent="." unique_id=1524889533 node_paths=PackedStringArray("hero_spawners")]
 script = ExtResource("1_dceo6")
-hero_spawners = [NodePath("../HeroSpawner1")]
+hero_spawners = [NodePath("../HeroSpawner1"), NodePath("../HeroSpawner2")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1782817460]
 position = Vector2(485.00003, 322)
@@ -32,10 +117,39 @@ zoom = Vector2(0.565, 0.565)
 [node name="Hand2" parent="." unique_id=1121984249 instance=ExtResource("2_3awqn")]
 position = Vector2(485, 386)
 
+[node name="HandBallistaGhost" type="Node2D" parent="." unique_id=1896844030]
+position = Vector2(328, -96)
+script = SubResource("GDScript_0nqiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="HandBallistaGhost" unique_id=1069596434]
+modulate = Color(1, 1, 1, 0.39215687)
+z_index = 1
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_0nqiu")
+script = SubResource("GDScript_3awqn")
+
+[node name="HandArrowGhost" type="Node2D" parent="." unique_id=253089276]
+script = SubResource("GDScript_u7pkq")
+
+[node name="Sprite2D" type="Sprite2D" parent="HandArrowGhost" unique_id=1184182509]
+modulate = Color(1, 1, 1, 0.39215687)
+z_index = 1
+position = Vector2(-24, 0)
+texture = SubResource("AtlasTexture_0nqiu")
+script = SubResource("GDScript_3awqn")
+
 [node name="HeroSpawner1" parent="." unique_id=245380419 node_paths=PackedStringArray("hero_goal") instance=ExtResource("3_0nqiu")]
-position = Vector2(480, 923)
+position = Vector2(544, 928)
 hero_goal = NodePath("../HeroGoal")
 hero_count = 20
+spawn_interval = 2
+count_heroes = true
+
+[node name="HeroSpawner2" parent="." unique_id=1770805751 node_paths=PackedStringArray("hero_goal") instance=ExtResource("3_0nqiu")]
+position = Vector2(416, 928)
+hero_goal = NodePath("../HeroGoal")
+hero_count = 10
+initial_delay = 2.0
 spawn_interval = 2
 count_heroes = true
 
@@ -43,11 +157,8 @@ count_heroes = true
 position = Vector2(480, -157)
 
 [node name="tilemapMainLayer" type="TileMapLayer" parent="." unique_id=2115166577 groups=["navigation"]]
-tile_map_data = PackedByteArray("AAAFAP3/AgACAAMAAAAFAPz/AgACAAIAAAAGAPz/AgADAAIAAAAIAPz/AgABAAIAAAAGAP3/AgADAAMAAAAIAP3/AgABAAMAAAAGAP7/AgAEAAQAAAAGAP//AgABAAcAAAAGAAAAAgABAAEAAAAGAAEAAgABAAIAAAAGAAIAAgADAAIAADAGAAMAAgABAAIAAAAGAA0AAgABAAEAAFAGAA4AAgADAAIAAAAHAP7/AgABAAcAAAAHAP//AgABAAcAAAAHAA0AAgABAAcAAAAHAA4AAgABAAcAAAAIAP7/AgABAAQAAAAIAP//AgABAAcAAAAIAAAAAgAEAAMAAAAIAAEAAgADAAIAAAAIAAIAAgADAAIAAAAIAAMAAgADAAIAAAAIAA0AAgADAAMAADAIAA4AAgABAAIAAAAHAPz/AgABAAcAAAAHAP3/AgABAAcAAAAHAAEAAgACAAIAAAAHAAIAAgACAAIAAAAHAAMAAgACAAIAAAAHAAAAAgACAAEAAAAKAPz/AgACAAIAAAAKAP3/AgACAAIAAAAKAP7/AgABAAIAAAAKAP//AgABAAIAAAAKAAAAAgADAAIAADAKAAEAAgADAAIAADAKAAIAAgADAAIAADAKAAMAAgADAAIAADAKAAQAAgADAAIAADAKAAUAAgABAAIAAAAKAAYAAgABAAIAAAAKAAcAAgADAAIAADAKAAgAAgADAAIAADAKAAkAAgADAAIAADAKAAoAAgADAAIAADAKAAsAAgADAAIAADAKAAwAAgABAAIAAAAKAA0AAgACAAIAAAAKAA4AAgACAAIAAAAEAPz/AgACAAIAAAAEAP3/AgACAAIAAAAEAP7/AgADAAIAAAAEAP//AgADAAIAAAAEAAAAAgADAAIAAAAEAAEAAgADAAIAAAAEAAIAAgADAAIAAAAEAAMAAgADAAIAAAAEAAQAAgADAAIAAAAEAAUAAgADAAIAAAAEAAYAAgADAAIAAAAEAAcAAgADAAIAAAAEAAgAAgADAAIAAAAEAAkAAgADAAIAAAAEAAoAAgADAAIAAAAEAAsAAgADAAIAAAAEAAwAAgADAAIAAAAEAA0AAgACAAIAAAAEAA4AAgACAAIAAAAFAP7/AgACAAQAAAAJAP7/AgACAAQAAAAJAPz/AgACAAIAAAAJAP3/AgACAAMAAAAFAP//AgABAAcAAAAFAAAAAgABAAcAAAAFAAEAAgABAAcAAAAFAAIAAgABAAcAAAAFAAMAAgABAAcAAAAFAA0AAgADAAIAAGAFAA4AAgACAAIAAAAJAP//AgABAAcAAAAJAAAAAgABAAcAAAAJAAEAAgABAAcAAAAJAAIAAgABAAcAAAAJAAMAAgABAAcAAAAJAA0AAgADAAIAAGAJAA4AAgACAAIAAAAFAAkAAgABAAcAAAAFAAoAAgABAAcAAAAFAAsAAgABAAcAAAAFAAwAAgABAAcAAAAGAAkAAgABAAIAAAAGAAoAAgABAAMAAAAGAAsAAgABAAQAAAAGAAwAAgABAAcAAAAHAAkAAgACAAIAAAAHAAoAAgACAAMAAAAHAAsAAgACAAQAAAAHAAwAAgABAAcAAAAIAAkAAgADAAIAAAAIAAoAAgADAAMAAAAIAAsAAgAEAAQAAAAIAAwAAgAEAAcAAAAJAAkAAgABAAcAAAAJAAoAAgABAAcAAAAJAAsAAgABAAcAAAAJAAwAAgABAAcAAAAJAAgAAgACAAcAAAAJAAcAAgACAAcAAAAJAAYAAgACAAcAAAAJAAUAAgACAAcAAAAJAAQAAgACAAcAAAAFAAgAAgACAAcAAAAFAAcAAgACAAcAAAAFAAYAAgACAAcAAAAFAAUAAgACAAcAAAAFAAQAAgACAAcAAAAIAAgAAgADAAIAAAAIAAcAAgADAAIAAAAIAAYAAgADAAIAAAAIAAUAAgADAAIAAAAIAAQAAgADAAIAAAAGAAQAAgADAAIAADAGAAUAAgADAAIAADAGAAYAAgADAAIAADAGAAcAAgADAAIAADAGAAgAAgADAAIAADA=")
+tile_map_data = PackedByteArray("AAAFAP3/AgACAAMAAAAFAPz/AgACAAIAAAAGAPz/AgADAAIAAAAIAPz/AgABAAIAAAAGAP3/AgADAAMAAAAIAP3/AgABAAMAAAAGAP7/AgAEAAQAAAAGAP//AgABAAcAAAAGAAAAAgABAAEAAAAGAAEAAgABAAIAAAAGAAIAAgADAAIAADAGAAMAAgABAAIAAAAHAP7/AgABAAcAAAAHAP//AgABAAcAAAAHAA0AAgABAAcAAAAHAA4AAgABAAcAAAAIAP7/AgABAAQAAAAIAP//AgABAAcAAAAIAAAAAgAEAAMAAAAIAAEAAgADAAIAAAAIAAIAAgADAAIAAAAIAAMAAgADAAIAAAAHAPz/AgABAAcAAAAHAP3/AgABAAcAAAAHAAEAAgACAAIAAAAHAAIAAgACAAIAAAAHAAMAAgACAAIAAAAHAAAAAgACAAEAAAAKAPz/AgACAAIAAAAKAP3/AgACAAIAAAAKAP7/AgABAAIAAAAKAP//AgABAAIAAAAKAAAAAgADAAIAADAKAAEAAgADAAIAADAKAAIAAgADAAIAADAKAAMAAgADAAIAADAKAAQAAgADAAIAADAKAAUAAgABAAIAAAAKAAYAAgABAAIAAAAKAAcAAgADAAIAADAKAAgAAgADAAIAADAKAAkAAgADAAIAADAKAAoAAgADAAIAADAKAAsAAgADAAIAADAKAAwAAgABAAIAAAAKAA0AAgACAAIAAAAKAA4AAgACAAIAAAAEAPz/AgACAAIAAAAEAP3/AgACAAIAAAAEAP7/AgADAAIAAAAEAP//AgADAAIAAAAEAAAAAgADAAIAAAAEAAEAAgADAAIAAAAEAAIAAgADAAIAAAAEAAMAAgADAAIAAAAEAAQAAgADAAIAAAAEAAUAAgADAAIAAAAEAAYAAgADAAIAAAAEAAcAAgADAAIAAAAEAAgAAgADAAIAAAAEAAkAAgADAAIAAAAEAAoAAgADAAIAAAAEAAsAAgADAAIAAAAEAAwAAgADAAIAAAAEAA0AAgACAAIAAAAEAA4AAgACAAIAAAAFAP7/AgACAAQAAAAJAP7/AgACAAQAAAAJAPz/AgACAAIAAAAJAP3/AgACAAMAAAAFAP//AgABAAcAAAAFAAAAAgABAAcAAAAFAAEAAgABAAcAAAAFAAIAAgABAAcAAAAFAAMAAgABAAcAAAAFAA0AAgABAAEAAFAFAA4AAgADAAIAAAAJAP//AgABAAcAAAAJAAAAAgABAAcAAAAJAAEAAgABAAcAAAAJAAIAAgABAAcAAAAJAAMAAgABAAcAAAAJAA0AAgADAAMAADAJAA4AAgABAAIAAAAFAAkAAgABAAcAAAAFAAoAAgABAAcAAAAFAAsAAgABAAcAAAAFAAwAAgABAAcAAAAGAAkAAgABAAIAAAAGAAoAAgABAAMAAAAGAAsAAgABAAQAAAAGAAwAAgABAAcAAAAHAAkAAgACAAIAAAAHAAoAAgACAAMAAAAHAAsAAgACAAQAAAAHAAwAAgABAAcAAAAIAAkAAgADAAIAAAAIAAoAAgADAAMAAAAIAAsAAgAEAAQAAAAIAAwAAgABAAcAAAAJAAkAAgABAAcAAAAJAAoAAgABAAcAAAAJAAsAAgABAAcAAAAJAAwAAgABAAcAAAAJAAgAAgACAAcAAAAJAAcAAgACAAcAAAAJAAYAAgACAAcAAAAJAAUAAgACAAcAAAAJAAQAAgACAAcAAAAFAAgAAgACAAcAAAAFAAcAAgACAAcAAAAFAAYAAgACAAcAAAAFAAUAAgACAAcAAAAFAAQAAgACAAcAAAAIAAgAAgADAAIAAAAIAAcAAgADAAIAAAAIAAYAAgADAAIAAAAIAAUAAgADAAIAAAAIAAQAAgADAAIAAAAGAAQAAgADAAIAADAGAAUAAgADAAIAADAGAAYAAgADAAIAADAGAAcAAgADAAIAADAGAAgAAgADAAIAADAIAA0AAgABAAcAAAAIAA4AAgABAAcAAAAGAA4AAgABAAcAAAAGAA0AAgABAAcAAAA=")
 tile_set = ExtResource("5_ip2q8")
-
-[node name="Ballista3" parent="." unique_id=581751397 instance=ExtResource("6_f3cjc")]
-position = Vector2(609, -95)
 
 [node name="Ballista5" parent="." unique_id=984022528 instance=ExtResource("6_f3cjc")]
 position = Vector2(352, -95)
