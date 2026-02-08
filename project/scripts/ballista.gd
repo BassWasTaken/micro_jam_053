@@ -4,13 +4,19 @@ extends Area2D
 @export var disable_timer: Timer
 @export var tower_visual: Polygon2D
 @export var bullet_scene: PackedScene
-@export var disable_sound: AudioStreamPlayer
+@onready var audio = $AudioStreamPlayer
+
+@export var fire_sounds: Array[AudioStream]
+@export var disable_sound: AudioStream
+
+@onready var seal = $Seal
 
 var timer = Timer.new()
 
 var disabled = false
 
 func _ready() -> void:
+	seal.visible = false
 	add_child(timer)
 	timer.wait_time = 1
 	timer.start()
@@ -19,8 +25,8 @@ func _ready() -> void:
 	# reenable timer if timer expires
 	disable_timer.timeout.connect(enable)
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	$Seal.rotation_degrees += delta * 60
 
 func shoot():
 	if disabled:
@@ -30,6 +36,8 @@ func shoot():
 	# and GameManager.hand.is_grabbing_tower:
 	# 	return # dont shoot if tower is being grabbed
 
+	audio.stream = fire_sounds.pick_random()
+	
 	var b = bullet_scene.instantiate()
 	b.global_position = global_position
 	b.direction = bullet_direction
@@ -41,11 +49,14 @@ func grab():
 func enable():
 	disabled = false
 	tower_visual.modulate = Color.WHITE
+	seal.visible = false
 
 func disable():
 	if !disabled:
-		disable_sound.play()
+		audio.stream = disable_sound
+		audio.play()
 
 	disabled = true
 	disable_timer.start()
 	tower_visual.modulate = Color.DARK_GRAY
+	seal.visible = true

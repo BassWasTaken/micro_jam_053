@@ -3,23 +3,32 @@
 [ext_resource type="Script" uid="uid://bat4qabgg70o5" path="res://project/scripts/ballista.gd" id="1_sybw5"]
 [ext_resource type="PackedScene" uid="uid://bgsd66mcgck41" path="res://project/scenes/bullet.tscn" id="2_soy4f"]
 [ext_resource type="AudioStream" uid="uid://clnxqk6rq2r" path="res://project/assets/import/SFX 202602060850/Die (4).wav" id="3_1jd6d"]
+[ext_resource type="AudioStream" uid="uid://cqj3cy0hcae1c" path="res://project/assets/import/SFX 02/Hit (1).wav" id="3_8843q"]
+[ext_resource type="Texture2D" uid="uid://re4tgarajqqg" path="res://project/assets/import/Grid_Vampure.png" id="4_6w6gw"]
+[ext_resource type="Texture2D" uid="uid://dbt3kgcrcoskg" path="res://project/assets/seal.png" id="5_52dgh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_160yq"]
 radius = 24.0
 
-[node name="Ballista" type="Area2D" unique_id=1194676352 node_paths=PackedStringArray("disable_timer", "tower_visual", "disable_sound")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_52dgh"]
+atlas = ExtResource("4_6w6gw")
+region = Rect2(640, 128, 64, 128)
+
+[node name="Ballista" type="Area2D" unique_id=1194676352 node_paths=PackedStringArray("disable_timer", "tower_visual")]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_sybw5")
 disable_timer = NodePath("DisableTimer")
 tower_visual = NodePath("Tower")
 bullet_scene = ExtResource("2_soy4f")
-disable_sound = NodePath("DisableSound")
+fire_sounds = Array[AudioStream]([ExtResource("3_8843q")])
+disable_sound = ExtResource("3_1jd6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784935512]
 shape = SubResource("CircleShape2D_160yq")
 
 [node name="Tower" type="Polygon2D" parent="." unique_id=719787405]
+visible = false
 color = Color(1, 0, 0, 1)
 offset = Vector2(0, 8)
 polygon = PackedVector2Array(0, 16, 16, 0, 16, -8, 8, -8, 8, -32, -8, -32, -8, -8, -16, -8, -16, 0)
@@ -27,6 +36,13 @@ polygon = PackedVector2Array(0, 16, 16, 0, 16, -8, 8, -8, 8, -32, -8, -32, -8, -
 [node name="DisableTimer" type="Timer" parent="." unique_id=152438128]
 wait_time = 3.0
 
-[node name="DisableSound" type="AudioStreamPlayer" parent="." unique_id=955786551]
-stream = ExtResource("3_1jd6d")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=631578203]
 volume_db = -17.333
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=342500549]
+position = Vector2(0, -32)
+texture = SubResource("AtlasTexture_52dgh")
+
+[node name="Seal" type="Sprite2D" parent="." unique_id=1189272857]
+visible = false
+texture = ExtResource("5_52dgh")

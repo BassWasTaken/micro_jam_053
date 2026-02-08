@@ -13,5 +13,5 @@ func _ready():
 
 func start_level(level_id):
 	var starting_units = int($StartingUnitsInput.value)
-	LevelManager.load_level(world_node, level_id, starting_units)
+	LevelManager.load_level(level_id, starting_units)
 	visible = false

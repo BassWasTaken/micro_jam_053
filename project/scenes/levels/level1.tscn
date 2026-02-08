@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://clmheniby8xkd"]
 
-[ext_resource type="Script" uid="uid://b27u4b1hfnk60" path="res://project/scripts/level_config.gd" id="1_btpvr"]
+[ext_resource type="Script" path="res://project/scripts/level_config.gd" id="1_btpvr"]
 [ext_resource type="PackedScene" uid="uid://bl2cxks8gfwmb" path="res://project/scenes/hand.tscn" id="2_wqddh"]
 [ext_resource type="PackedScene" uid="uid://5ytmks2ap74m" path="res://project/scenes/hero_spawner.tscn" id="3_lr6mp"]
 [ext_resource type="PackedScene" uid="uid://4r5yqvcp7xyn" path="res://project/scenes/hero_goal.tscn" id="4_8w1yf"]
-[ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_u74ei"]
+[ext_resource type="AudioStream" uid="uid://civqvyv1f2dxq" path="res://project/assets/import/MidIntensity - Intro.ogg" id="5_btpvr"]
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_ssw8u"]
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_lklv8"]
 [ext_resource type="PackedScene" uid="uid://bsjgl0rdnan6f" path="res://project/scenes/half-wall.tscn" id="8_gnl8o"]
@@ -38,7 +38,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
 agent_radius = 32.0
 
-[node name="PrototypeWithGrid" type="Node2D" unique_id=1443434043]
+[node name="PrototypeWithGrid2" type="Node2D" unique_id=1443434043]
 
 [node name="LevelConfig" type="Node2D" parent="." unique_id=1213950458 node_paths=PackedStringArray("hero_spawners")]
 script = ExtResource("1_btpvr")
@@ -68,7 +68,7 @@ count_heroes = true
 position = Vector2(-600, -104)
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2128074938]
-stream = ExtResource("5_u74ei")
+stream = ExtResource("5_btpvr")
 autoplay = true
 bus = &"Music"
 

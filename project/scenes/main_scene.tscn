@@ -1,8 +1,17 @@
-[gd_scene format=3 uid="uid://cgdkevl8iumnd"]
+[gd_scene format=3 uid="uid://b6sf8qwakmwds"]
 
 [ext_resource type="Script" uid="uid://c1geiqa2dvwes" path="res://project/scripts/main_scene.gd" id="1_c0jt4"]
+[ext_resource type="PackedScene" uid="uid://bpf00mrviar0k" path="res://project/scenes/levels/menu_scene.tscn" id="2_bk8yl"]
+[ext_resource type="PackedScene" uid="uid://cwlwa8xufsoxr" path="res://project/scenes/level_transition.tscn" id="2_tl761"]
 
-[node name="MainScene" type="Node2D" unique_id=1934839800]
+[node name="Node" type="Node" unique_id=401249621 node_paths=PackedStringArray("level_transition", "world_root")]
 script = ExtResource("1_c0jt4")
+level_transition = NodePath("CanvasLayer/LevelTransition")
+initial_scene = ExtResource("2_bk8yl")
+world_root = NodePath("World")
 
 [node name="World" type="Node2D" parent="." unique_id=1331739931]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1952528861]
+
+[node name="LevelTransition" parent="CanvasLayer" unique_id=1371454848 instance=ExtResource("2_tl761")]

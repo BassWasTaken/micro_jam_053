@@ -27,6 +27,8 @@ var heroes_on_goal = 0
 
 var _heroes_initial_count_for_reset_after_losing = 0
 
+signal distribute_requested(units: int)
+
 func _distribute_units(units, spawners):
 	for s in spawners:
 		s.hero_count = 0
@@ -37,26 +39,25 @@ func _distribute_units(units, spawners):
 		units -= 1
 		current_spawner_index = (current_spawner_index + 1) % spawners.size()
 
-func load_level(world_node, level_id, starting_units):
-	if last_loaded_level:
-		last_loaded_level.queue_free()
-
+func load_level(level_id, starting_units):
 	# temp condition to make the level select appear at the end
 	if level_id == "end":
-		world_node.add_child(levels_map["end"]["scene"].instantiate())
+		SceneManager.transition_to_scene(levels_map["end"]["scene"])
+		# world_node.add_child(levels_map["end"]["scene"].instantiate())
 		return
 
-	var new_level : Node2D = levels_map[level_id]["scene"].instantiate()
 
-	var level_config = new_level.find_child("LevelConfig")
-	if level_config:
-		_distribute_units(starting_units, level_config.hero_spawners)
-	else:
-		push_warning("Unable to find LevelConfig node")
+	# var level_config = new_level.find_child("LevelConfig")
+	# if level_config:
+	# 	_distribute_units(starting_units, level_config.hero_spawners)
+	# else:
+	# 	push_warning("Unable to find LevelConfig node")
 
+	var new_level = levels_map[level_id]["scene"]
 	await get_tree().process_frame
 
-	world_node.add_child(new_level)
+	SceneManager.transition_to_scene(new_level)
+	distribute_requested.emit(starting_units)
 
 	current_level_id = level_id
 	last_loaded_level = new_level
@@ -67,12 +68,13 @@ func load_level(world_node, level_id, starting_units):
 		_heroes_initial_count_for_reset_after_losing = heroes_initial_count
 
 func hero_reached_goal_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_on_goal += 1
 	if heroes_on_goal >= heroes_remaining:
 		var next_level_id = levels_map[current_level_id]["next"]
 		if next_level_id:
 			load_level(
-				last_loaded_level.get_parent(),
 				next_level_id,
 				heroes_remaining
 			)
@@ -80,6 +82,8 @@ func hero_reached_goal_event():
 			print("no more levels to load")
 
 func hero_died_event():
+	if !current_level_id:
+		return # load_level was not called, this is a test scene
 	heroes_remaining -= 1
 	if heroes_remaining <= 0:
 		UserInterface.show_game_over_screen()
