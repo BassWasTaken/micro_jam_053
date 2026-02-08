@@ -9,6 +9,9 @@
 [ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="7_8w1yf"]
 [ext_resource type="PackedScene" uid="uid://d4am6xfgck7ur" path="res://project/scenes/ballista_hz.tscn" id="8_hoqpf"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="10_4ykh6"]
+[ext_resource type="Texture2D" uid="uid://bl8y4851ta2jn" path="res://project/assets/import/chest.png" id="10_lr6mp"]
+[ext_resource type="Texture2D" uid="uid://chhnuh1p2smnr" path="res://project/assets/import/gokd.png" id="11_8w1yf"]
+[ext_resource type="Texture2D" uid="uid://bgcumiovb16e2" path="res://project/assets/import/lamp.png" id="12_u74ei"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
 vertices = PackedVector2Array(-832, 576, 10.90625, 576, -957.4922, 611.77344, 384, -320, 640, -256, 640, -128, 256, -128, -512, -192, -384, -320, 960, -64, 960, 256, 832, 128, 832, -256, 256, 256, 256, 128, 570.25, -792.4922, 594.7422, -768, 448, -768, 384, -832, -950.27344, 128, -832, 256, 128, 128, 128, 256, 256, 566.9375, 128, 571.6719, 832, -865.84375, 1333.9688, -866.9297, 1333.9063, -768, 960, -768, 832, -320, 960, -192, -935.46875, -862.0625, 640, -865.4375, 640, -832, 586.6172, -832, 1333.5078, -192, 1333.4297, -64, 640, -320, 128, -128, -946.4375, -128, -832, -192, -832, -384, 448, -448, 640, -448, -832, -448, -448, -448, -448, -384, -512, -384, -384, -384, -832, -832)
@@ -82,3 +85,71 @@ delay = 0.71
 [node name="Ballista2" parent="." unique_id=679749904 instance=ExtResource("10_4ykh6")]
 position = Vector2(609, 153)
 delay = 0.98
+
+[node name="Chest" type="Sprite2D" parent="." unique_id=128300237]
+position = Vector2(-280, 102)
+texture = ExtResource("10_lr6mp")
+
+[node name="Gokd" type="Sprite2D" parent="." unique_id=1704122921]
+position = Vector2(414, 541)
+texture = ExtResource("11_8w1yf")
+
+[node name="Gokd2" type="Sprite2D" parent="." unique_id=1152120070]
+position = Vector2(674, 537)
+texture = ExtResource("11_8w1yf")
+
+[node name="Lamp" type="Sprite2D" parent="." unique_id=1680527540]
+position = Vector2(419, 601)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp2" type="Sprite2D" parent="." unique_id=2042901334]
+position = Vector2(676, 597)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp3" type="Sprite2D" parent="." unique_id=371379242]
+position = Vector2(69, 172)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp4" type="Sprite2D" parent="." unique_id=1697778483]
+position = Vector2(183, 170)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp5" type="Sprite2D" parent="." unique_id=1155736343]
+position = Vector2(291, 170)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp6" type="Sprite2D" parent="." unique_id=1744600330]
+position = Vector2(394, 167)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp7" type="Sprite2D" parent="." unique_id=717619632]
+position = Vector2(-170, 37)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp8" type="Sprite2D" parent="." unique_id=1592928648]
+position = Vector2(-265, 33)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp9" type="Sprite2D" parent="." unique_id=262192714]
+position = Vector2(-396, 36)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp10" type="Sprite2D" parent="." unique_id=886182799]
+position = Vector2(861, 25)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp11" type="Sprite2D" parent="." unique_id=1175028402]
+position = Vector2(990, 24)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp12" type="Sprite2D" parent="." unique_id=2074360288]
+position = Vector2(544, 162)
+texture = ExtResource("12_u74ei")
+
+[node name="Lamp13" type="Sprite2D" parent="." unique_id=820053289]
+position = Vector2(671, 158)
+texture = ExtResource("12_u74ei")
+
+[node name="Gokd3" type="Sprite2D" parent="." unique_id=457185135]
+position = Vector2(-231, 206)
+texture = ExtResource("11_8w1yf")
