@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c7yy7xghf3yjv"]
+
+[ext_resource type="Script" uid="uid://c5lecp0vnubfe" path="res://project/scripts/main_menu/vampire_fella.gd" id="1_he0nq"]
+[ext_resource type="Texture2D" uid="uid://pdidrrhcok2w" path="res://project/assets/import/Menu_items/vamp sheet.png" id="2_2ajr7"]
+[ext_resource type="AudioStream" uid="uid://bcu4p37wh3gmx" path="res://project/assets/import/SFX 03/Click Style 01 (2).wav" id="3_npimv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58sbv"]
+radius = 33.24154
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3tg"]
+atlas = ExtResource("2_2ajr7")
+region = Rect2(148, 0, 148, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qalks"]
+atlas = ExtResource("2_2ajr7")
+region = Rect2(296, 0, 148, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtd8k"]
+atlas = ExtResource("2_2ajr7")
+region = Rect2(444, 0, 148, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3rm1"]
+atlas = ExtResource("2_2ajr7")
+region = Rect2(0, 0, 148, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr6w6"]
+atlas = ExtResource("2_2ajr7")
+region = Rect2(148, 0, 148, 136)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_px1q1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qalks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtd8k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_b3rm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr6w6")
+}],
+"loop": false,
+"name": &"nudge",
+"speed": 5.0
+}]
+
+[node name="VampireFella" type="Area2D" unique_id=1908353234 node_paths=PackedStringArray("anim_player", "nudge_sfx")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_he0nq")
+anim_player = NodePath("AnimatedSprite2D")
+nudge_sfx = NodePath("NudgeSound")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=877059257]
+shape = SubResource("CircleShape2D_58sbv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1965525480]
+sprite_frames = SubResource("SpriteFrames_px1q1")
+animation = &"idle"
+
+[node name="NudgeSound" type="AudioStreamPlayer" parent="." unique_id=70424514]
+stream = ExtResource("3_npimv")
+volume_db = -6.411
+pitch_scale = 1.72
+bus = &"Sfx"

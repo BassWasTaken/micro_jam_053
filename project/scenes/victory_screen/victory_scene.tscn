@@ -14,9 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cl578e6300cox" path="res://project/assets/import/Menu_items/REY.png" id="11_vw17v"]
 [ext_resource type="Script" uid="uid://b1gcqy8ftt3c1" path="res://project/scripts/audio/music_requester.gd" id="13_px1q1"]
 [ext_resource type="Resource" uid="uid://ch68iafkw7wxm" path="res://project/resources/audio/low_intensity.tres" id="14_gi3tg"]
+[ext_resource type="PackedScene" uid="uid://c7yy7xghf3yjv" path="res://project/scenes/vampire_fella.tscn" id="15_gi3tg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_58sbv"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi3tg"]
+size = Vector2(370, 20)
 
 [node name="VictoryScene" type="Node2D" unique_id=251242985 node_paths=PackedStringArray("exit_grabber", "win_sfx")]
 script = ExtResource("1_xe60i")
@@ -32,12 +33,13 @@ tile_set = ExtResource("2_fdo2t")
 [node name="Hand" parent="." unique_id=1121984249 instance=ExtResource("3_vcu6o")]
 position = Vector2(-318, 13)
 
-[node name="MenuOption" type="Area2D" parent="." unique_id=997503326 node_paths=PackedStringArray("select_audio")]
+[node name="MenuOption" type="Area2D" parent="." unique_id=997503326 node_paths=PackedStringArray("select_audio", "label")]
 position = Vector2(387, 255)
 collision_layer = 8
-collision_mask = 0
+collision_mask = 64
 script = ExtResource("4_1ccrh")
 select_audio = NodePath("SelectSound")
+label = NodePath("Label")
 
 [node name="Polygon2D" type="Polygon2D" parent="MenuOption" unique_id=1098632324]
 visible = false
@@ -45,16 +47,31 @@ color = Color(0.5279288, 0, 0.2818575, 1)
 polygon = PackedVector2Array(-23, -26, -24, 25, 29, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MenuOption" unique_id=466661896]
-shape = SubResource("CircleShape2D_58sbv")
+position = Vector2(-175, 0)
+shape = SubResource("RectangleShape2D_gi3tg")
 
 [node name="SelectSound" type="AudioStreamPlayer" parent="MenuOption" unique_id=1185587007]
 stream = ExtResource("5_vw17v")
 
-[node name="Deco" type="Sprite2D" parent="MenuOption" unique_id=161852839]
+[node name="Label" type="Control" parent="MenuOption" unique_id=1129832133]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Deco" type="Sprite2D" parent="MenuOption/Label" unique_id=161852839]
 position = Vector2(-16, -1)
 rotation = 2.3770504
 scale = Vector2(0.155, 0.155)
 texture = ExtResource("6_fly7v")
+
+[node name="TextureRect3" type="TextureRect" parent="MenuOption/Label" unique_id=1754997878]
+layout_mode = 0
+offset_left = -387.0
+offset_top = -24.0
+offset_right = -32.0
+offset_bottom = 16.0
+texture = ExtResource("11_vw17v")
 
 [node name="HeroPartyArea" type="Node2D" parent="." unique_id=1978270054]
 position = Vector2(-382, -2)
@@ -86,12 +103,9 @@ texture = ExtResource("10_vw17v")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1754997878]
-offset_top = 231.0
-offset_right = 355.0
-offset_bottom = 271.0
-texture = ExtResource("11_vw17v")
-
 [node name="MusicRequester" type="Node" parent="." unique_id=1536365479]
 script = ExtResource("13_px1q1")
 song = ExtResource("14_gi3tg")
+
+[node name="VampireFella" parent="." unique_id=1908353234 instance=ExtResource("15_gi3tg")]
+position = Vector2(-288, 231)

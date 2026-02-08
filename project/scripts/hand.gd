@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Hand
 
 @onready var open_hand_sprite = $OpenHand
 @onready var closed_hand_sprite = $ClosedHand
