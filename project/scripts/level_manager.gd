@@ -34,20 +34,21 @@ var _heroes_initial_count_for_reset_after_losing = 0
 signal distribute_requested(units: int)
 signal game_over
 
-func _distribute_units(units, spawners):
-	for s in spawners:
-		s.hero_count = 0
-		s.count_heroes = false
-	var current_spawner_index = 0
-	while units > 0:
-		spawners[current_spawner_index].hero_count += 1
-		units -= 1
-		current_spawner_index = (current_spawner_index + 1) % spawners.size()
+# func _distribute_units(units, spawners):
+# 	for s in spawners:
+# 		s.hero_count = 0
+# 		s.count_heroes = false
+
+# 	var current_spawner_index = 0
+# 	while units > 0:
+# 		spawners[current_spawner_index].hero_count += 1
+# 		units -= 1
+# 		current_spawner_index = (current_spawner_index + 1) % spawners.size()
 
 
 func start_new():
 	UserInterface.show_alive_count(true)
-	load_level("0", 16)
+	load_level("0", 10)
 
 
 func load_level(level_id, starting_units):
@@ -97,4 +98,5 @@ func hero_died_event():
 		return # load_level was not called, this is a test scene
 	heroes_remaining -= 1
 	if heroes_remaining <= 0:
+		print("game over")
 		game_over.emit()

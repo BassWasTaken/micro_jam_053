@@ -1,4 +1,5 @@
 extends Node2D
+class_name HeroSpawner
 
 @export var hero_goal: Node2D
 @export var hero_count = 4
@@ -11,12 +12,12 @@ var Hero = preload("res://project/scenes/hero.tscn")
 var timer_initial = Timer.new()
 var timer = Timer.new()
 
-func _ready() -> void:
-	if hero_count == 0:
-		return
-	if count_heroes:
-		LevelManager.heroes_remaining += hero_count
-	
+func start_spawning() -> void:
+	print("starts?", hero_count)
+	# if hero_count == 0:
+	# 	return
+	# if count_heroes:
+	# 	LevelManager.heroes_remaining = hero_count
 	add_child(timer_initial)
 	timer_initial.start(initial_delay)
 	timer_initial.connect("timeout", initial_spawn)

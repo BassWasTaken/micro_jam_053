@@ -25,7 +25,7 @@ agent_radius = 32.0
 
 [node name="LevelConfig" type="Node2D" parent="." unique_id=1213950458 node_paths=PackedStringArray("hero_spawners")]
 script = ExtResource("1_btpvr")
-hero_spawners = [NodePath("../HeroSpawner1"), NodePath("../HeroSpawner2")]
+hero_spawners = [NodePath("../HeroSpawner1"), NodePath("../HeroSpawner2"), NodePath("../HeroSpawner3")]
 
 [node name="Hand" parent="." unique_id=1121984249 instance=ExtResource("2_wqddh")]
 position = Vector2(465, 331)
