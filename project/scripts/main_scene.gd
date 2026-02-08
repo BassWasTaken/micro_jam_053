@@ -6,20 +6,19 @@ extends Node
 
 func _ready():
 	SceneManager.on_switch.connect(on_scene_load)
+	SceneManager.on_reset_to_main.connect(reset_to_main)
 	SceneManager.load_scene(initial_scene)
 
-	# LevelManager.load_level($World, "1", 12)
-	# UserInterface.go_to_main_menu_signal.connect(func():
-	# 	# TODO replace this when the main menu is implemented
-	# 	LevelManager.load_level($World, "1", 12)
-	# )
+
+func reset_to_main():
+	SceneManager.transition_to_scene(initial_scene)
+
 
 func on_scene_load(scene: PackedScene, transition: bool):
 	if transition:
 		level_transition.fade_out_level()
 		await level_transition.faded_out_level
 
-	print("done fadin")
 	# clear up old scenes
 	for child in world_root.get_children():
 		child.queue_free()
