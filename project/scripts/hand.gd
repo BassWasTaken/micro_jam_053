@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var open_hand_sprite = $OpenHand
 @onready var closed_hand_sprite = $ClosedHand
+@onready var hand_anim = $AnimatedSprite2D
 
 @export var speed = 300.0
 @export var accel = 3000.0
@@ -21,6 +22,10 @@ func _ready():
 	$GrabArea.connect("area_exited", clear_hovered_area)
 
 	GameManager.hand = self
+	
+	hand_anim.animation_finished.connect(func():
+		hand_anim.play("default")
+	)
 
 func _physics_process(delta: float) -> void:
 	if is_grabbing_tower:
@@ -46,6 +51,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta):
 	if Input.is_action_just_pressed("grab"):
+		hand_anim.play("grab")
 		for grabbable in grabbables:
 			grabbable.grab()
 
@@ -65,8 +71,8 @@ func _process(_delta):
 	# else:
 	# 	modulate = Color.WHITE
 
-	open_hand_sprite.visible = !is_grabbing_tower
-	closed_hand_sprite.visible = is_grabbing_tower
+	#open_hand_sprite.visible = !is_grabbing_tower
+	#closed_hand_sprite.visible = is_grabbing_tower
 
 func set_hovered_area(area):
 	if area.has_method("grab"):

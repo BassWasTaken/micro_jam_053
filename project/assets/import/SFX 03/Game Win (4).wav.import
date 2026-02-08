@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crgiqogre0h5a"
+path="res://.godot/imported/Game Win (4).wav-27929132ea19833a9f808bdcb6d63e8f.sample"
+
+[deps]
+
+source_file="res://project/assets/import/SFX 03/Game Win (4).wav"
+dest_files=["res://.godot/imported/Game Win (4).wav-27929132ea19833a9f808bdcb6d63e8f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

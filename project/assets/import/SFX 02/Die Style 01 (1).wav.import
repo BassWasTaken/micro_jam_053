@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://din2kob4w038p"
+path="res://.godot/imported/Die Style 01 (1).wav-7ff92cbf65d2b3f0c7263bb616b1cc36.sample"
+
+[deps]
+
+source_file="res://project/assets/import/SFX 02/Die Style 01 (1).wav"
+dest_files=["res://.godot/imported/Die Style 01 (1).wav-7ff92cbf65d2b3f0c7263bb616b1cc36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

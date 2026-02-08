@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://bgsd66mcgck41"]
 
 [ext_resource type="Script" uid="uid://c7i4myynpahoa" path="res://project/scripts/bullet.gd" id="1_eevmn"]
+[ext_resource type="Texture2D" uid="uid://re4tgarajqqg" path="res://project/assets/import/Grid_Vampure.png" id="2_i7o5h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ci6n7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py3da"]
+atlas = ExtResource("2_i7o5h")
+region = Rect2(704, 64, 64, 64)
 
 [node name="Bullet" type="Area2D" unique_id=411405303]
 collision_layer = 16
@@ -11,6 +16,7 @@ script = ExtResource("1_eevmn")
 wall_mask = 1
 
 [node name="Visuals" type="Polygon2D" parent="." unique_id=1971352736]
+visible = false
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-8, -8, -16, 0, -8, 8, 0, 16, 8, 8, 16, 0, 8, -8, 0, -16)
 
@@ -21,3 +27,9 @@ polygon = PackedVector2Array(-8, -8, -16, 0, -8, 8, 0, 16, 8, 8, 16, 0, 8, -8, 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=624112566]
 shape = SubResource("CircleShape2D_ci6n7")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=546161744]
+position = Vector2(0.11903, 0.48268127)
+scale = Vector2(-1, 1)
+texture = SubResource("AtlasTexture_py3da")
+offset = Vector2(9.291111, -0.80293655)

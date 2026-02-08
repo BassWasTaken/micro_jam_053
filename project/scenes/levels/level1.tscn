@@ -7,8 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://cjk3gvvqjfrlr" path="res://project/assets/import/HighIntensity Demo 01.mp3" id="5_u74ei"]
 [ext_resource type="PackedScene" uid="uid://curtjaxepqma6" path="res://project/scenes/wall.tscn" id="6_ssw8u"]
 [ext_resource type="PackedScene" uid="uid://bfd0swu11prsb" path="res://project/scenes/water.tscn" id="7_lklv8"]
-[ext_resource type="PackedScene" uid="uid://bsjgl0rdnan6f" path="res://project/scenes/half-wall.tscn" id="8_gnl8o"]
-[ext_resource type="PackedScene" uid="uid://b7fsien2307l1" path="res://project/scenes/tunnel.tscn" id="9_y5nnq"]
+[ext_resource type="PackedScene" path="res://project/scenes/half-wall.tscn" id="8_gnl8o"]
+[ext_resource type="PackedScene" path="res://project/scenes/tunnel.tscn" id="9_y5nnq"]
 [ext_resource type="PackedScene" uid="uid://vscjdn6nv5vk" path="res://project/scenes/ballista.tscn" id="10_4ykh6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_21c5t"]
