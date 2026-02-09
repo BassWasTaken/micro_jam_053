@@ -52,7 +52,7 @@ signal game_over
 
 func start_new():
 	UserInterface.show_alive_count(true)
-	load_level("0", 22)
+	load_level("0", 18)
 
 
 func load_level(level_id, starting_units):
