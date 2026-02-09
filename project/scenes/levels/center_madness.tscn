@@ -10,8 +10,8 @@
 [ext_resource type="Resource" uid="uid://c184t2hnuvysq" path="res://project/resources/audio/mid_intensity.tres" id="9_n6lct"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wjbml"]
-vertices = PackedVector2Array(514, 500.57813, 446, 501.21094, 446, 322, 514, 322, -62, 505.92188, -130, 506.54688, -130, 130, -62, 322, -130, -254, -574.0781, -254, -573.65625, -322, -130, -322, -576.4531, 130, -576.4297, 126, -130, 126, 446, 254, 446, -716.1094, 514, -715.78906, 514, -322, -130, -718.78906, -62, -718.46875, -62, 254, 871.5703, 254, 871.6797, 322, 514, 254, 870.6719, -322, 870.77344, -254, 514, -254)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(6, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(11, 19, 20, 21), PackedInt32Array(8, 11, 21), PackedInt32Array(14, 8, 21), PackedInt32Array(6, 14, 21, 7), PackedInt32Array(22, 23, 3, 24), PackedInt32Array(25, 26, 27, 18), PackedInt32Array(15, 18, 27), PackedInt32Array(15, 27, 24, 2), PackedInt32Array(7, 21, 15, 2), PackedInt32Array(2, 24, 3)])
+vertices = PackedVector2Array(514, 500.57813, 446, 501.21094, 446, 322, 514, 322, -62, 505.92188, -130, 506.54688, -130, 130, -62, 322, -130, -702, -571.2969, -702, -571.1797, -720.8594, 870.03906, -714.1328, -130, -254, -574.0781, -254, -573.65625, -322, -130, -322, -576.4531, 130, -576.4297, 126, -130, 126, 870.0703, -702, 514, -702, 871.5703, 254, 871.6797, 322, 514, 254, 870.6719, -322, 870.77344, -254, 514, -254, 514, -322, 446, 254, 446, -702, -62, 254, -62, -702)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(6, 16, 17, 18), PackedInt32Array(11, 19, 20), PackedInt32Array(21, 22, 3, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(26, 23, 28, 29), PackedInt32Array(27, 26, 29), PackedInt32Array(20, 27, 29), PackedInt32Array(28, 23, 3, 2), PackedInt32Array(30, 28, 2, 7), PackedInt32Array(30, 7, 6), PackedInt32Array(31, 30, 6, 18), PackedInt32Array(31, 18, 12), PackedInt32Array(31, 12, 15), PackedInt32Array(31, 15, 8), PackedInt32Array(31, 8, 11), PackedInt32Array(29, 31, 11), PackedInt32Array(29, 11, 20)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-601, -751, -609, 541, 902, 527, 900, -744)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
@@ -65,6 +65,11 @@ rotation = -1.5707964
 bullet_direction = Vector2(1, 0)
 
 [node name="Ballista6" parent="." unique_id=1981387660 instance=ExtResource("6_4knpr")]
+position = Vector2(890, 352)
+rotation = 1.5707964
+bullet_direction = Vector2(-1, 0)
+
+[node name="Ballista9" parent="." unique_id=1770333712 instance=ExtResource("6_4knpr")]
 position = Vector2(890, 352)
 rotation = 1.5707964
 bullet_direction = Vector2(-1, 0)

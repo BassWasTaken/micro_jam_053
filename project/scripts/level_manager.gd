@@ -3,7 +3,6 @@ extends Node
 var levels_map = {
 	"0": {
 		"scene": preload("res://project/scenes/levels/level0.tscn"),
-		# "scene": preload("res://project/scenes/levels/center_madness.tscn"),
 		"next": "1"
 	},
 	"1": {
@@ -16,6 +15,10 @@ var levels_map = {
 	},
 	"3": {
 		"scene": preload("res://project/scenes/levels/level3.tscn"),
+		"next": "4"
+	},
+	"4": {
+		"scene": preload("res://project/scenes/levels/center_madness.tscn"),
 		"next": "end"
 	},
 	"end": {
@@ -49,7 +52,7 @@ signal game_over
 
 func start_new():
 	UserInterface.show_alive_count(true)
-	load_level("0", 18)
+	load_level("0", 22)
 
 
 func load_level(level_id, starting_units):
