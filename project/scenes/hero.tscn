@@ -101,6 +101,54 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="GDScript" id="GDScript_sys3p"]
+script/source = "extends Area2D
+
+signal on_grab
+
+func grab():
+	on_grab.emit()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sys3p"]
+
+[sub_resource type="Animation" id="Animation_mjif7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimHolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sys3p"]
+resource_name = "jumpy"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimHolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjif7"]
+_data = {
+&"RESET": SubResource("Animation_mjif7"),
+&"jumpy": SubResource("Animation_sys3p")
+}
+
 [node name="Hero" type="CharacterBody2D" unique_id=967307088]
 collision_layer = 4
 script = ExtResource("1_3clfj")
@@ -118,13 +166,15 @@ polygon = PackedVector2Array(-16, -8, -8, 24, 0, 16, 8, 24, 16, -8, 8, -8, 8, -1
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1421495157]
 path_desired_distance = 5.0
 
-[node name="Anim1" type="AnimatedSprite2D" parent="." unique_id=992498915]
+[node name="AnimHolder" type="Node2D" parent="." unique_id=1872851794]
+
+[node name="Anim1" type="AnimatedSprite2D" parent="AnimHolder" unique_id=992498915]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_kyrl5")
 autoplay = "default"
 frame_progress = 0.52590287
 
-[node name="Anim2" type="AnimatedSprite2D" parent="." unique_id=1679287607]
+[node name="Anim2" type="AnimatedSprite2D" parent="AnimHolder" unique_id=1679287607]
 visible = false
 sprite_frames = SubResource("SpriteFrames_sqwkv")
 autoplay = "default"
@@ -141,3 +191,14 @@ show_percentage = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=709901114]
 bus = &"Vox"
+
+[node name="GrabArea" type="Area2D" parent="." unique_id=1797566954]
+collision_layer = 4
+collision_mask = 0
+script = SubResource("GDScript_sys3p")
+
+[node name="Shape" type="CollisionShape2D" parent="GrabArea" unique_id=330708063]
+shape = SubResource("CircleShape2D_sys3p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=719805510]
+libraries/ = SubResource("AnimationLibrary_mjif7")
