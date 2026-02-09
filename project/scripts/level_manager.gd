@@ -3,6 +3,7 @@ extends Node
 var levels_map = {
 	"0": {
 		"scene": preload("res://project/scenes/levels/level0.tscn"),
+		# "scene": preload("res://project/scenes/levels/center_madness.tscn"),
 		"next": "1"
 	},
 	"1": {
